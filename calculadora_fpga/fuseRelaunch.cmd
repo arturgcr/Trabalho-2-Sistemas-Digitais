@@ -1,0 +1,1 @@
+-intstyle "ise" -incremental -o "/home/ise/VirtualBox/Trabalho-2-Sistemas-Digitais/calculadora_fpga/tb_top_isim_beh.exe" -prj "/home/ise/VirtualBox/Trabalho-2-Sistemas-Digitais/calculadora_fpga/tb_top_beh.prj" "work.tb_top" 

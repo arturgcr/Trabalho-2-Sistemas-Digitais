@@ -1,0 +1,30 @@
+V3 15
+FL /home/ise/VirtualBox/Trabalho-2-Sistemas-Digitais/calculadora_fpga/src/lcd_controller.vhd 2025/06/23.20:26:20 P.20131013
+EN work/lcd_controller 1750713294 \
+      FL /home/ise/VirtualBox/Trabalho-2-Sistemas-Digitais/calculadora_fpga/src/lcd_controller.vhd \
+      PB ieee/std_logic_1164 1381692176 PB ieee/STD_LOGIC_UNSIGNED 1381692179
+AR work/lcd_controller/Behavioral 1750713295 \
+      FL /home/ise/VirtualBox/Trabalho-2-Sistemas-Digitais/calculadora_fpga/src/lcd_controller.vhd \
+      EN work/lcd_controller 1750713294
+FL /home/ise/VirtualBox/Trabalho-2-Sistemas-Digitais/calculadora_fpga/src/logica_calculadora.vhd 2025/06/23.21:14:23 P.20131013
+EN work/logica_calculadora 1750713292 \
+      FL /home/ise/VirtualBox/Trabalho-2-Sistemas-Digitais/calculadora_fpga/src/logica_calculadora.vhd \
+      PB ieee/std_logic_1164 1381692176 PB ieee/NUMERIC_STD 1381692181
+AR work/logica_calculadora/Behavioral 1750713293 \
+      FL /home/ise/VirtualBox/Trabalho-2-Sistemas-Digitais/calculadora_fpga/src/logica_calculadora.vhd \
+      EN work/logica_calculadora 1750713292
+FL /home/ise/VirtualBox/Trabalho-2-Sistemas-Digitais/calculadora_fpga/src/teclado_ps2.vhd 2025/06/23.20:20:56 P.20131013
+EN work/teclado_ps2 1750713290 \
+      FL /home/ise/VirtualBox/Trabalho-2-Sistemas-Digitais/calculadora_fpga/src/teclado_ps2.vhd \
+      PB ieee/std_logic_1164 1381692176 PB ieee/STD_LOGIC_UNSIGNED 1381692179
+AR work/teclado_ps2/Behavioral 1750713291 \
+      FL /home/ise/VirtualBox/Trabalho-2-Sistemas-Digitais/calculadora_fpga/src/teclado_ps2.vhd \
+      EN work/teclado_ps2 1750713290
+FL /home/ise/VirtualBox/Trabalho-2-Sistemas-Digitais/calculadora_fpga/src/top.vhd 2025/06/23.21:14:45 P.20131013
+EN work/top 1750713296 \
+      FL /home/ise/VirtualBox/Trabalho-2-Sistemas-Digitais/calculadora_fpga/src/top.vhd \
+      PB ieee/std_logic_1164 1381692176
+AR work/top/Structural 1750713297 \
+      FL /home/ise/VirtualBox/Trabalho-2-Sistemas-Digitais/calculadora_fpga/src/top.vhd \
+      EN work/top 1750713296 CP work/teclado_ps2 CP work/logica_calculadora \
+      CP work/lcd_controller

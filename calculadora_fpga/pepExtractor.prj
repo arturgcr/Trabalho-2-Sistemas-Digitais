@@ -1,0 +1,4 @@
+work	"src/lcd_controller.vhd"
+work	"src/logica_calculadora.vhd"
+work	"src/teclado_ps2.vhd"
+work	"src/top.vhd"
