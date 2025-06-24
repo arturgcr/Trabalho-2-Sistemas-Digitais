@@ -55,6 +55,10 @@
     <transform xil_pn:end_ts="1750713470" xil_pn:in_ck="6320299993197502990" xil_pn:name="TRAN_copyAbstractToPostAbstractSimulation" xil_pn:start_ts="1750713470">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForInputs"/>
+      <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="InputChanged"/>
+      <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name="sim/tb_top.vhd"/>
       <outfile xil_pn:name="src/lcd_controller.vhd"/>
       <outfile xil_pn:name="src/logica_calculadora.vhd"/>
@@ -76,6 +80,11 @@
     <transform xil_pn:end_ts="1750713470" xil_pn:in_ck="6320299993197502990" xil_pn:name="TRAN_copyPostAbstractToPreSimulation" xil_pn:start_ts="1750713470">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForInputs"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
+      <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="InputChanged"/>
+      <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name="sim/tb_top.vhd"/>
       <outfile xil_pn:name="src/lcd_controller.vhd"/>
       <outfile xil_pn:name="src/logica_calculadora.vhd"/>
@@ -85,6 +94,10 @@
     <transform xil_pn:end_ts="1750713473" xil_pn:in_ck="6320299993197502990" xil_pn:name="TRAN_ISimulateBehavioralModelRunFuse" xil_pn:prop_ck="7215303773990174163" xil_pn:start_ts="1750713470">
       <status xil_pn:value="FailedRun"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForInputs"/>
+      <status xil_pn:value="OutOfDateForProperties"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
+      <status xil_pn:value="InputChanged"/>
     </transform>
     <transform xil_pn:end_ts="1750712548" xil_pn:name="TRAN_copyInitialToXSTAbstractSynthesis" xil_pn:start_ts="1750712548">
       <status xil_pn:value="SuccessfullyRun"/>
