@@ -1,0 +1,19 @@
+#-----------------------------------------------------------
+# PlanAhead v14.7 (64-bit)
+# Build 321239 by xbuild on Fri Sep 27 19:24:36 MDT 2013
+# Start of session at: Tue Jun 24 19:30:44 2025
+# Process ID: 5073
+# Log file: /home/ise/VirtualBox/Trabalho-2-Sistemas-Digitais/calculadora_fpga/planAhead_run_5/planAhead.log
+# Journal file: /home/ise/VirtualBox/Trabalho-2-Sistemas-Digitais/calculadora_fpga/planAhead_run_5/planAhead.jou
+#-----------------------------------------------------------
+start_gui
+source /home/ise/VirtualBox/Trabalho-2-Sistemas-Digitais/calculadora_fpga/pa.fromHdl.tcl
+update_compile_order -fileset sim_1
+startgroup
+set_property package_pin W12 [get_ports ps2_clk]
+endgroup
+save_constraints
+startgroup
+set_property package_pin E12 [get_ports clk]
+endgroup
+save_constraints

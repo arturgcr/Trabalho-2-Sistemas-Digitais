@@ -1,0 +1,8 @@
+Release 14.7 Drc P.20131013 (lin64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+
+Tue Jun 24 19:35:42 2025
+
+drc -z teclado_teste.ncd teclado_teste.pcf
+
+DRC detected 0 errors and 0 warnings.

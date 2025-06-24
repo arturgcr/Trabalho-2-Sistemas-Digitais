@@ -1,8 +1,11 @@
 AR logica_calculadora behavioral /home/ise/VirtualBox/Trabalho-2-Sistemas-Digitais/calculadora_fpga/src/logica_calculadora.vhd sub00/vhpl05 1750713293
+EN teclado_teste NULL /home/ise/VirtualBox/Trabalho-2-Sistemas-Digitais/calculadora_fpga/teclado_teste.vhd sub00/vhpl09 1750793604
 EN lcd_controller NULL /home/ise/VirtualBox/Trabalho-2-Sistemas-Digitais/calculadora_fpga/src/lcd_controller.vhd sub00/vhpl03 1750713294
 AR top structural /home/ise/VirtualBox/Trabalho-2-Sistemas-Digitais/calculadora_fpga/src/top.vhd sub00/vhpl07 1750713297
-EN teclado_ps2 NULL /home/ise/VirtualBox/Trabalho-2-Sistemas-Digitais/calculadora_fpga/src/teclado_ps2.vhd sub00/vhpl00 1750713290
-AR teclado_ps2 behavioral /home/ise/VirtualBox/Trabalho-2-Sistemas-Digitais/calculadora_fpga/src/teclado_ps2.vhd sub00/vhpl01 1750713291
-EN top NULL /home/ise/VirtualBox/Trabalho-2-Sistemas-Digitais/calculadora_fpga/src/top.vhd sub00/vhpl06 1750713296
+EN teclado_ps2 NULL /home/ise/VirtualBox/Trabalho-2-Sistemas-Digitais/calculadora_fpga/src/teclado_ps2.vhd sub00/vhpl00 1750793602
+AR teclado_ps2 behavioral /home/ise/VirtualBox/Trabalho-2-Sistemas-Digitais/calculadora_fpga/src/teclado_ps2.vhd sub00/vhpl01 1750793603
+EN top NULL /home/ise/VirtualBox/Trabalho-2-Sistemas-Digitais/calculadora_fpga/src/top.vhd sub00/vhpl06 1750792534
 EN logica_calculadora NULL /home/ise/VirtualBox/Trabalho-2-Sistemas-Digitais/calculadora_fpga/src/logica_calculadora.vhd sub00/vhpl02 1750713292
+AR teclado_teste behavioral /home/ise/VirtualBox/Trabalho-2-Sistemas-Digitais/calculadora_fpga/teclado_teste.vhd sub00/vhpl10 1750793605
 AR lcd_controller behavioral /home/ise/VirtualBox/Trabalho-2-Sistemas-Digitais/calculadora_fpga/src/lcd_controller.vhd sub00/vhpl04 1750713295
+AR top behavioral /home/ise/VirtualBox/Trabalho-2-Sistemas-Digitais/calculadora_fpga/src/top.vhd sub00/vhpl08 1750792535

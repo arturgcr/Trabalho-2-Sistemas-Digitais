@@ -1,0 +1,9 @@
+xst -intstyle ise -ifn "/home/ise/VirtualBox/Trabalho-2-Sistemas-Digitais/calculadora_fpga/teclado_teste.xst" -ofn "/home/ise/VirtualBox/Trabalho-2-Sistemas-Digitais/calculadora_fpga/teclado_teste.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc teclado_teste.ucf -p xc3s700an-fgg484-5 teclado_teste.ngc teclado_teste.ngd  
+map -intstyle ise -p xc3s700an-fgg484-5 -cm area -ir off -pr off -c 100 -o teclado_teste_map.ncd teclado_teste.ngd teclado_teste.pcf 
+par -w -intstyle ise -ol high -t 1 teclado_teste_map.ncd teclado_teste.ncd teclado_teste.pcf 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc teclado_teste.ucf -p xc3s700an-fgg484-5 teclado_teste.ngc teclado_teste.ngd  
+map -intstyle ise -p xc3s700an-fgg484-5 -cm area -ir off -pr off -c 100 -o teclado_teste_map.ncd teclado_teste.ngd teclado_teste.pcf 
+par -w -intstyle ise -ol high -t 1 teclado_teste_map.ncd teclado_teste.ncd teclado_teste.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml teclado_teste.twx teclado_teste.ncd -o teclado_teste.twr teclado_teste.pcf -ucf teclado_teste.ucf 
+bitgen -intstyle ise -f teclado_teste.ut teclado_teste.ncd 

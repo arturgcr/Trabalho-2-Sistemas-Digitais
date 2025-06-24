@@ -1,0 +1,60 @@
+#-----------------------------------------------------------
+# PlanAhead v14.7 (64-bit)
+# Build 321239 by xbuild on Fri Sep 27 19:24:36 MDT 2013
+# Start of session at: Tue Jun 24 19:04:11 2025
+# Process ID: 4117
+# Log file: /home/ise/VirtualBox/Trabalho-2-Sistemas-Digitais/calculadora_fpga/planAhead_run_3/planAhead.log
+# Journal file: /home/ise/VirtualBox/Trabalho-2-Sistemas-Digitais/calculadora_fpga/planAhead_run_3/planAhead.jou
+#-----------------------------------------------------------
+start_gui
+source /home/ise/VirtualBox/Trabalho-2-Sistemas-Digitais/calculadora_fpga/pa.fromHdl.tcl
+update_compile_order -fileset sim_1
+set_property iostandard LVCMOS33 [get_ports [list {dado_ascii_out[7]} {dado_ascii_out[6]} {dado_ascii_out[5]} {dado_ascii_out[4]} {dado_ascii_out[3]} {dado_ascii_out[2]} {dado_ascii_out[1]} {dado_ascii_out[0]}]]
+save_constraints
+startgroup
+set_property package_pin U21 [get_ports {dado_ascii_out[7]}]
+endgroup
+startgroup
+set_property package_pin Y22 [get_ports {dado_ascii_out[6]}]
+endgroup
+startgroup
+set_property package_pin V20 [get_ports {dado_ascii_out[5]}]
+endgroup
+startgroup
+set_property package_pin V19 [get_ports {dado_ascii_out[4]}]
+endgroup
+startgroup
+set_property package_pin U19 [get_ports {dado_ascii_out[3]}]
+endgroup
+startgroup
+set_property package_pin U20 [get_ports {dado_ascii_out[2]}]
+endgroup
+startgroup
+set_property package_pin T19 [get_ports {dado_ascii_out[1]}]
+endgroup
+startgroup
+set_property package_pin R20 [get_ports {dado_ascii_out[0]}]
+endgroup
+save_constraints
+set_property package_pin "" [get_ports [list  clk]]
+startgroup
+set_property package_pin C9 [get_ports clk]
+endgroup
+startgroup
+set_property package_pin V11 [get_ports ps2_clk]
+endgroup
+set_property package_pin "" [get_ports [list  ps2_data]]
+startgroup
+set_property package_pin W2 [get_ports ps2_clk]
+endgroup
+startgroup
+set_property package_pin W12 [get_ports ps2_clk]
+endgroup
+startgroup
+set_property package_pin V11 [get_ports ps2_data]
+endgroup
+save_constraints
+startgroup
+set_property package_pin T15 [get_ports reset]
+endgroup
+save_constraints

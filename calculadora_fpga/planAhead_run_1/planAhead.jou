@@ -1,0 +1,30 @@
+#-----------------------------------------------------------
+# PlanAhead v14.7 (64-bit)
+# Build 321239 by xbuild on Fri Sep 27 19:24:36 MDT 2013
+# Start of session at: Tue Jun 24 18:30:05 2025
+# Process ID: 3252
+# Log file: /home/ise/VirtualBox/Trabalho-2-Sistemas-Digitais/calculadora_fpga/planAhead_run_1/planAhead.log
+# Journal file: /home/ise/VirtualBox/Trabalho-2-Sistemas-Digitais/calculadora_fpga/planAhead_run_1/planAhead.jou
+#-----------------------------------------------------------
+start_gui
+source /home/ise/VirtualBox/Trabalho-2-Sistemas-Digitais/calculadora_fpga/pa.fromHdl.tcl
+update_compile_order -fileset sim_1
+set_property iostandard LVCMOS33 [get_ports [list {ascii_result1[7]} {ascii_result1[6]} {ascii_result1[5]} {ascii_result1[4]} {ascii_result1[3]} {ascii_result1[2]} {ascii_result1[1]} {ascii_result1[0]}]]
+set_property iostandard LVCMOS33 [get_ports [list {ascii_result2[7]} {ascii_result2[6]} {ascii_result2[5]} {ascii_result2[4]} {ascii_result2[3]} {ascii_result2[2]} {ascii_result2[1]} {ascii_result2[0]}]]
+set_property iostandard LVCMOS33 [get_ports [list {ascii_result3[7]} {ascii_result3[6]} {ascii_result3[5]} {ascii_result3[4]} {ascii_result3[3]} {ascii_result3[2]} {ascii_result3[1]} {ascii_result3[0]}]]
+set_property iostandard LVCMOS33 [get_ports [list {ascii_result4[7]} {ascii_result4[6]} {ascii_result4[5]} {ascii_result4[4]} {ascii_result4[3]} {ascii_result4[2]} {ascii_result4[1]} {ascii_result4[0]}]]
+set_property iostandard LVCMOS33 [get_ports [list {ascii_result5[7]} {ascii_result5[6]} {ascii_result5[5]} {ascii_result5[4]} {ascii_result5[3]} {ascii_result5[2]} {ascii_result5[1]} {ascii_result5[0]}]]
+set_property iostandard LVCMOS33 [get_ports [list {dado_ascii[7]} {dado_ascii[6]} {dado_ascii[5]} {dado_ascii[4]} {dado_ascii[3]} {dado_ascii[2]} {dado_ascii[1]} {dado_ascii[0]}]]
+set_property iostandard LVCMOS33 [get_ports [list erro_div_zero]]
+set_property iostandard LVCMOS33 [get_ports [list clk]]
+set_property iostandard LVCMOS33 [get_ports [list pronto]]
+set_property iostandard LVCMOS33 [get_ports [list reset]]
+set_property iostandard LVCMOS33 [get_ports [list resultado_pronto]]
+save_constraints
+startgroup
+set_property package_pin C9 [get_ports clk]
+endgroup
+set_property package_pin "" [get_ports [list  erro_div_zero]]
+startgroup
+set_property package_pin T9 [get_ports reset]
+endgroup
