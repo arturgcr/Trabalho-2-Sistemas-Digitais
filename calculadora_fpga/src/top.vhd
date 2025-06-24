@@ -2,7 +2,7 @@ library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.NUMERIC_STD.ALL;
 
-entity logica_calculadora is
+entity top is
     Port (
         clk               : in  std_logic;                        -- system clock
         reset             : in  std_logic;                        -- asynchronous reset
@@ -18,9 +18,9 @@ entity logica_calculadora is
         resultado_pronto  : out std_logic;                        -- high when result is ready
         erro_div_zero     : out std_logic                         -- high if division by zero occurs
     );
-end logica_calculadora;
+end top;
 
-architecture Behavioral of logica_calculadora is
+architecture Behavioral of top is
 
     -- Define FSM states
     type state_type is (IDLE, DIG1, OPERADOR, DIG2, CALCULA, MOSTRA);

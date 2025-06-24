@@ -1,1 +1,1 @@
--intstyle "ise" -incremental -o "/home/ise/VirtualBox/Trabalho-2-Sistemas-Digitais/calculadora_fpga/tb_top_isim_beh.exe" -prj "/home/ise/VirtualBox/Trabalho-2-Sistemas-Digitais/calculadora_fpga/tb_top_beh.prj" "work.tb_top" 
+-intstyle "ise" -incremental -o "C:/Users/rafam/OneDrive/Documentos/Facul/Sistemas Digitais/Trabalho 2/Trabalho-2-Sistemas-Digitais/calculadora_fpga/tb_teclado_ps2_isim_beh.exe" -prj "C:/Users/rafam/OneDrive/Documentos/Facul/Sistemas Digitais/Trabalho 2/Trabalho-2-Sistemas-Digitais/calculadora_fpga/tb_teclado_ps2_beh.prj" "work.tb_teclado_ps2" 
