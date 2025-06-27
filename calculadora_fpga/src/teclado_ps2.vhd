@@ -1,41 +1,113 @@
-----------------------------------------------------------------------------------
--- Company: 
--- Engineer: 
--- 
--- Create Date:    18:45:00 06/23/2025 
--- Design Name: 
--- Module Name:    teclado_ps2 - Behavioral 
--- Project Name: 
--- Target Devices: 
--- Tool versions: 
--- Description: 
---
--- Dependencies: 
---
--- Revision: 
--- Revision 0.01 - File Created
--- Additional Comments: 
---
-----------------------------------------------------------------------------------
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
-
--- Uncomment the following library declaration if using
--- arithmetic functions with Signed or Unsigned values
---use IEEE.NUMERIC_STD.ALL;
-
--- Uncomment the following library declaration if instantiating
--- any Xilinx primitives in this code.
---library UNISIM;
---use UNISIM.VComponents.all;
+use IEEE.NUMERIC_STD.ALL;
 
 entity teclado_ps2 is
+    Port (
+        clk         : in  std_logic;                        -- Clock do sistema (ex: 50 MHz)
+        reset       : in  std_logic;                        -- Reset assíncrono
+        ps2_clk     : in  std_logic;                        -- Clock da interface PS/2
+        ps2_data    : in  std_logic;                        -- Dados da interface PS/2
+        dado_ascii  : out std_logic_vector(7 downto 0);     -- Código ASCII decodificado
+        pronto      : out std_logic                         -- Pulso alto quando novo caractere recebido
+    );
 end teclado_ps2;
 
 architecture Behavioral of teclado_ps2 is
 
+    -- Sincronização do clock PS/2 com clock do sistema
+    signal ps2_clk_sync : std_logic_vector(2 downto 0) := (others => '1');
+    signal falling_edge : std_logic := '0';
+
+    -- Captura do frame PS/2
+    signal bit_count    : integer range 0 to 10 := 0;
+    signal shift_reg    : std_logic_vector(10 downto 0) := (others => '0');
+    signal scan_code    : std_logic_vector(7 downto 0) := (others => '0');
+
+    -- Estados internos
+    signal is_break     : std_logic := '0';
+    signal dado_reg     : std_logic_vector(7 downto 0) := (others => '0');
+    signal pronto_reg   : std_logic := '0';
+
 begin
 
+    -- Detecta borda de descida do ps2_clk
+    process(clk)
+    begin
+        if rising_edge(clk) then
+            ps2_clk_sync <= ps2_clk_sync(1 downto 0) & ps2_clk;
+            falling_edge <= ps2_clk_sync(2) and not ps2_clk_sync(1);
+        end if;
+    end process;
+
+    -- Recepção serial de dados do teclado
+    process(clk)
+    begin
+        if rising_edge(clk) then
+            if reset = '1' then
+                bit_count <= 0;
+                shift_reg <= (others => '0');
+                scan_code <= (others => '0');
+            elsif falling_edge = '1' then
+                shift_reg(bit_count) <= ps2_data;
+                if bit_count = 10 then
+                    scan_code <= shift_reg(8 downto 1);  -- bits 1 a 8: dados úteis
+                    bit_count <= 0;
+                else
+                    bit_count <= bit_count + 1;
+                end if;
+            end if;
+        end if;
+    end process;
+
+    -- Interpretação de códigos: BREAK → ignora; MAKE → converte
+    process(clk)
+    begin
+        if rising_edge(clk) then
+            pronto_reg <= '0';  -- default
+
+            if scan_code = x"F0" then
+                is_break <= '1';  -- próxima será BREAK
+            elsif is_break = '1' then
+                is_break <= '0';  -- ignora a próxima (tecla solta)
+            else
+                -- Tecla pressionada: interpretar scan code
+                case scan_code is
+                    when x"45" => dado_reg <= x"30"; -- '0'
+                    when x"16" => dado_reg <= x"31"; -- '1'
+                    when x"1E" => dado_reg <= x"32"; -- '2'
+                    when x"26" => dado_reg <= x"33"; -- '3'
+                    when x"25" => dado_reg <= x"34"; -- '4'
+                    when x"2E" => dado_reg <= x"35"; -- '5'
+                    when x"36" => dado_reg <= x"36"; -- '6'
+                    when x"3D" => dado_reg <= x"37"; -- '7'
+                    when x"3E" => dado_reg <= x"38"; -- '8'
+                    when x"46" => dado_reg <= x"39"; -- '9'
+
+                    -- Operadores
+                    when x"79" => dado_reg <= x"2B"; -- '+'
+                    when x"7B" => dado_reg <= x"2D"; -- '-'
+                    when x"7C" => dado_reg <= x"2A"; -- '*'
+                    when x"4A" => dado_reg <= x"2F"; -- '/'
+                    when x"5A" => dado_reg <= x"3D"; -- '='
+
+                    -- Teclas especiais
+                    when x"66" => dado_reg <= x"08"; -- Backspace
+                    when x"76" => dado_reg <= x"0C"; -- Clear (ESC como 'C')
+
+                    -- Ponto decimal (opcional no futuro)
+                    -- when x"49" => dado_reg <= x"2E"; -- '.'
+
+                    when others => dado_reg <= x"3F"; -- '?'
+                end case;
+
+                pronto_reg <= '1';  -- sinaliza que dado está pronto
+            end if;
+        end if;
+    end process;
+
+    -- Saídas
+    dado_ascii <= dado_reg;
+    pronto     <= pronto_reg;
 
 end Behavioral;
-

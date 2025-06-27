@@ -1,0 +1,5 @@
+vhdl work "/home/ise/VirtualBox/Trabalho-2-Sistemas-Digitais/calculadora_fpga/src/teclado_ps2.vhd"
+vhdl work "/home/ise/VirtualBox/Trabalho-2-Sistemas-Digitais/calculadora_fpga/src/logica_calculadora.vhd"
+vhdl work "/home/ise/VirtualBox/Trabalho-2-Sistemas-Digitais/calculadora_fpga/src/lcd_controller.vhd"
+vhdl work "/home/ise/VirtualBox/Trabalho-2-Sistemas-Digitais/calculadora_fpga/src/ascii_converter.vhd"
+vhdl work "/home/ise/VirtualBox/Trabalho-2-Sistemas-Digitais/calculadora_fpga/src/top.vhd"
