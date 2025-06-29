@@ -129,7 +129,6 @@ begin
                         if escrever = '0' then
                             estado <= INIT_3;
                         end if;
-
                 end case;
             end if;
         end if;

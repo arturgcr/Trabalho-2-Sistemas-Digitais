@@ -1,10 +1,10 @@
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 
-entity tb_teclado_ps2 is
-end tb_teclado_ps2;
+entity teclado_ps2_tb is
+end teclado_ps2_tb;
 
-architecture Behavioral of tb_teclado_ps2 is
+architecture Behavioral of teclado_ps2_tb is
 
     -- DUT Signals
     signal clk       : std_logic := '0';

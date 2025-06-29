@@ -1,4 +1,4 @@
-Running: C:\Xilinx\14.7\ISE_DS\ISE\bin\nt64\unwrapped\fuse.exe -intstyle ise -incremental -o C:/Users/rafam/OneDrive/Documentos/Facul/Sistemas Digitais/Trabalho 2/Trabalho-2-Sistemas-Digitais/calculadora_fpga/tb_teclado_ps2_isim_beh.exe -prj C:/Users/rafam/OneDrive/Documentos/Facul/Sistemas Digitais/Trabalho 2/Trabalho-2-Sistemas-Digitais/calculadora_fpga/tb_teclado_ps2_beh.prj work.tb_teclado_ps2 
+Running: C:\Xilinx\14.7\ISE_DS\ISE\bin\nt64\unwrapped\fuse.exe -intstyle ise -incremental -o C:/Users/rafam/OneDrive/Documentos/Facul/Sistemas Digitais/Trabalho 2/Trabalho-2-Sistemas-Digitais/calculadora_fpga/teclado_ps2_tb_isim_beh.exe -prj C:/Users/rafam/OneDrive/Documentos/Facul/Sistemas Digitais/Trabalho 2/Trabalho-2-Sistemas-Digitais/calculadora_fpga/teclado_ps2_tb_beh.prj work.teclado_ps2_tb 
 ISim P.20131013 (signature 0x7708f090)
 Number of CPUs detected in this system: 4
 Turning on mult-threading, number of parallel sub-compilation jobs: 8 
@@ -11,10 +11,10 @@ Compiling package standard
 Compiling package std_logic_1164
 Compiling package numeric_std
 Compiling architecture behavioral of entity teclado_ps2 [teclado_ps2_default]
-Compiling architecture behavioral of entity tb_teclado_ps2
+Compiling architecture behavioral of entity teclado_ps2_tb
 Time Resolution for simulation is 1ps.
 Waiting for 1 sub-compilation(s) to finish...
 Compiled 6 VHDL Units
-Built simulation executable C:/Users/rafam/OneDrive/Documentos/Facul/Sistemas Digitais/Trabalho 2/Trabalho-2-Sistemas-Digitais/calculadora_fpga/tb_teclado_ps2_isim_beh.exe
-Fuse Memory Usage: 36076 KB
-Fuse CPU Usage: 546 ms
+Built simulation executable C:/Users/rafam/OneDrive/Documentos/Facul/Sistemas Digitais/Trabalho 2/Trabalho-2-Sistemas-Digitais/calculadora_fpga/teclado_ps2_tb_isim_beh.exe
+Fuse Memory Usage: 36020 KB
+Fuse CPU Usage: 562 ms

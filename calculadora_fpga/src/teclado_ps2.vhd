@@ -28,6 +28,7 @@ architecture Behavioral of teclado_ps2 is
     -- Estados internos
     signal dado_reg     : std_logic_vector(7 downto 0) := (others => '0');
     signal pronto_reg   : std_logic := '0';
+	 signal recebido   : std_logic := '0';
 
 begin
 
@@ -44,6 +45,9 @@ begin
     process(clk)
     begin
         if rising_edge(clk) then
+				if recebido = '1' then
+								recebido <= '0';
+				end if;
             if reset = '1' then
                 bit_count <= 0;
                 shift_reg <= (others => '0');
@@ -55,9 +59,9 @@ begin
 						  previous_scan_code <= scan_code;
                     scan_code <= shift_reg(8 downto 1);  -- bits 1 a 8: dados úteis
                     bit_count <= 0;
-                else
+						  recebido <= '1';
+				    else
                     bit_count <= bit_count + 1;
-						  
                 end if;
             end if;
         end if;
@@ -69,9 +73,8 @@ begin
         if rising_edge(clk) then
 				if reset = '1' then
 					 dado_reg <= (others => '0');
-				end if;
-            if previous_scan_code = x"F0" then
-                case scan_code is -- Tecla pressionada: interpretar scan code
+				elsif recebido = '1' and previous_scan_code = x"F0" then						
+					case scan_code is -- Tecla pressionada: interpretar scan code
                     when x"45" => dado_reg <= x"30"; -- '0'
                     when x"16" => dado_reg <= x"31"; -- '1'
                     when x"1E" => dado_reg <= x"32"; -- '2'
@@ -99,12 +102,10 @@ begin
 
                     when others => dado_reg <= x"3F"; -- '?'
                 end case;
-					 if not pronto_reg = '1' then
-							pronto_reg <= '1';  -- sinaliza que dado está pronto
-					 end if;
+					 pronto_reg <= '1';
 				else
 					pronto_reg <= '0';
-            end if;
+				end if;
         end if;
     end process;
 
