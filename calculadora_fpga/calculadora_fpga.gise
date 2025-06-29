@@ -67,15 +67,15 @@
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1751211679" xil_pn:in_ck="4472936380617953857" xil_pn:name="TRAN_copyAbstractToPostAbstractSimulation" xil_pn:start_ts="1751211679">
+    <transform xil_pn:end_ts="1751214952" xil_pn:in_ck="-9057903934242355174" xil_pn:name="TRAN_copyAbstractToPostAbstractSimulation" xil_pn:start_ts="1751214952">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
-      <outfile xil_pn:name="../../../../../../../Downloads/teclado_ps2_tb.vhd"/>
       <outfile xil_pn:name="src/ascii_converter.vhd"/>
       <outfile xil_pn:name="src/lcd_controller.vhd"/>
       <outfile xil_pn:name="src/logica_calculadora.vhd"/>
       <outfile xil_pn:name="src/teclado_ps2.vhd"/>
       <outfile xil_pn:name="src/top.vhd"/>
+      <outfile xil_pn:name="teclado_ps2_tb.vhd"/>
     </transform>
     <transform xil_pn:end_ts="1751211720" xil_pn:name="TRAN_xawsToSimhdl" xil_pn:prop_ck="-677140182801780856" xil_pn:start_ts="1751211720">
       <status xil_pn:value="SuccessfullyRun"/>
@@ -89,17 +89,17 @@
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1751211682" xil_pn:in_ck="4472936380617953857" xil_pn:name="TRAN_copyPostAbstractToPreSimulation" xil_pn:start_ts="1751211682">
+    <transform xil_pn:end_ts="1751214955" xil_pn:in_ck="-9057903934242355174" xil_pn:name="TRAN_copyPostAbstractToPreSimulation" xil_pn:start_ts="1751214955">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
-      <outfile xil_pn:name="../../../../../../../Downloads/teclado_ps2_tb.vhd"/>
       <outfile xil_pn:name="src/ascii_converter.vhd"/>
       <outfile xil_pn:name="src/lcd_controller.vhd"/>
       <outfile xil_pn:name="src/logica_calculadora.vhd"/>
       <outfile xil_pn:name="src/teclado_ps2.vhd"/>
       <outfile xil_pn:name="src/top.vhd"/>
+      <outfile xil_pn:name="teclado_ps2_tb.vhd"/>
     </transform>
-    <transform xil_pn:end_ts="1751211724" xil_pn:in_ck="4472936380617953857" xil_pn:name="TRAN_ISimulateBehavioralModelRunFuse" xil_pn:prop_ck="-125023095765862559" xil_pn:start_ts="1751211720">
+    <transform xil_pn:end_ts="1751214959" xil_pn:in_ck="-9057903934242355174" xil_pn:name="TRAN_ISimulateBehavioralModelRunFuse" xil_pn:prop_ck="-125023095765862559" xil_pn:start_ts="1751214955">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <outfile xil_pn:name="fuse.log"/>
@@ -109,7 +109,7 @@
       <outfile xil_pn:name="tb_teclado_ps2_isim_beh.exe"/>
       <outfile xil_pn:name="xilinxsim.ini"/>
     </transform>
-    <transform xil_pn:end_ts="1751211725" xil_pn:in_ck="8134888207337204723" xil_pn:name="TRAN_ISimulateBehavioralModel" xil_pn:prop_ck="847707351343348307" xil_pn:start_ts="1751211724">
+    <transform xil_pn:end_ts="1751214960" xil_pn:in_ck="8134888207337204723" xil_pn:name="TRAN_ISimulateBehavioralModel" xil_pn:prop_ck="847707351343348307" xil_pn:start_ts="1751214959">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <outfile xil_pn:name="isim.cmd"/>
