@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="C:/Users/rafam/OneDrive/Documentos/Facul/Sistemas Digitais/Trabalho 2/Trabalho-2-Sistemas-Digitais/calculadora_fpga/tb_teclado_ps2_isim_beh.wdb" id="1" type="auto">
+         <top_modules>
+            <top_module name="numeric_std" />
+            <top_module name="std_logic_1164" />
+            <top_module name="tb_teclado_ps2" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <WVObjectSize size="7" />
+   <wave_markers>
+      <marker time="1760000000000" label="" />
+      <marker time="1960220000000" label="" />
+      <marker time="2800000000000" label="" />
+      <marker time="3040280000000" label="" />
+      <marker time="4800000000000" label="" />
+      <marker time="5000380000000" label="" />
+      <marker time="5840000000000" label="" />
+      <marker time="6720000000000" label="" />
+      <marker time="6960460000000" label="" />
+      <marker time="880200000000" label="" />
+   </wave_markers>
+   <wvobject fp_name="/tb_teclado_ps2/clk" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_teclado_ps2/reset" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">reset</obj_property>
+      <obj_property name="ObjectShortName">reset</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_teclado_ps2/ps2_clk" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">ps2_clk</obj_property>
+      <obj_property name="ObjectShortName">ps2_clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_teclado_ps2/ps2_data" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">ps2_data</obj_property>
+      <obj_property name="ObjectShortName">ps2_data</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_teclado_ps2/dado_ascii" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">dado_ascii[7:0]</obj_property>
+      <obj_property name="ObjectShortName">dado_ascii[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_teclado_ps2/pronto" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">pronto</obj_property>
+      <obj_property name="ObjectShortName">pronto</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_teclado_ps2/clk_period" type="other" db_ref_id="1">
+      <obj_property name="ElementShortName">clk_period</obj_property>
+      <obj_property name="ObjectShortName">clk_period</obj_property>
+   </wvobject>
+</wave_config>

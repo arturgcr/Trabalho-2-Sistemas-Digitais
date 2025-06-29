@@ -17,15 +17,15 @@ architecture Behavioral of teclado_ps2 is
 
     -- Sincronização do clock PS/2 com clock do sistema
     signal ps2_clk_sync : std_logic_vector(2 downto 0) := (others => '1');
-    signal falling_edge : std_logic := '0';
+    signal ps2_falling_edge : std_logic := '0';
 
     -- Captura do frame PS/2
     signal bit_count    : integer range 0 to 10 := 0;
     signal shift_reg    : std_logic_vector(10 downto 0) := (others => '0');
     signal scan_code    : std_logic_vector(7 downto 0) := (others => '0');
+	 signal previous_scan_code    : std_logic_vector(7 downto 0) := (others => '0');
 
     -- Estados internos
-    signal is_break     : std_logic := '0';
     signal dado_reg     : std_logic_vector(7 downto 0) := (others => '0');
     signal pronto_reg   : std_logic := '0';
 
@@ -36,7 +36,7 @@ begin
     begin
         if rising_edge(clk) then
             ps2_clk_sync <= ps2_clk_sync(1 downto 0) & ps2_clk;
-            falling_edge <= ps2_clk_sync(2) and not ps2_clk_sync(1);
+            ps2_falling_edge <= ps2_clk_sync(2) and not ps2_clk_sync(1);
         end if;
     end process;
 
@@ -48,13 +48,16 @@ begin
                 bit_count <= 0;
                 shift_reg <= (others => '0');
                 scan_code <= (others => '0');
-            elsif falling_edge = '1' then
+					 previous_scan_code <= (others => '0');
+            elsif ps2_falling_edge = '1' then
                 shift_reg(bit_count) <= ps2_data;
                 if bit_count = 10 then
+						  previous_scan_code <= scan_code;
                     scan_code <= shift_reg(8 downto 1);  -- bits 1 a 8: dados úteis
                     bit_count <= 0;
                 else
                     bit_count <= bit_count + 1;
+						  
                 end if;
             end if;
         end if;
@@ -64,15 +67,11 @@ begin
     process(clk)
     begin
         if rising_edge(clk) then
-            pronto_reg <= '0';  -- default
-
-            if scan_code = x"F0" then
-                is_break <= '1';  -- próxima será BREAK
-            elsif is_break = '1' then
-                is_break <= '0';  -- ignora a próxima (tecla solta)
-            else
-                -- Tecla pressionada: interpretar scan code
-                case scan_code is
+				if reset = '1' then
+					 dado_reg <= (others => '0');
+				end if;
+            if previous_scan_code = x"F0" then
+                case scan_code is -- Tecla pressionada: interpretar scan code
                     when x"45" => dado_reg <= x"30"; -- '0'
                     when x"16" => dado_reg <= x"31"; -- '1'
                     when x"1E" => dado_reg <= x"32"; -- '2'
@@ -100,8 +99,11 @@ begin
 
                     when others => dado_reg <= x"3F"; -- '?'
                 end case;
-
-                pronto_reg <= '1';  -- sinaliza que dado está pronto
+					 if not pronto_reg = '1' then
+							pronto_reg <= '1';  -- sinaliza que dado está pronto
+					 end if;
+				else
+					pronto_reg <= '0';
             end if;
         end if;
     end process;

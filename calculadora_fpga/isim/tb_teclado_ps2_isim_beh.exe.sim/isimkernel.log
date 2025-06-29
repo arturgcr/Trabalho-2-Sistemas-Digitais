@@ -1,0 +1,29 @@
+Command line:
+   tb_teclado_ps2_isim_beh.exe
+     -simmode  gui
+     -simrunnum  0
+     -socket  62933
+
+Sun Jun 29 12:42:06 2025
+
+
+ Elaboration Time: 0.03125 sec
+
+ Current Memory Usage: 5150.41 Meg
+
+ Total Signals          : 20
+ Total Nets             : 54
+ Total Signal Drivers   : 14
+ Total Blocks           : 4
+ Total Primitive Blocks : 3
+ Total Processes        : 8
+ Total Traceable Variables  : 14
+ Total Scalar Nets and Variables : 538
+Total Line Count : 81
+
+ Total Simulation Time: 1.57813 sec
+
+ Current Memory Usage: 4678.55 Meg
+
+Sun Jun 29 13:08:20 2025
+

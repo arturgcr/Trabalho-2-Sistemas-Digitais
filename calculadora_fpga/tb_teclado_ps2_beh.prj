@@ -1,0 +1,2 @@
+vhdl work "src/teclado_ps2.vhd"
+vhdl work "../../../../../../../Downloads/teclado_ps2_tb.vhd"

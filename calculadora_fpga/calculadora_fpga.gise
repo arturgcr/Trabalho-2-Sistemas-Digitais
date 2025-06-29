@@ -27,15 +27,25 @@
     <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="ascii_converter.prj"/>
     <file xil_pn:fileType="FILE_XST_STX" xil_pn:name="ascii_converter.stx"/>
     <file xil_pn:fileType="FILE_XST" xil_pn:name="ascii_converter.xst"/>
+    <file xil_pn:fileType="FILE_LOG" xil_pn:name="fuse.log"/>
+    <file xil_pn:fileType="FILE_DIRECTORY" xil_pn:name="isim"/>
+    <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_CMD" xil_pn:name="isim.cmd"/>
+    <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_LOG" xil_pn:name="isim.log"/>
     <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="lcd_controller.prj"/>
     <file xil_pn:fileType="FILE_XST_STX" xil_pn:name="lcd_controller.stx"/>
     <file xil_pn:fileType="FILE_XST" xil_pn:name="lcd_controller.xst"/>
     <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="logica_calculadora.prj"/>
     <file xil_pn:fileType="FILE_XST_STX" xil_pn:name="logica_calculadora.stx"/>
     <file xil_pn:fileType="FILE_XST" xil_pn:name="logica_calculadora.xst"/>
+    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="tb_teclado_ps2_beh.prj"/>
+    <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_ISIM_EXE" xil_pn:name="tb_teclado_ps2_isim_beh.exe"/>
+    <file xil_pn:fileType="FILE_ISIM_MISC" xil_pn:name="tb_teclado_ps2_isim_beh.wdb"/>
+    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="tb_teclado_ps2_stx_beh.prj"/>
     <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="teclado_ps2.prj"/>
     <file xil_pn:fileType="FILE_XST_STX" xil_pn:name="teclado_ps2.stx"/>
     <file xil_pn:fileType="FILE_XST" xil_pn:name="teclado_ps2.xst"/>
+    <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_ISIM_EXE" xil_pn:name="teclado_ps2_isim_beh.exe"/>
+    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="teclado_ps2_stx_beh.prj"/>
     <file xil_pn:fileType="FILE_CMD_LOG" xil_pn:name="top.cmd_log"/>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_LSO" xil_pn:name="top.lso"/>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NGC" xil_pn:name="top.ngc"/>
@@ -48,10 +58,64 @@
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="top_vhdl.prj"/>
     <file xil_pn:fileType="FILE_XRPT" xil_pn:name="top_xst.xrpt"/>
     <file xil_pn:fileType="FILE_FITTER_REPORT" xil_pn:name="webtalk_pn.xml"/>
+    <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_INI" xil_pn:name="xilinxsim.ini"/>
     <file xil_pn:fileType="FILE_DIRECTORY" xil_pn:name="xst"/>
   </files>
 
   <transforms xmlns="http://www.xilinx.com/XMLSchema">
+    <transform xil_pn:end_ts="1751210722" xil_pn:name="TRAN_copyInitialToAbstractSimulation" xil_pn:start_ts="1751210722">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1751211679" xil_pn:in_ck="4472936380617953857" xil_pn:name="TRAN_copyAbstractToPostAbstractSimulation" xil_pn:start_ts="1751211679">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <outfile xil_pn:name="../../../../../../../Downloads/teclado_ps2_tb.vhd"/>
+      <outfile xil_pn:name="src/ascii_converter.vhd"/>
+      <outfile xil_pn:name="src/lcd_controller.vhd"/>
+      <outfile xil_pn:name="src/logica_calculadora.vhd"/>
+      <outfile xil_pn:name="src/teclado_ps2.vhd"/>
+      <outfile xil_pn:name="src/top.vhd"/>
+    </transform>
+    <transform xil_pn:end_ts="1751211720" xil_pn:name="TRAN_xawsToSimhdl" xil_pn:prop_ck="-677140182801780856" xil_pn:start_ts="1751211720">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1751211720" xil_pn:name="TRAN_schematicsToHdlSim" xil_pn:prop_ck="8316814482752406608" xil_pn:start_ts="1751211720">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1751210722" xil_pn:name="TRAN_regenerateCoresSim" xil_pn:prop_ck="8027907696836900121" xil_pn:start_ts="1751210722">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1751211682" xil_pn:in_ck="4472936380617953857" xil_pn:name="TRAN_copyPostAbstractToPreSimulation" xil_pn:start_ts="1751211682">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <outfile xil_pn:name="../../../../../../../Downloads/teclado_ps2_tb.vhd"/>
+      <outfile xil_pn:name="src/ascii_converter.vhd"/>
+      <outfile xil_pn:name="src/lcd_controller.vhd"/>
+      <outfile xil_pn:name="src/logica_calculadora.vhd"/>
+      <outfile xil_pn:name="src/teclado_ps2.vhd"/>
+      <outfile xil_pn:name="src/top.vhd"/>
+    </transform>
+    <transform xil_pn:end_ts="1751211724" xil_pn:in_ck="4472936380617953857" xil_pn:name="TRAN_ISimulateBehavioralModelRunFuse" xil_pn:prop_ck="-125023095765862559" xil_pn:start_ts="1751211720">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <outfile xil_pn:name="fuse.log"/>
+      <outfile xil_pn:name="isim"/>
+      <outfile xil_pn:name="isim.log"/>
+      <outfile xil_pn:name="tb_teclado_ps2_beh.prj"/>
+      <outfile xil_pn:name="tb_teclado_ps2_isim_beh.exe"/>
+      <outfile xil_pn:name="xilinxsim.ini"/>
+    </transform>
+    <transform xil_pn:end_ts="1751211725" xil_pn:in_ck="8134888207337204723" xil_pn:name="TRAN_ISimulateBehavioralModel" xil_pn:prop_ck="847707351343348307" xil_pn:start_ts="1751211724">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <outfile xil_pn:name="isim.cmd"/>
+      <outfile xil_pn:name="isim.log"/>
+      <outfile xil_pn:name="tb_teclado_ps2_isim_beh.wdb"/>
+    </transform>
     <transform xil_pn:end_ts="1751061682" xil_pn:name="TRAN_copyInitialToXSTAbstractSynthesis" xil_pn:start_ts="1751061682">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
@@ -84,6 +148,8 @@
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="WarningsGenerated"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForInputs"/>
+      <status xil_pn:value="InputChanged"/>
       <outfile xil_pn:name=".lso"/>
       <outfile xil_pn:name="_xmsgs/xst.xmsgs"/>
       <outfile xil_pn:name="top.lso"/>

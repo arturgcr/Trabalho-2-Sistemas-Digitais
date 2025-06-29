@@ -1,0 +1,29 @@
+Command line:
+   teclado_ps2_isim_beh.exe
+     -simmode  gui
+     -simrunnum  0
+     -socket  62931
+
+Sun Jun 29 12:41:28 2025
+
+
+ Elaboration Time: 0.046875 sec
+
+ Current Memory Usage: 5150.42 Meg
+
+ Total Signals          : 14
+ Total Nets             : 54
+ Total Signal Drivers   : 10
+ Total Blocks           : 3
+ Total Primitive Blocks : 3
+ Total Processes        : 5
+ Total Traceable Variables  : 13
+ Total Scalar Nets and Variables : 537
+Total Line Count : 43
+
+ Total Simulation Time: 0.0625 sec
+
+ Current Memory Usage: 5150.42 Meg
+
+Sun Jun 29 12:41:32 2025
+
