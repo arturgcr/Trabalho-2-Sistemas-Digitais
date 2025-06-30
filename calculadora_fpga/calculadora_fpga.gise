@@ -43,10 +43,10 @@
     <file xil_pn:fileType="FILE_XST_STX" xil_pn:name="teclado_ps2.stx"/>
     <file xil_pn:fileType="FILE_XST" xil_pn:name="teclado_ps2.xst"/>
     <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_ISIM_EXE" xil_pn:name="teclado_ps2_isim_beh.exe"/>
-    <file xil_pn:fileType="FILE_ISIM_MISC" xil_pn:name="teclado_ps2_isim_beh.wdb"/>
     <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="teclado_ps2_stx_beh.prj"/>
     <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="teclado_ps2_tb_beh.prj"/>
     <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_ISIM_EXE" xil_pn:name="teclado_ps2_tb_isim_beh.exe"/>
+    <file xil_pn:fileType="FILE_ISIM_MISC" xil_pn:name="teclado_ps2_tb_isim_beh.wdb"/>
     <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="teclado_ps2_tb_stx_beh.prj"/>
     <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_ISIM_EXE" xil_pn:name="teclado_teste_leds_isim_beh.exe"/>
     <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="teclado_teste_leds_stx_beh.prj"/>
@@ -109,6 +109,8 @@
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <status xil_pn:value="OutOfDateForProperties"/>
+      <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name="fuse.log"/>
       <outfile xil_pn:name="isim"/>
       <outfile xil_pn:name="isim.log"/>
@@ -116,13 +118,16 @@
       <outfile xil_pn:name="teclado_ps2_tb_isim_beh.exe"/>
       <outfile xil_pn:name="xilinxsim.ini"/>
     </transform>
-    <transform xil_pn:end_ts="1751228625" xil_pn:in_ck="-3569047738060136707" xil_pn:name="TRAN_ISimulateBehavioralModel" xil_pn:prop_ck="-6260502130439893442" xil_pn:start_ts="1751228624">
+    <transform xil_pn:end_ts="1751229483" xil_pn:in_ck="-3569047738060136707" xil_pn:name="TRAN_ISimulateBehavioralModel" xil_pn:prop_ck="1435797383452051091" xil_pn:start_ts="1751229483">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForProperties"/>
       <status xil_pn:value="OutOfDateForPredecessor"/>
+      <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name="isim.cmd"/>
       <outfile xil_pn:name="isim.log"/>
-      <outfile xil_pn:name="teclado_ps2_isim_beh.wdb"/>
+      <outfile xil_pn:name="teclado_ps2_tb_isim_beh.wdb"/>
     </transform>
     <transform xil_pn:end_ts="1751061682" xil_pn:name="TRAN_copyInitialToXSTAbstractSynthesis" xil_pn:start_ts="1751061682">
       <status xil_pn:value="SuccessfullyRun"/>
