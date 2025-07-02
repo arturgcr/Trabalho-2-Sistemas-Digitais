@@ -1,41 +1,194 @@
-----------------------------------------------------------------------------------
--- Company: 
--- Engineer: 
--- 
--- Create Date:    18:44:25 06/23/2025 
--- Design Name: 
--- Module Name:    top - Behavioral 
--- Project Name: 
--- Target Devices: 
--- Tool versions: 
--- Description: 
---
--- Dependencies: 
---
--- Revision: 
--- Revision 0.01 - File Created
--- Additional Comments: 
---
-----------------------------------------------------------------------------------
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
-
--- Uncomment the following library declaration if using
--- arithmetic functions with Signed or Unsigned values
---use IEEE.NUMERIC_STD.ALL;
-
--- Uncomment the following library declaration if instantiating
--- any Xilinx primitives in this code.
---library UNISIM;
---use UNISIM.VComponents.all;
+use IEEE.NUMERIC_STD.ALL;
 
 entity top is
+    Port (
+        clk              : in  std_logic;
+        reset            : in  std_logic;
+
+        -- PS/2 interface
+        ps2_clk          : in  std_logic;
+        ps2_data         : in  std_logic;
+
+        -- LCD interface
+        lcd_rs           : out std_logic;
+        lcd_rw           : out std_logic;
+        lcd_enable       : out std_logic;
+        lcd_data         : out std_logic_vector(7 downto 0);
+
+        -- Debug/output
+        erro_div_zero    : out std_logic;
+        resultado_pronto : out std_logic
+    );
 end top;
 
 architecture Behavioral of top is
 
+    type state_type is (IDLE, DIG1, OPERADOR, DIG2, CALCULA, ESCREVE_LCD);
+    signal state : state_type := IDLE;
+
+    signal ascii_tecla  : std_logic_vector(7 downto 0);
+    signal tecla_pronta : std_logic;
+
+    signal op1, op2 : integer range 0 to 99 := 0;
+    signal operador_ascii : std_logic_vector(7 downto 0) := (others => '0');
+
+    signal iniciar_calc : std_logic := '0';
+    signal calc_pronto  : std_logic := '0';
+    signal resultado    : integer range 0 to 999 := 0;
+    signal sinal_neg    : std_logic := '0';
+    signal erro         : std_logic := '0';
+
+    signal conv1, conv2, conv3, conv4, conv5 : std_logic_vector(7 downto 0);
+    signal a1, a2, a3, a4, a5 : std_logic_vector(7 downto 0);
+
+    signal escrever_lcd : std_logic := '0';
+
+    signal lcd_wait_counter : integer range 0 to 500000 := 0;
+    constant LCD_WAIT_TIME  : integer := 250000;
+
 begin
 
+    teclado_inst : entity work.teclado_ps2
+        port map (
+            clk        => clk,
+            reset      => reset,
+            ps2_clk    => ps2_clk,
+            ps2_data   => ps2_data,
+            dado_ascii => ascii_tecla,
+            pronto     => tecla_pronta
+        );
+
+    calculadora_inst : entity work.logica_calculadora
+        port map (
+            clk       => clk,
+            reset     => reset,
+            start     => iniciar_calc,
+            op1       => op1,
+            op2       => op2,
+            operador  => operador_ascii,
+            resultado => resultado,
+            negativo  => sinal_neg,
+            erro      => erro,
+            pronto    => calc_pronto
+        );
+
+    ascii_conv_inst : entity work.ascii_converter
+        port map (
+            valor     => resultado,
+            negativo  => sinal_neg,
+            ascii1    => conv1,
+            ascii2    => conv2,
+            ascii3    => conv3,
+            ascii4    => conv4,
+            ascii5    => conv5
+        );
+
+    lcd_ctrl_inst : entity work.lcd_controller
+        port map (
+            clk         => clk,
+            reset       => reset,
+            escrever    => escrever_lcd,
+            ascii1      => a1,
+            ascii2      => a2,
+            ascii3      => a3,
+            ascii4      => a4,
+            ascii5      => a5,
+            lcd_rs      => lcd_rs,
+            lcd_rw      => lcd_rw,
+            lcd_enable  => lcd_enable,
+            lcd_data    => lcd_data
+        );
+
+    process(clk)
+    begin
+        if rising_edge(clk) then
+            if reset = '1' then
+                state <= IDLE;
+                op1 <= 0;
+                op2 <= 0;
+                operador_ascii <= (others => '0');
+                iniciar_calc <= '0';
+                escrever_lcd <= '0';
+                lcd_wait_counter <= 0;
+                a1 <= (others => '0');
+                a2 <= (others => '0');
+                a3 <= (others => '0');
+                a4 <= (others => '0');
+                a5 <= (others => '0');
+
+            else
+                case state is
+                    when IDLE =>
+                        if tecla_pronta = '1' and ascii_tecla >= x"30" and ascii_tecla <= x"39" then
+                            op1 <= to_integer(unsigned(ascii_tecla)) - 48;
+                            state <= DIG1;
+                        end if;
+
+                    when DIG1 =>
+                        if tecla_pronta = '1' then
+                            if ascii_tecla >= x"30" and ascii_tecla <= x"39" then
+                                op1 <= op1 * 10 + (to_integer(unsigned(ascii_tecla)) - 48);
+                            elsif ascii_tecla = x"2B" or ascii_tecla = x"2D" or
+                                  ascii_tecla = x"2A" or ascii_tecla = x"2F" then
+                                operador_ascii <= ascii_tecla;
+                                state <= OPERADOR;
+                            end if;
+                        end if;
+
+                    when OPERADOR =>
+                        if tecla_pronta = '1' and ascii_tecla >= x"30" and ascii_tecla <= x"39" then
+                            op2 <= to_integer(unsigned(ascii_tecla)) - 48;
+                            state <= DIG2;
+                        end if;
+
+                    when DIG2 =>
+                        if tecla_pronta = '1' then
+                            if ascii_tecla >= x"30" and ascii_tecla <= x"39" then
+                                op2 <= op2 * 10 + (to_integer(unsigned(ascii_tecla)) - 48);
+                            elsif ascii_tecla = x"3D" then
+                                iniciar_calc <= '1';
+                                state <= CALCULA;
+                            end if;
+                        end if;
+
+                    when CALCULA =>
+                        iniciar_calc <= '0';
+                        if calc_pronto = '1' then
+                            if erro = '1' then
+                                a1 <= x"45";
+                                a2 <= x"52";
+                                a3 <= x"52";
+                                a4 <= x"4F";
+                                a5 <= x"20";
+                            else
+                                a1 <= conv1;
+                                a2 <= conv2;
+                                a3 <= conv3;
+                                a4 <= conv4;
+                                a5 <= conv5;
+                            end if;
+                            escrever_lcd <= '1';
+                            lcd_wait_counter <= LCD_WAIT_TIME;
+                            state <= ESCREVE_LCD;
+                        end if;
+
+                    when ESCREVE_LCD =>
+                        escrever_lcd <= '0';
+                        if lcd_wait_counter > 0 then
+                            lcd_wait_counter <= lcd_wait_counter - 1;
+                        else
+                            state <= IDLE;
+                        end if;
+
+                    when others => null;
+                end case;
+            end if;
+        end if;
+    end process;
+
+    resultado_pronto <= calc_pronto;
+    erro_div_zero <= erro;
 
 end Behavioral;
-
