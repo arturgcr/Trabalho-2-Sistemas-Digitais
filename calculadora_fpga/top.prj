@@ -1,0 +1,5 @@
+vhdl work "src/teclado_ps2.vhd"
+vhdl work "src/logica_calculadora.vhd"
+vhdl work "src/lcd_controller.vhd"
+vhdl work "src/ascii_converter.vhd"
+vhdl work "src/top.vhd"

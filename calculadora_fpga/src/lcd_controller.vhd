@@ -1,3 +1,24 @@
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+use IEEE.NUMERIC_STD.ALL;
+
+entity lcd_controller is
+    Port (
+        clk      : in  std_logic;
+        reset    : in  std_logic;
+        escrever : in  std_logic;
+        ascii1   : in  std_logic_vector(7 downto 0);
+        ascii2   : in  std_logic_vector(7 downto 0);
+        ascii3   : in  std_logic_vector(7 downto 0);
+        ascii4   : in  std_logic_vector(7 downto 0);
+        ascii5   : in  std_logic_vector(7 downto 0);
+        lcd_rs   : out std_logic;
+        lcd_rw   : out std_logic;
+        lcd_enable : out std_logic;
+        lcd_data   : out std_logic_vector(7 downto 0)
+    );
+end lcd_controller;
+
 architecture Behavioral of lcd_controller is
 
     type estado_type is (
@@ -47,21 +68,21 @@ begin
             else
                 case estado is
                     when INIT_0 =>
-                        data_reg <= x"38";
+                        data_reg <= x"38";  -- Function Set
                         rs_reg <= '0';
                         enable_reg <= '1';
                         contador <= 2000;
                         estado <= INIT_1;
 
                     when INIT_1 =>
-                        data_reg <= x"0C";
+                        data_reg <= x"0C";  -- Display ON, Cursor OFF
                         rs_reg <= '0';
                         enable_reg <= '1';
                         contador <= 2000;
                         estado <= INIT_2;
 
                     when INIT_2 =>
-                        data_reg <= x"01";
+                        data_reg <= x"01";  -- Clear Display
                         rs_reg <= '0';
                         enable_reg <= '1';
                         contador <= 5000;
@@ -73,7 +94,7 @@ begin
                         end if;
 
                     when SET_CURSOR =>
-                        data_reg <= x"80";
+                        data_reg <= x"80";  -- Set cursor to beginning
                         rs_reg <= '0';
                         enable_reg <= '1';
                         contador <= 2000;

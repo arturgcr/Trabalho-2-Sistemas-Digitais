@@ -1,0 +1,37 @@
+V3 19
+FL /home/ise/VirtualBox/Trabalho-2-Sistemas-Digitais/calculadora_fpga/src/ascii_converter.vhd 2025/07/02.01:45:41 P.20131013
+EN work/ascii_converter 1751431116 \
+      FL /home/ise/VirtualBox/Trabalho-2-Sistemas-Digitais/calculadora_fpga/src/ascii_converter.vhd \
+      PB ieee/std_logic_1164 1381692176 PB ieee/NUMERIC_STD 1381692181
+AR work/ascii_converter/Behavioral 1751431117 \
+      FL /home/ise/VirtualBox/Trabalho-2-Sistemas-Digitais/calculadora_fpga/src/ascii_converter.vhd \
+      EN work/ascii_converter 1751431116
+FL /home/ise/VirtualBox/Trabalho-2-Sistemas-Digitais/calculadora_fpga/src/lcd_controller.vhd 2025/07/02.02:13:08 P.20131013
+EN work/lcd_controller 1751431118 \
+      FL /home/ise/VirtualBox/Trabalho-2-Sistemas-Digitais/calculadora_fpga/src/lcd_controller.vhd \
+      PB ieee/std_logic_1164 1381692176 PB ieee/NUMERIC_STD 1381692181
+AR work/lcd_controller/Behavioral 1751431119 \
+      FL /home/ise/VirtualBox/Trabalho-2-Sistemas-Digitais/calculadora_fpga/src/lcd_controller.vhd \
+      EN work/lcd_controller 1751431118
+FL /home/ise/VirtualBox/Trabalho-2-Sistemas-Digitais/calculadora_fpga/src/logica_calculadora.vhd 2025/07/02.04:38:17 P.20131013
+EN work/logica_calculadora 1751431114 \
+      FL /home/ise/VirtualBox/Trabalho-2-Sistemas-Digitais/calculadora_fpga/src/logica_calculadora.vhd \
+      PB ieee/std_logic_1164 1381692176 PB ieee/NUMERIC_STD 1381692181
+AR work/logica_calculadora/Behavioral 1751431115 \
+      FL /home/ise/VirtualBox/Trabalho-2-Sistemas-Digitais/calculadora_fpga/src/logica_calculadora.vhd \
+      EN work/logica_calculadora 1751431114
+FL /home/ise/VirtualBox/Trabalho-2-Sistemas-Digitais/calculadora_fpga/src/teclado_ps2.vhd 2025/07/02.01:46:40 P.20131013
+EN work/teclado_ps2 1751431112 \
+      FL /home/ise/VirtualBox/Trabalho-2-Sistemas-Digitais/calculadora_fpga/src/teclado_ps2.vhd \
+      PB ieee/std_logic_1164 1381692176 PB ieee/NUMERIC_STD 1381692181
+AR work/teclado_ps2/Behavioral 1751431113 \
+      FL /home/ise/VirtualBox/Trabalho-2-Sistemas-Digitais/calculadora_fpga/src/teclado_ps2.vhd \
+      EN work/teclado_ps2 1751431112
+FL /home/ise/VirtualBox/Trabalho-2-Sistemas-Digitais/calculadora_fpga/src/top.vhd 2025/07/02.04:38:28 P.20131013
+EN work/top 1751431120 \
+      FL /home/ise/VirtualBox/Trabalho-2-Sistemas-Digitais/calculadora_fpga/src/top.vhd \
+      PB ieee/std_logic_1164 1381692176 PB ieee/NUMERIC_STD 1381692181
+AR work/top/Behavioral 1751431121 \
+      FL /home/ise/VirtualBox/Trabalho-2-Sistemas-Digitais/calculadora_fpga/src/top.vhd \
+      EN work/top 1751431120 CP work/teclado_ps2 CP work/logica_calculadora \
+      CP work/ascii_converter CP work/lcd_controller
