@@ -4,15 +4,15 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 Parameter TMPDIR set to xst/projnav.tmp
 
 
-Total REAL time to Xst completion: 1.00 secs
-Total CPU time to Xst completion: 0.02 secs
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.01 secs
  
 --> 
 Parameter xsthdpdir set to xst
 
 
-Total REAL time to Xst completion: 1.00 secs
-Total CPU time to Xst completion: 0.02 secs
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.01 secs
  
 --> 
 Reading design: top.prj
@@ -113,11 +113,11 @@ Compiling vhdl file "/home/ise/VirtualBox/Trabalho-2-Sistemas-Digitais/calculado
 Architecture behavioral of Entity logica_calculadora is up to date.
 Compiling vhdl file "/home/ise/VirtualBox/Trabalho-2-Sistemas-Digitais/calculadora_fpga/src/ascii_converter.vhd" in Library work.
 Architecture behavioral of Entity ascii_converter is up to date.
-Compiling vhdl file "/home/ise/VirtualBox/Trabalho-2-Sistemas-Digitais/calculadora_fpga/src/lcd_controller.vhd" in Library work.
-Architecture behavioral of Entity lcd_controller is up to date.
 Compiling vhdl file "/home/ise/VirtualBox/Trabalho-2-Sistemas-Digitais/calculadora_fpga/src/top.vhd" in Library work.
 Entity <top> compiled.
 Entity <top> (Architecture <behavioral>) compiled.
+Compiling vhdl file "/home/ise/VirtualBox/Trabalho-2-Sistemas-Digitais/calculadora_fpga/src/lcd_controller.vhd" in Library work.
+Architecture behavioral of Entity lcd_controller is up to date.
 
 =========================================================================
 *                     Design Hierarchy Analysis                         *
@@ -164,495 +164,37 @@ WARNING:Xst:646 - Signal <shift_reg<10:9>> is assigned but never used. This unco
 WARNING:Xst:646 - Signal <shift_reg<0>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
     Found 4-bit up counter for signal <bit_count>.
     Found 8-bit register for signal <dado_reg>.
-    Found 1-bit register for signal <falling_edge>.
-    Found 1-bit register for signal <is_break>.
+    Found 8-bit register for signal <previous_scan_code>.
     Found 1-bit register for signal <pronto_reg>.
     Found 3-bit register for signal <ps2_clk_sync>.
+    Found 1-bit register for signal <ps2_falling_edge>.
+    Found 1-bit register for signal <recebido>.
     Found 8-bit register for signal <scan_code>.
     Found 8-bit register for signal <shift_reg<8:1>>.
     Summary:
 	inferred   1 Counter(s).
-	inferred  30 D-type flip-flop(s).
+	inferred  38 D-type flip-flop(s).
 Unit <teclado_ps2> synthesized.
 
 
 Synthesizing Unit <logica_calculadora>.
     Related source file is "/home/ise/VirtualBox/Trabalho-2-Sistemas-Digitais/calculadora_fpga/src/logica_calculadora.vhd".
-WARNING:Xst:643 - "/home/ise/VirtualBox/Trabalho-2-Sistemas-Digitais/calculadora_fpga/src/logica_calculadora.vhd" line 63: The result of a 7x4-bit multiplication is partially used. Only the 10 least significant bits are used. If you are doing this on purpose, you may safely ignore this warning. Otherwise, make sure you are not losing information, leading to unexpected circuit behavior.
-WARNING:Xst:643 - "/home/ise/VirtualBox/Trabalho-2-Sistemas-Digitais/calculadora_fpga/src/logica_calculadora.vhd" line 50: The result of a 8x4-bit multiplication is partially used. Only the 11 least significant bits are used. If you are doing this on purpose, you may safely ignore this warning. Otherwise, make sure you are not losing information, leading to unexpected circuit behavior.
-WARNING:Xst:643 - "/home/ise/VirtualBox/Trabalho-2-Sistemas-Digitais/calculadora_fpga/src/logica_calculadora.vhd" line 53: The result of a 8x5-bit multiplication is partially used. Only the 11 least significant bits are used. If you are doing this on purpose, you may safely ignore this warning. Otherwise, make sure you are not losing information, leading to unexpected circuit behavior.
-WARNING:Xst:643 - "/home/ise/VirtualBox/Trabalho-2-Sistemas-Digitais/calculadora_fpga/src/logica_calculadora.vhd" line 56: The result of a 14x4-bit multiplication is partially used. Only the 11 least significant bits are used. If you are doing this on purpose, you may safely ignore this warning. Otherwise, make sure you are not losing information, leading to unexpected circuit behavior.
-    Found 7x4-bit multiplier for signal <$mult0000> created at line 63.
-    Found 11-bit subtractor for signal <$sub0000> created at line 70.
-    Found 12-bit subtractor for signal <$sub0001> created at line 70.
-    Found 13-bit subtractor for signal <$sub0002> created at line 70.
-    Found 14-bit subtractor for signal <$sub0003> created at line 70.
-    Found 15-bit subtractor for signal <$sub0004> created at line 70.
-    Found 16-bit subtractor for signal <$sub0005> created at line 70.
-    Found 17-bit subtractor for signal <$sub0006> created at line 70.
-    Found 18-bit subtractor for signal <$sub0007> created at line 70.
-    Found 19-bit subtractor for signal <$sub0008> created at line 70.
-    Found 21-bit subtractor for signal <$sub0009> created at line 70.
-    Found 22-bit subtractor for signal <$sub0010> created at line 70.
-    Found 23-bit subtractor for signal <$sub0011> created at line 70.
-    Found 24-bit subtractor for signal <$sub0012> created at line 70.
-    Found 25-bit subtractor for signal <$sub0013> created at line 70.
-    Found 26-bit subtractor for signal <$sub0014> created at line 70.
-    Found 27-bit subtractor for signal <$sub0015> created at line 70.
-    Found 28-bit subtractor for signal <$sub0016> created at line 70.
-    Found 29-bit subtractor for signal <$sub0017> created at line 70.
-    Found 31-bit subtractor for signal <$sub0018> created at line 70.
-    Found 11-bit subtractor for signal <$sub0019> created at line 70.
-    Found 12-bit subtractor for signal <$sub0020> created at line 70.
-    Found 13-bit subtractor for signal <$sub0021> created at line 70.
-    Found 14-bit subtractor for signal <$sub0022> created at line 70.
-    Found 15-bit subtractor for signal <$sub0023> created at line 70.
-    Found 16-bit subtractor for signal <$sub0024> created at line 70.
-    Found 17-bit subtractor for signal <$sub0025> created at line 70.
-    Found 18-bit subtractor for signal <$sub0026> created at line 70.
-    Found 1-bit register for signal <erro_reg>.
-    Found 1-bit register for signal <negativo_reg>.
-    Found 11-bit comparator less for signal <negativo_reg$cmp_lt0000> created at line 82.
-    Found 32-bit subtractor for signal <numerador$addsub0000> created at line 70.
-    Found 32-bit subtractor for signal <numerador$addsub0001> created at line 70.
-    Found 32-bit subtractor for signal <numerador$addsub0002> created at line 70.
-    Found 32-bit subtractor for signal <numerador$addsub0003> created at line 70.
-    Found 32-bit subtractor for signal <numerador$addsub0004> created at line 70.
-    Found 32-bit subtractor for signal <numerador$addsub0005> created at line 70.
-    Found 32-bit subtractor for signal <numerador$addsub0006> created at line 70.
-    Found 32-bit subtractor for signal <numerador$addsub0007> created at line 70.
-    Found 32-bit subtractor for signal <numerador$addsub0008> created at line 70.
-    Found 32-bit subtractor for signal <numerador$addsub0009> created at line 70.
-    Found 32-bit subtractor for signal <numerador$addsub0010> created at line 70.
-    Found 32-bit subtractor for signal <numerador$addsub0011> created at line 70.
-    Found 32-bit subtractor for signal <numerador$addsub0012> created at line 70.
-    Found 32-bit subtractor for signal <numerador$addsub0013> created at line 70.
-    Found 32-bit subtractor for signal <numerador$addsub0014> created at line 70.
-    Found 32-bit subtractor for signal <numerador$addsub0015> created at line 70.
-    Found 32-bit subtractor for signal <numerador$addsub0016> created at line 70.
-    Found 32-bit subtractor for signal <numerador$addsub0017> created at line 70.
-    Found 32-bit subtractor for signal <numerador$addsub0018> created at line 70.
-    Found 32-bit subtractor for signal <numerador$addsub0019> created at line 70.
-    Found 32-bit subtractor for signal <numerador$addsub0020> created at line 70.
-    Found 32-bit subtractor for signal <numerador$addsub0021> created at line 70.
-    Found 32-bit subtractor for signal <numerador$addsub0022> created at line 70.
-    Found 32-bit subtractor for signal <numerador$addsub0023> created at line 70.
-    Found 32-bit subtractor for signal <numerador$addsub0024> created at line 70.
-    Found 32-bit subtractor for signal <numerador$addsub0025> created at line 70.
-    Found 32-bit subtractor for signal <numerador$addsub0026> created at line 70.
-    Found 32-bit subtractor for signal <numerador$addsub0027> created at line 70.
-    Found 32-bit subtractor for signal <numerador$addsub0028> created at line 70.
-    Found 32-bit subtractor for signal <numerador$addsub0029> created at line 70.
-    Found 32-bit subtractor for signal <numerador$addsub0030> created at line 70.
-    Found 32-bit subtractor for signal <numerador$addsub0031> created at line 70.
-    Found 32-bit subtractor for signal <numerador$addsub0032> created at line 70.
-    Found 32-bit subtractor for signal <numerador$addsub0033> created at line 70.
-    Found 32-bit subtractor for signal <numerador$addsub0034> created at line 70.
-    Found 32-bit subtractor for signal <numerador$addsub0035> created at line 70.
-    Found 32-bit subtractor for signal <numerador$addsub0036> created at line 70.
-    Found 32-bit subtractor for signal <numerador$addsub0037> created at line 70.
-    Found 32-bit subtractor for signal <numerador$addsub0038> created at line 70.
-    Found 32-bit subtractor for signal <numerador$addsub0039> created at line 70.
-    Found 32-bit subtractor for signal <numerador$addsub0040> created at line 70.
-    Found 32-bit subtractor for signal <numerador$addsub0041> created at line 70.
-    Found 32-bit subtractor for signal <numerador$addsub0042> created at line 70.
-    Found 32-bit subtractor for signal <numerador$addsub0043> created at line 70.
-    Found 32-bit subtractor for signal <numerador$addsub0044> created at line 70.
-    Found 32-bit subtractor for signal <numerador$addsub0045> created at line 70.
-    Found 32-bit subtractor for signal <numerador$addsub0046> created at line 70.
-    Found 32-bit subtractor for signal <numerador$addsub0047> created at line 70.
-    Found 32-bit subtractor for signal <numerador$addsub0048> created at line 70.
-    Found 32-bit subtractor for signal <numerador$addsub0049> created at line 70.
-    Found 32-bit subtractor for signal <numerador$addsub0050> created at line 70.
-    Found 32-bit subtractor for signal <numerador$addsub0051> created at line 70.
-    Found 32-bit subtractor for signal <numerador$addsub0052> created at line 70.
-    Found 32-bit subtractor for signal <numerador$addsub0053> created at line 70.
-    Found 32-bit subtractor for signal <numerador$addsub0054> created at line 70.
-    Found 20-bit subtractor for signal <numerador$sub0000> created at line 70.
-    Found 30-bit subtractor for signal <numerador$sub0001> created at line 70.
-    Found 32-bit subtractor for signal <numerador$sub0002> created at line 70.
-    Found 32-bit subtractor for signal <numerador$sub0003> created at line 70.
-    Found 32-bit subtractor for signal <numerador$sub0004> created at line 70.
-    Found 32-bit subtractor for signal <numerador$sub0005> created at line 70.
-    Found 32-bit subtractor for signal <numerador$sub0006> created at line 70.
-    Found 32-bit subtractor for signal <numerador$sub0007> created at line 70.
-    Found 32-bit subtractor for signal <numerador$sub0008> created at line 70.
-    Found 1-bit register for signal <pronto_reg>.
-    Found 19-bit subtractor for signal <quociente$addsub0000> created at line 70.
-    Found 32-bit subtractor for signal <quociente$addsub0001> created at line 70.
-    Found 32-bit subtractor for signal <quociente$addsub0002> created at line 70.
-    Found 32-bit subtractor for signal <quociente$addsub0003> created at line 70.
-    Found 32-bit subtractor for signal <quociente$addsub0004> created at line 70.
-    Found 32-bit subtractor for signal <quociente$addsub0005> created at line 70.
-    Found 32-bit subtractor for signal <quociente$addsub0006> created at line 70.
-    Found 32-bit subtractor for signal <quociente$addsub0007> created at line 70.
-    Found 32-bit subtractor for signal <quociente$addsub0008> created at line 70.
-    Found 32-bit subtractor for signal <quociente$addsub0009> created at line 70.
-    Found 32-bit subtractor for signal <quociente$addsub0010> created at line 70.
-    Found 32-bit subtractor for signal <quociente$addsub0011> created at line 70.
-    Found 32-bit subtractor for signal <quociente$addsub0012> created at line 70.
-    Found 32-bit subtractor for signal <quociente$addsub0013> created at line 70.
-    Found 32-bit subtractor for signal <quociente$addsub0014> created at line 70.
-    Found 32-bit subtractor for signal <quociente$addsub0015> created at line 70.
-    Found 32-bit subtractor for signal <quociente$addsub0016> created at line 70.
-    Found 32-bit subtractor for signal <quociente$addsub0017> created at line 70.
-    Found 32-bit subtractor for signal <quociente$addsub0018> created at line 70.
-    Found 32-bit subtractor for signal <quociente$addsub0019> created at line 70.
-    Found 32-bit subtractor for signal <quociente$addsub0020> created at line 70.
-    Found 32-bit subtractor for signal <quociente$addsub0021> created at line 70.
-    Found 32-bit subtractor for signal <quociente$addsub0022> created at line 70.
-    Found 32-bit subtractor for signal <quociente$addsub0023> created at line 70.
-    Found 32-bit subtractor for signal <quociente$addsub0024> created at line 70.
-    Found 32-bit subtractor for signal <quociente$addsub0025> created at line 70.
-    Found 32-bit subtractor for signal <quociente$addsub0026> created at line 70.
-    Found 32-bit subtractor for signal <quociente$addsub0027> created at line 70.
-    Found 32-bit subtractor for signal <quociente$addsub0028> created at line 70.
-    Found 32-bit subtractor for signal <quociente$addsub0029> created at line 70.
-    Found 32-bit subtractor for signal <quociente$addsub0030> created at line 70.
-    Found 32-bit subtractor for signal <quociente$addsub0031> created at line 70.
-    Found 32-bit subtractor for signal <quociente$addsub0032> created at line 70.
-    Found 32-bit subtractor for signal <quociente$addsub0033> created at line 70.
-    Found 32-bit subtractor for signal <quociente$addsub0034> created at line 70.
-    Found 32-bit subtractor for signal <quociente$addsub0035> created at line 70.
-    Found 32-bit subtractor for signal <quociente$addsub0036> created at line 70.
-    Found 32-bit subtractor for signal <quociente$addsub0037> created at line 70.
-    Found 32-bit subtractor for signal <quociente$addsub0038> created at line 70.
-    Found 32-bit subtractor for signal <quociente$addsub0039> created at line 70.
-    Found 32-bit subtractor for signal <quociente$addsub0040> created at line 70.
-    Found 32-bit subtractor for signal <quociente$addsub0041> created at line 70.
-    Found 32-bit subtractor for signal <quociente$addsub0042> created at line 70.
-    Found 32-bit subtractor for signal <quociente$addsub0043> created at line 70.
-    Found 32-bit subtractor for signal <quociente$addsub0044> created at line 70.
-    Found 32-bit subtractor for signal <quociente$addsub0045> created at line 70.
-    Found 32-bit subtractor for signal <quociente$addsub0046> created at line 70.
-    Found 32-bit subtractor for signal <quociente$addsub0047> created at line 70.
-    Found 32-bit subtractor for signal <quociente$addsub0048> created at line 70.
-    Found 32-bit subtractor for signal <quociente$addsub0049> created at line 70.
-    Found 32-bit subtractor for signal <quociente$addsub0050> created at line 70.
-    Found 32-bit subtractor for signal <quociente$addsub0051> created at line 70.
-    Found 32-bit subtractor for signal <quociente$addsub0052> created at line 70.
-    Found 32-bit subtractor for signal <quociente$addsub0053> created at line 70.
-    Found 32-bit subtractor for signal <quociente$addsub0054> created at line 70.
-    Found 32-bit subtractor for signal <quociente$addsub0055> created at line 70.
-    Found 32-bit subtractor for signal <quociente$addsub0056> created at line 70.
-    Found 32-bit subtractor for signal <quociente$addsub0057> created at line 70.
-    Found 32-bit subtractor for signal <quociente$addsub0058> created at line 70.
-    Found 32-bit subtractor for signal <quociente$addsub0059> created at line 70.
-    Found 32-bit subtractor for signal <quociente$addsub0060> created at line 70.
-    Found 32-bit subtractor for signal <quociente$addsub0061> created at line 70.
-    Found 32-bit subtractor for signal <quociente$addsub0062> created at line 70.
-    Found 32-bit subtractor for signal <quociente$addsub0063> created at line 70.
-    Found 32-bit subtractor for signal <quociente$addsub0064> created at line 70.
-    Found 32-bit subtractor for signal <quociente$addsub0065> created at line 70.
-    Found 32-bit subtractor for signal <quociente$addsub0066> created at line 70.
-    Found 32-bit subtractor for signal <quociente$addsub0067> created at line 70.
-    Found 32-bit subtractor for signal <quociente$addsub0068> created at line 70.
-    Found 32-bit subtractor for signal <quociente$addsub0069> created at line 70.
-    Found 32-bit subtractor for signal <quociente$addsub0070> created at line 70.
-    Found 32-bit subtractor for signal <quociente$addsub0071> created at line 70.
-    Found 32-bit subtractor for signal <quociente$addsub0072> created at line 70.
-    Found 32-bit subtractor for signal <quociente$addsub0073> created at line 70.
-    Found 32-bit subtractor for signal <quociente$addsub0074> created at line 70.
-    Found 32-bit subtractor for signal <quociente$addsub0075> created at line 70.
-    Found 32-bit subtractor for signal <quociente$addsub0076> created at line 70.
-    Found 32-bit subtractor for signal <quociente$addsub0077> created at line 70.
-    Found 32-bit subtractor for signal <quociente$addsub0078> created at line 70.
-    Found 32-bit subtractor for signal <quociente$addsub0079> created at line 70.
-    Found 32-bit subtractor for signal <quociente$addsub0080> created at line 70.
-    Found 32-bit subtractor for signal <quociente$addsub0081> created at line 70.
-    Found 32-bit subtractor for signal <quociente$addsub0082> created at line 70.
-    Found 32-bit subtractor for signal <quociente$addsub0083> created at line 70.
-    Found 32-bit subtractor for signal <quociente$addsub0084> created at line 70.
-    Found 32-bit subtractor for signal <quociente$addsub0085> created at line 70.
-    Found 32-bit subtractor for signal <quociente$addsub0086> created at line 70.
-    Found 32-bit subtractor for signal <quociente$addsub0087> created at line 70.
-    Found 32-bit subtractor for signal <quociente$addsub0088> created at line 70.
-    Found 32-bit subtractor for signal <quociente$addsub0089> created at line 70.
-    Found 32-bit subtractor for signal <quociente$addsub0090> created at line 70.
-    Found 32-bit subtractor for signal <quociente$addsub0091> created at line 70.
-    Found 32-bit subtractor for signal <quociente$addsub0092> created at line 70.
-    Found 32-bit subtractor for signal <quociente$addsub0093> created at line 70.
-    Found 32-bit subtractor for signal <quociente$addsub0094> created at line 70.
-    Found 32-bit subtractor for signal <quociente$addsub0095> created at line 70.
-    Found 32-bit subtractor for signal <quociente$addsub0096> created at line 70.
-    Found 32-bit subtractor for signal <quociente$addsub0097> created at line 70.
-    Found 32-bit subtractor for signal <quociente$addsub0098> created at line 70.
-    Found 32-bit subtractor for signal <quociente$addsub0099> created at line 70.
-    Found 32-bit subtractor for signal <quociente$addsub0100> created at line 70.
-    Found 32-bit subtractor for signal <quociente$addsub0101> created at line 70.
-    Found 32-bit subtractor for signal <quociente$addsub0102> created at line 70.
-    Found 32-bit subtractor for signal <quociente$addsub0103> created at line 70.
-    Found 32-bit subtractor for signal <quociente$addsub0104> created at line 70.
-    Found 32-bit subtractor for signal <quociente$addsub0105> created at line 70.
-    Found 32-bit subtractor for signal <quociente$addsub0106> created at line 70.
-    Found 32-bit subtractor for signal <quociente$addsub0107> created at line 70.
-    Found 32-bit subtractor for signal <quociente$addsub0108> created at line 70.
-    Found 32-bit subtractor for signal <quociente$addsub0109> created at line 70.
-    Found 32-bit subtractor for signal <quociente$addsub0110> created at line 70.
-    Found 32-bit subtractor for signal <quociente$addsub0111> created at line 70.
-    Found 32-bit subtractor for signal <quociente$addsub0112> created at line 70.
-    Found 32-bit subtractor for signal <quociente$addsub0113> created at line 70.
-    Found 32-bit subtractor for signal <quociente$addsub0114> created at line 70.
-    Found 32-bit subtractor for signal <quociente$addsub0115> created at line 70.
-    Found 32-bit subtractor for signal <quociente$addsub0116> created at line 70.
-    Found 32-bit subtractor for signal <quociente$addsub0117> created at line 70.
-    Found 32-bit subtractor for signal <quociente$addsub0118> created at line 70.
-    Found 32-bit subtractor for signal <quociente$addsub0119> created at line 70.
-    Found 32-bit subtractor for signal <quociente$addsub0120> created at line 70.
-    Found 32-bit subtractor for signal <quociente$addsub0121> created at line 70.
-    Found 32-bit subtractor for signal <quociente$addsub0122> created at line 70.
-    Found 32-bit subtractor for signal <quociente$addsub0123> created at line 70.
-    Found 32-bit subtractor for signal <quociente$addsub0124> created at line 70.
-    Found 32-bit subtractor for signal <quociente$addsub0125> created at line 70.
-    Found 32-bit subtractor for signal <quociente$addsub0126> created at line 70.
-    Found 32-bit subtractor for signal <quociente$addsub0127> created at line 70.
-    Found 32-bit subtractor for signal <quociente$addsub0128> created at line 70.
-    Found 32-bit subtractor for signal <quociente$addsub0129> created at line 70.
-    Found 32-bit subtractor for signal <quociente$addsub0130> created at line 70.
-    Found 32-bit subtractor for signal <quociente$addsub0131> created at line 70.
-    Found 32-bit subtractor for signal <quociente$addsub0132> created at line 70.
-    Found 32-bit subtractor for signal <quociente$addsub0133> created at line 70.
-    Found 32-bit subtractor for signal <quociente$addsub0134> created at line 70.
-    Found 32-bit subtractor for signal <quociente$addsub0135> created at line 70.
-    Found 32-bit subtractor for signal <quociente$addsub0136> created at line 70.
-    Found 32-bit subtractor for signal <quociente$addsub0137> created at line 70.
-    Found 32-bit subtractor for signal <quociente$addsub0138> created at line 70.
-    Found 32-bit subtractor for signal <quociente$addsub0139> created at line 70.
-    Found 32-bit subtractor for signal <quociente$addsub0140> created at line 70.
-    Found 32-bit subtractor for signal <quociente$addsub0141> created at line 70.
-    Found 32-bit subtractor for signal <quociente$addsub0142> created at line 70.
-    Found 32-bit subtractor for signal <quociente$addsub0143> created at line 70.
-    Found 32-bit subtractor for signal <quociente$addsub0144> created at line 70.
-    Found 32-bit subtractor for signal <quociente$addsub0145> created at line 70.
-    Found 32-bit subtractor for signal <quociente$addsub0146> created at line 70.
-    Found 32-bit subtractor for signal <quociente$addsub0147> created at line 70.
-    Found 32-bit subtractor for signal <quociente$addsub0148> created at line 70.
-    Found 32-bit subtractor for signal <quociente$addsub0149> created at line 70.
-    Found 32-bit subtractor for signal <quociente$addsub0150> created at line 70.
-    Found 32-bit subtractor for signal <quociente$addsub0151> created at line 70.
-    Found 32-bit subtractor for signal <quociente$addsub0152> created at line 70.
-    Found 32-bit subtractor for signal <quociente$addsub0153> created at line 70.
-    Found 32-bit subtractor for signal <quociente$addsub0154> created at line 70.
-    Found 32-bit subtractor for signal <quociente$addsub0155> created at line 70.
-    Found 32-bit subtractor for signal <quociente$addsub0156> created at line 70.
-    Found 32-bit subtractor for signal <quociente$addsub0157> created at line 70.
-    Found 32-bit subtractor for signal <quociente$addsub0158> created at line 70.
-    Found 32-bit subtractor for signal <quociente$addsub0159> created at line 70.
-    Found 32-bit subtractor for signal <quociente$addsub0160> created at line 70.
-    Found 32-bit subtractor for signal <quociente$addsub0161> created at line 70.
-    Found 32-bit subtractor for signal <quociente$addsub0162> created at line 70.
-    Found 32-bit subtractor for signal <quociente$addsub0163> created at line 70.
-    Found 32-bit subtractor for signal <quociente$addsub0164> created at line 70.
-    Found 32-bit subtractor for signal <quociente$addsub0165> created at line 70.
-    Found 32-bit subtractor for signal <quociente$addsub0166> created at line 70.
-    Found 32-bit subtractor for signal <quociente$addsub0167> created at line 70.
-    Found 32-bit subtractor for signal <quociente$addsub0168> created at line 70.
-    Found 32-bit subtractor for signal <quociente$addsub0169> created at line 70.
-    Found 32-bit subtractor for signal <quociente$addsub0170> created at line 70.
-    Found 32-bit subtractor for signal <quociente$addsub0171> created at line 70.
-    Found 32-bit subtractor for signal <quociente$addsub0172> created at line 70.
-    Found 32-bit subtractor for signal <quociente$addsub0173> created at line 70.
-    Found 32-bit subtractor for signal <quociente$addsub0174> created at line 70.
-    Found 32-bit subtractor for signal <quociente$addsub0175> created at line 70.
-    Found 32-bit subtractor for signal <quociente$addsub0176> created at line 70.
-    Found 32-bit subtractor for signal <quociente$addsub0177> created at line 70.
-    Found 32-bit subtractor for signal <quociente$addsub0178> created at line 70.
-    Found 32-bit subtractor for signal <quociente$addsub0179> created at line 70.
-    Found 32-bit subtractor for signal <quociente$addsub0180> created at line 70.
-    Found 32-bit subtractor for signal <quociente$addsub0181> created at line 70.
-    Found 32-bit subtractor for signal <quociente$addsub0182> created at line 70.
-    Found 32-bit subtractor for signal <quociente$addsub0183> created at line 70.
-    Found 32-bit subtractor for signal <quociente$addsub0184> created at line 70.
-    Found 32-bit subtractor for signal <quociente$addsub0185> created at line 70.
-    Found 32-bit subtractor for signal <quociente$addsub0186> created at line 70.
-    Found 32-bit subtractor for signal <quociente$addsub0187> created at line 70.
-    Found 32-bit subtractor for signal <quociente$addsub0188> created at line 70.
-    Found 32-bit subtractor for signal <quociente$addsub0189> created at line 70.
-    Found 32-bit subtractor for signal <quociente$addsub0190> created at line 70.
-    Found 32-bit subtractor for signal <quociente$addsub0191> created at line 70.
-    Found 32-bit subtractor for signal <quociente$addsub0192> created at line 70.
-    Found 32-bit subtractor for signal <quociente$addsub0193> created at line 70.
-    Found 32-bit subtractor for signal <quociente$addsub0194> created at line 70.
-    Found 32-bit subtractor for signal <quociente$addsub0195> created at line 70.
-    Found 32-bit subtractor for signal <quociente$addsub0196> created at line 70.
-    Found 32-bit subtractor for signal <quociente$addsub0197> created at line 70.
-    Found 32-bit subtractor for signal <quociente$addsub0198> created at line 70.
-    Found 10-bit comparator less for signal <quociente$cmp_lt0000> created at line 68.
-    Found 11-bit comparator less for signal <quociente$cmp_lt0001> created at line 71.
-    Found 12-bit comparator less for signal <quociente$cmp_lt0002> created at line 71.
-    Found 13-bit comparator less for signal <quociente$cmp_lt0003> created at line 71.
-    Found 14-bit comparator less for signal <quociente$cmp_lt0004> created at line 71.
-    Found 15-bit comparator less for signal <quociente$cmp_lt0005> created at line 71.
-    Found 16-bit comparator less for signal <quociente$cmp_lt0006> created at line 71.
-    Found 17-bit comparator less for signal <quociente$cmp_lt0007> created at line 71.
-    Found 18-bit comparator less for signal <quociente$cmp_lt0008> created at line 71.
-    Found 19-bit comparator less for signal <quociente$cmp_lt0009> created at line 71.
-    Found 20-bit comparator less for signal <quociente$cmp_lt0010> created at line 71.
-    Found 21-bit comparator less for signal <quociente$cmp_lt0011> created at line 71.
-    Found 22-bit comparator less for signal <quociente$cmp_lt0012> created at line 71.
-    Found 23-bit comparator less for signal <quociente$cmp_lt0013> created at line 71.
-    Found 24-bit comparator less for signal <quociente$cmp_lt0014> created at line 71.
-    Found 25-bit comparator less for signal <quociente$cmp_lt0015> created at line 71.
-    Found 26-bit comparator less for signal <quociente$cmp_lt0016> created at line 71.
-    Found 27-bit comparator less for signal <quociente$cmp_lt0017> created at line 71.
-    Found 28-bit comparator less for signal <quociente$cmp_lt0018> created at line 71.
-    Found 29-bit comparator less for signal <quociente$cmp_lt0019> created at line 71.
-    Found 30-bit comparator less for signal <quociente$cmp_lt0020> created at line 71.
-    Found 31-bit comparator less for signal <quociente$cmp_lt0021> created at line 71.
-    Found 32-bit comparator less for signal <quociente$cmp_lt0022> created at line 71.
-    Found 32-bit comparator less for signal <quociente$cmp_lt0023> created at line 71.
-    Found 32-bit comparator less for signal <quociente$cmp_lt0024> created at line 71.
-    Found 32-bit comparator less for signal <quociente$cmp_lt0025> created at line 71.
-    Found 32-bit comparator less for signal <quociente$cmp_lt0026> created at line 71.
-    Found 32-bit comparator less for signal <quociente$cmp_lt0027> created at line 71.
-    Found 32-bit comparator less for signal <quociente$cmp_lt0028> created at line 71.
-    Found 32-bit comparator less for signal <quociente$cmp_lt0029> created at line 71.
-    Found 32-bit comparator less for signal <quociente$cmp_lt0030> created at line 71.
-    Found 32-bit comparator less for signal <quociente$cmp_lt0031> created at line 71.
-    Found 32-bit comparator less for signal <quociente$cmp_lt0032> created at line 71.
-    Found 32-bit comparator less for signal <quociente$cmp_lt0033> created at line 71.
-    Found 32-bit comparator less for signal <quociente$cmp_lt0034> created at line 71.
-    Found 32-bit comparator less for signal <quociente$cmp_lt0035> created at line 71.
-    Found 32-bit comparator less for signal <quociente$cmp_lt0036> created at line 71.
-    Found 32-bit comparator less for signal <quociente$cmp_lt0037> created at line 71.
-    Found 32-bit comparator less for signal <quociente$cmp_lt0038> created at line 71.
-    Found 32-bit comparator less for signal <quociente$cmp_lt0039> created at line 71.
-    Found 32-bit comparator less for signal <quociente$cmp_lt0040> created at line 71.
-    Found 32-bit comparator less for signal <quociente$cmp_lt0041> created at line 71.
-    Found 32-bit comparator less for signal <quociente$cmp_lt0042> created at line 71.
-    Found 32-bit comparator less for signal <quociente$cmp_lt0043> created at line 71.
-    Found 32-bit comparator less for signal <quociente$cmp_lt0044> created at line 71.
-    Found 32-bit comparator less for signal <quociente$cmp_lt0045> created at line 71.
-    Found 32-bit comparator less for signal <quociente$cmp_lt0046> created at line 71.
-    Found 32-bit comparator less for signal <quociente$cmp_lt0047> created at line 71.
-    Found 32-bit comparator less for signal <quociente$cmp_lt0048> created at line 71.
-    Found 32-bit comparator less for signal <quociente$cmp_lt0049> created at line 71.
-    Found 32-bit comparator less for signal <quociente$cmp_lt0050> created at line 71.
-    Found 32-bit comparator less for signal <quociente$cmp_lt0051> created at line 71.
-    Found 32-bit comparator less for signal <quociente$cmp_lt0052> created at line 71.
-    Found 32-bit comparator less for signal <quociente$cmp_lt0053> created at line 71.
-    Found 32-bit comparator less for signal <quociente$cmp_lt0054> created at line 71.
-    Found 32-bit comparator less for signal <quociente$cmp_lt0055> created at line 71.
-    Found 32-bit comparator less for signal <quociente$cmp_lt0056> created at line 71.
-    Found 32-bit comparator less for signal <quociente$cmp_lt0057> created at line 71.
-    Found 32-bit comparator less for signal <quociente$cmp_lt0058> created at line 71.
-    Found 32-bit comparator less for signal <quociente$cmp_lt0059> created at line 71.
-    Found 32-bit comparator less for signal <quociente$cmp_lt0060> created at line 71.
-    Found 32-bit comparator less for signal <quociente$cmp_lt0061> created at line 71.
-    Found 32-bit comparator less for signal <quociente$cmp_lt0062> created at line 71.
-    Found 32-bit comparator less for signal <quociente$cmp_lt0063> created at line 71.
-    Found 32-bit comparator less for signal <quociente$cmp_lt0064> created at line 71.
-    Found 32-bit comparator less for signal <quociente$cmp_lt0065> created at line 71.
-    Found 32-bit comparator less for signal <quociente$cmp_lt0066> created at line 71.
-    Found 32-bit comparator less for signal <quociente$cmp_lt0067> created at line 71.
-    Found 32-bit comparator less for signal <quociente$cmp_lt0068> created at line 71.
-    Found 32-bit comparator less for signal <quociente$cmp_lt0069> created at line 71.
-    Found 32-bit comparator less for signal <quociente$cmp_lt0070> created at line 71.
-    Found 32-bit comparator less for signal <quociente$cmp_lt0071> created at line 71.
-    Found 32-bit comparator less for signal <quociente$cmp_lt0072> created at line 71.
-    Found 32-bit comparator less for signal <quociente$cmp_lt0073> created at line 71.
-    Found 32-bit comparator less for signal <quociente$cmp_lt0074> created at line 71.
-    Found 32-bit comparator less for signal <quociente$cmp_lt0075> created at line 71.
-    Found 32-bit comparator less for signal <quociente$cmp_lt0076> created at line 71.
-    Found 32-bit comparator less for signal <quociente$cmp_lt0077> created at line 71.
-    Found 32-bit comparator less for signal <quociente$cmp_lt0078> created at line 71.
-    Found 32-bit comparator less for signal <quociente$cmp_lt0079> created at line 71.
-    Found 32-bit comparator less for signal <quociente$cmp_lt0080> created at line 71.
-    Found 32-bit comparator less for signal <quociente$cmp_lt0081> created at line 71.
-    Found 32-bit comparator less for signal <quociente$cmp_lt0082> created at line 71.
-    Found 32-bit comparator less for signal <quociente$cmp_lt0083> created at line 71.
-    Found 32-bit comparator less for signal <quociente$cmp_lt0084> created at line 71.
-    Found 32-bit comparator less for signal <quociente$cmp_lt0085> created at line 71.
-    Found 32-bit comparator less for signal <quociente$cmp_lt0086> created at line 71.
-    Found 32-bit comparator less for signal <quociente$cmp_lt0087> created at line 71.
-    Found 32-bit comparator less for signal <quociente$cmp_lt0088> created at line 71.
-    Found 32-bit comparator less for signal <quociente$cmp_lt0089> created at line 71.
-    Found 32-bit comparator less for signal <quociente$cmp_lt0090> created at line 71.
-    Found 32-bit comparator less for signal <quociente$cmp_lt0091> created at line 71.
-    Found 32-bit comparator less for signal <quociente$cmp_lt0092> created at line 71.
-    Found 32-bit comparator less for signal <quociente$cmp_lt0093> created at line 71.
-    Found 32-bit comparator less for signal <quociente$cmp_lt0094> created at line 71.
-    Found 32-bit comparator less for signal <quociente$cmp_lt0095> created at line 71.
-    Found 32-bit comparator less for signal <quociente$cmp_lt0096> created at line 71.
-    Found 32-bit comparator less for signal <quociente$cmp_lt0097> created at line 71.
-    Found 32-bit comparator less for signal <quociente$cmp_lt0098> created at line 71.
-    Found 32-bit comparator less for signal <quociente$cmp_lt0099> created at line 71.
-    Found 32-bit subtractor for signal <quociente$sub0007> created at line 70.
-    Found 32-bit subtractor for signal <quociente$sub0016> created at line 70.
-    Found 32-bit subtractor for signal <quociente$sub0025> created at line 70.
-    Found 32-bit subtractor for signal <quociente$sub0034> created at line 70.
-    Found 32-bit subtractor for signal <quociente$sub0043> created at line 70.
-    Found 32-bit subtractor for signal <quociente$sub0052> created at line 70.
-    Found 32-bit subtractor for signal <quociente$sub0061> created at line 70.
-    Found 32-bit subtractor for signal <quociente$sub0068> created at line 70.
-    Found 32-bit subtractor for signal <quociente$sub0076> created at line 70.
-    Found 32-bit subtractor for signal <quociente$sub0084> created at line 70.
-    Found 32-bit subtractor for signal <quociente$sub0092> created at line 70.
-    Found 32-bit subtractor for signal <quociente$sub0100> created at line 70.
-    Found 32-bit subtractor for signal <quociente$sub0108> created at line 70.
-    Found 32-bit subtractor for signal <quociente$sub0116> created at line 70.
-    Found 32-bit subtractor for signal <quociente$sub0122> created at line 70.
-    Found 32-bit subtractor for signal <quociente$sub0129> created at line 70.
-    Found 32-bit subtractor for signal <quociente$sub0136> created at line 70.
-    Found 32-bit subtractor for signal <quociente$sub0143> created at line 70.
-    Found 32-bit subtractor for signal <quociente$sub0150> created at line 70.
-    Found 32-bit subtractor for signal <quociente$sub0157> created at line 70.
-    Found 32-bit subtractor for signal <quociente$sub0164> created at line 70.
-    Found 32-bit subtractor for signal <quociente$sub0169> created at line 70.
-    Found 32-bit subtractor for signal <quociente$sub0175> created at line 70.
-    Found 32-bit subtractor for signal <quociente$sub0181> created at line 70.
-    Found 32-bit subtractor for signal <quociente$sub0187> created at line 70.
-    Found 32-bit subtractor for signal <quociente$sub0193> created at line 70.
-    Found 32-bit subtractor for signal <quociente$sub0199> created at line 70.
-    Found 32-bit subtractor for signal <quociente$sub0205> created at line 70.
-    Found 32-bit subtractor for signal <quociente$sub0209> created at line 70.
-    Found 32-bit subtractor for signal <quociente$sub0214> created at line 70.
-    Found 32-bit subtractor for signal <quociente$sub0219> created at line 70.
-    Found 32-bit subtractor for signal <quociente$sub0224> created at line 70.
-    Found 32-bit subtractor for signal <quociente$sub0229> created at line 70.
-    Found 32-bit subtractor for signal <quociente$sub0234> created at line 70.
-    Found 32-bit subtractor for signal <quociente$sub0239> created at line 70.
-    Found 32-bit subtractor for signal <quociente$sub0242> created at line 70.
-    Found 32-bit subtractor for signal <quociente$sub0246> created at line 70.
-    Found 32-bit subtractor for signal <quociente$sub0250> created at line 70.
-    Found 32-bit subtractor for signal <quociente$sub0254> created at line 70.
-    Found 32-bit subtractor for signal <quociente$sub0258> created at line 70.
-    Found 32-bit subtractor for signal <quociente$sub0262> created at line 70.
-    Found 32-bit subtractor for signal <quociente$sub0266> created at line 70.
-    Found 32-bit subtractor for signal <quociente$sub0268> created at line 70.
-    Found 32-bit subtractor for signal <quociente$sub0271> created at line 70.
-    Found 32-bit subtractor for signal <quociente$sub0274> created at line 70.
-    Found 32-bit subtractor for signal <quociente$sub0277> created at line 70.
-    Found 32-bit subtractor for signal <quociente$sub0280> created at line 70.
-    Found 32-bit subtractor for signal <quociente$sub0283> created at line 70.
-    Found 32-bit subtractor for signal <quociente$sub0286> created at line 70.
-    Found 32-bit subtractor for signal <quociente$sub0287> created at line 70.
-    Found 32-bit subtractor for signal <quociente$sub0289> created at line 70.
-    Found 32-bit subtractor for signal <quociente$sub0291> created at line 70.
-    Found 32-bit subtractor for signal <quociente$sub0293> created at line 70.
-    Found 32-bit subtractor for signal <quociente$sub0295> created at line 70.
-    Found 32-bit subtractor for signal <quociente$sub0297> created at line 70.
-    Found 32-bit subtractor for signal <quociente$sub0299> created at line 70.
-    Found 32-bit subtractor for signal <quociente$sub0300> created at line 70.
-    Found 32-bit subtractor for signal <quociente$sub0301> created at line 70.
-    Found 32-bit subtractor for signal <quociente$sub0302> created at line 70.
-    Found 32-bit subtractor for signal <quociente$sub0303> created at line 70.
-    Found 32-bit subtractor for signal <quociente$sub0304> created at line 70.
-    Found 32-bit subtractor for signal <quociente$sub0305> created at line 70.
-    Found 10-bit register for signal <resultado_abs>.
-    Found 10-bit adder for signal <resultado_abs$addsub0000> created at line 84.
-    Found 11-bit register for signal <resultado_int>.
-    Found 8-bit subtractor for signal <resultado_int$addsub0001> created at line 53.
-    Found 7-bit adder carry out for signal <resultado_int$addsub0002> created at line 50.
-    Found 8x4-bit multiplier for signal <resultado_int$mult0003> created at line 50.
-    Found 8x5-bit multiplier for signal <resultado_int$mult0004> created at line 53.
-    Found 14x4-bit multiplier for signal <resultado_int$mult0005> created at line 56.
-    Found 7x7-bit multiplier for signal <resultado_int$mult0006> created at line 56.
+WARNING:Xst:646 - Signal <res_int> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+    Found 1-bit register for signal <erro_r>.
+    Found 1-bit register for signal <neg_r>.
+    Found 10-bit comparator less for signal <neg_r$cmp_lt0000> created at line 60.
+    Found 1-bit register for signal <pronto_r>.
+    Found 10-bit register for signal <res_abs>.
+    Found 10-bit adder for signal <res_abs$addsub0000> created at line 62.
+    Found 7-bit adder carry out for signal <tmp$addsub0000> created at line 48.
+    Found 10x10-bit multiplier for signal <tmp$mult0000> created at line 48.
+    Found 10x10-bit multiplier for signal <tmp$mult0002> created at line 51.
+    Found 7-bit subtractor for signal <tmp$sub0000> created at line 51.
     Summary:
-	inferred  24 D-type flip-flop(s).
-	inferred 355 Adder/Subtractor(s).
-	inferred   5 Multiplier(s).
-	inferred 101 Comparator(s).
+	inferred  13 D-type flip-flop(s).
+	inferred   3 Adder/Subtractor(s).
+	inferred   2 Multiplier(s).
+	inferred   1 Comparator(s).
 Unit <logica_calculadora> synthesized.
 
 
@@ -661,19 +203,19 @@ Synthesizing Unit <ascii_converter>.
 WARNING:Xst:646 - Signal <inteiro> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
 WARNING:Xst:643 - "/home/ise/VirtualBox/Trabalho-2-Sistemas-Digitais/calculadora_fpga/src/ascii_converter.vhd" line 33: The result of a 32x6-bit multiplication is partially used. Only the 32 least significant bits are used. If you are doing this on purpose, you may safely ignore this warning. Otherwise, make sure you are not losing information, leading to unexpected circuit behavior.
     Found 32x6-bit multiplier for signal <$mult0000> created at line 33.
-    Found 6-bit adder for signal <ascii2$add0000> created at line 76.
-    Found 6-bit adder for signal <ascii3$add0000> created at line 77.
-    Found 6-bit adder for signal <ascii5$add0000> created at line 79.
+    Found 6-bit adder for signal <ascii2$add0000> created at line 66.
+    Found 6-bit adder for signal <ascii3$add0000> created at line 67.
+    Found 6-bit adder for signal <ascii5$add0000> created at line 73.
     Found 4-bit subtractor for signal <decimal>.
     Found 32-bit comparator greatequal for signal <dezena$cmp_ge0000> created at line 36.
-    Found 32-bit comparator greatequal for signal <dezena$cmp_ge0001> created at line 38.
-    Found 32-bit comparator greatequal for signal <dezena$cmp_ge0002> created at line 41.
-    Found 32-bit comparator greatequal for signal <dezena$cmp_ge0003> created at line 44.
-    Found 32-bit comparator greatequal for signal <dezena$cmp_ge0004> created at line 47.
-    Found 32-bit comparator greatequal for signal <dezena$cmp_ge0005> created at line 50.
-    Found 32-bit comparator greatequal for signal <dezena$cmp_ge0006> created at line 53.
-    Found 32-bit comparator greatequal for signal <dezena$cmp_ge0007> created at line 56.
-    Found 32-bit comparator greatequal for signal <dezena$cmp_ge0008> created at line 59.
+    Found 32-bit comparator greatequal for signal <dezena$cmp_ge0001> created at line 37.
+    Found 32-bit comparator greatequal for signal <dezena$cmp_ge0002> created at line 39.
+    Found 32-bit comparator greatequal for signal <dezena$cmp_ge0003> created at line 41.
+    Found 32-bit comparator greatequal for signal <dezena$cmp_ge0004> created at line 43.
+    Found 32-bit comparator greatequal for signal <dezena$cmp_ge0005> created at line 45.
+    Found 32-bit comparator greatequal for signal <dezena$cmp_ge0006> created at line 47.
+    Found 32-bit comparator greatequal for signal <dezena$cmp_ge0007> created at line 49.
+    Found 32-bit comparator greatequal for signal <dezena$cmp_ge0008> created at line 51.
     Found 10-bit comparator less for signal <i$cmp_gt0000> created at line 29.
     Found 4-bit subtractor for signal <unidade$share0000> created at line 36.
     Summary:
@@ -687,10 +229,10 @@ Synthesizing Unit <lcd_controller>.
     Related source file is "/home/ise/VirtualBox/Trabalho-2-Sistemas-Digitais/calculadora_fpga/src/lcd_controller.vhd".
     Found finite state machine <FSM_0> for signal <estado>.
     -----------------------------------------------------------------------
-    | States             | 11                                             |
-    | Transitions        | 13                                             |
-    | Inputs             | 1                                              |
-    | Outputs            | 11                                             |
+    | States             | 9                                              |
+    | Transitions        | 12                                             |
+    | Inputs             | 2                                              |
+    | Outputs            | 9                                              |
     | Clock              | clk                       (rising_edge)        |
     | Clock enable       | estado$not0000            (positive)           |
     | Reset              | reset                     (positive)           |
@@ -700,17 +242,22 @@ Synthesizing Unit <lcd_controller>.
     | Encoding           | automatic                                      |
     | Implementation     | LUT                                            |
     -----------------------------------------------------------------------
+    Found 8-bit 5-to-1 multiplexer for signal <$varindex0000> created at line 84.
     Found 16-bit register for signal <contador>.
-    Found 16-bit subtractor for signal <contador$addsub0000> created at line 54.
+    Found 16-bit subtractor for signal <contador$addsub0000> created at line 44.
     Found 8-bit register for signal <data_reg>.
     Found 1-bit register for signal <enable_reg>.
-    Found 16-bit comparator greater for signal <estado$cmp_gt0000> created at line 51.
+    Found 16-bit comparator greater for signal <estado$cmp_gt0000> created at line 41.
+    Found 3-bit comparator less for signal <estado$cmp_lt0000> created at line 96.
     Found 1-bit register for signal <rs_reg>.
+    Found 3-bit register for signal <write_index>.
+    Found 3-bit adder for signal <write_index$addsub0000> created at line 97.
     Summary:
 	inferred   1 Finite State Machine(s).
-	inferred  26 D-type flip-flop(s).
-	inferred   1 Adder/Subtractor(s).
-	inferred   1 Comparator(s).
+	inferred  29 D-type flip-flop(s).
+	inferred   2 Adder/Subtractor(s).
+	inferred   2 Comparator(s).
+	inferred   8 Multiplexer(s).
 Unit <lcd_controller> synthesized.
 
 
@@ -719,9 +266,9 @@ Synthesizing Unit <top>.
     Found finite state machine <FSM_1> for signal <state>.
     -----------------------------------------------------------------------
     | States             | 6                                              |
-    | Transitions        | 31                                             |
-    | Inputs             | 9                                              |
-    | Outputs            | 9                                              |
+    | Transitions        | 30                                             |
+    | Inputs             | 10                                             |
+    | Outputs            | 8                                              |
     | Clock              | clk                       (rising_edge)        |
     | Reset              | reset                     (positive)           |
     | Reset type         | synchronous                                    |
@@ -730,9 +277,9 @@ Synthesizing Unit <top>.
     | Encoding           | automatic                                      |
     | Implementation     | LUT                                            |
     -----------------------------------------------------------------------
-WARNING:Xst:643 - "/home/ise/VirtualBox/Trabalho-2-Sistemas-Digitais/calculadora_fpga/src/top.vhd" line 153: The result of a 7x4-bit multiplication is partially used. Only the 10 least significant bits are used. If you are doing this on purpose, you may safely ignore this warning. Otherwise, make sure you are not losing information, leading to unexpected circuit behavior.
-WARNING:Xst:643 - "/home/ise/VirtualBox/Trabalho-2-Sistemas-Digitais/calculadora_fpga/src/top.vhd" line 138: The result of a 7x4-bit multiplication is partially used. Only the 10 least significant bits are used. If you are doing this on purpose, you may safely ignore this warning. Otherwise, make sure you are not losing information, leading to unexpected circuit behavior.
-    Found 9-bit subtractor for signal <$sub0000> created at line 138.
+WARNING:Xst:643 - "/home/ise/VirtualBox/Trabalho-2-Sistemas-Digitais/calculadora_fpga/src/top.vhd" line 149: The result of a 7x4-bit multiplication is partially used. Only the 10 least significant bits are used. If you are doing this on purpose, you may safely ignore this warning. Otherwise, make sure you are not losing information, leading to unexpected circuit behavior.
+WARNING:Xst:643 - "/home/ise/VirtualBox/Trabalho-2-Sistemas-Digitais/calculadora_fpga/src/top.vhd" line 132: The result of a 7x4-bit multiplication is partially used. Only the 10 least significant bits are used. If you are doing this on purpose, you may safely ignore this warning. Otherwise, make sure you are not losing information, leading to unexpected circuit behavior.
+    Found 9-bit subtractor for signal <$sub0000> created at line 132.
     Found 8-bit register for signal <a1>.
     Found 8-bit register for signal <a2>.
     Found 8-bit register for signal <a3>.
@@ -740,22 +287,25 @@ WARNING:Xst:643 - "/home/ise/VirtualBox/Trabalho-2-Sistemas-Digitais/calculadora
     Found 8-bit register for signal <a5>.
     Found 1-bit register for signal <escrever_lcd>.
     Found 1-bit register for signal <iniciar_calc>.
+    Found 19-bit register for signal <lcd_wait_counter>.
+    Found 19-bit subtractor for signal <lcd_wait_counter$addsub0000> created at line 180.
     Found 7-bit register for signal <op1>.
-    Found 7-bit adder for signal <op1$addsub0000> created at line 138.
-    Found 7x4-bit multiplier for signal <op1$mult0000> created at line 138.
-    Found 7-bit subtractor for signal <op1$sub0000> created at line 132.
+    Found 7-bit adder for signal <op1$addsub0000> created at line 132.
+    Found 7x4-bit multiplier for signal <op1$mult0000> created at line 132.
+    Found 7-bit subtractor for signal <op1$sub0000> created at line 125.
     Found 7-bit register for signal <op2>.
-    Found 7-bit adder for signal <op2$addsub0000> created at line 153.
-    Found 7x4-bit multiplier for signal <op2$mult0000> created at line 153.
+    Found 7-bit adder for signal <op2$addsub0000> created at line 149.
+    Found 7x4-bit multiplier for signal <op2$mult0000> created at line 149.
     Found 8-bit register for signal <operador_ascii>.
-    Found 8-bit comparator greatequal for signal <state$cmp_ge0000> created at line 131.
-    Found 8-bit comparator lessequal for signal <state$cmp_le0000> created at line 131.
+    Found 8-bit comparator greatequal for signal <state$cmp_ge0000> created at line 124.
+    Found 19-bit comparator greater for signal <state$cmp_gt0000> created at line 179.
+    Found 8-bit comparator lessequal for signal <state$cmp_le0000> created at line 124.
     Summary:
 	inferred   1 Finite State Machine(s).
-	inferred  64 D-type flip-flop(s).
-	inferred   4 Adder/Subtractor(s).
+	inferred  83 D-type flip-flop(s).
+	inferred   5 Adder/Subtractor(s).
 	inferred   2 Multiplier(s).
-	inferred   2 Comparator(s).
+	inferred   3 Comparator(s).
 Unit <top> synthesized.
 
 INFO:Xst:1767 - HDL ADVISOR - Resource sharing has identified that some arithmetic operations in this design can share the same physical resources for reduced device utilization. For improved clock frequency you may try to disable resource sharing.
@@ -764,82 +314,41 @@ INFO:Xst:1767 - HDL ADVISOR - Resource sharing has identified that some arithmet
 HDL Synthesis Report
 
 Macro Statistics
-# Multipliers                                          : 8
- 14x4-bit multiplier                                   : 1
+# Multipliers                                          : 5
+ 10x10-bit multiplier                                  : 2
  32x6-bit multiplier                                   : 1
- 7x4-bit multiplier                                    : 3
- 7x7-bit multiplier                                    : 1
- 8x4-bit multiplier                                    : 1
- 8x5-bit multiplier                                    : 1
-# Adders/Subtractors                                   : 365
+ 7x4-bit multiplier                                    : 2
+# Adders/Subtractors                                   : 15
  10-bit adder                                          : 1
- 11-bit subtractor                                     : 2
- 12-bit subtractor                                     : 2
- 13-bit subtractor                                     : 2
- 14-bit subtractor                                     : 2
- 15-bit subtractor                                     : 2
- 16-bit subtractor                                     : 3
- 17-bit subtractor                                     : 2
- 18-bit subtractor                                     : 2
- 19-bit subtractor                                     : 2
- 20-bit subtractor                                     : 1
- 21-bit subtractor                                     : 1
- 22-bit subtractor                                     : 1
- 23-bit subtractor                                     : 1
- 24-bit subtractor                                     : 1
- 25-bit subtractor                                     : 1
- 26-bit subtractor                                     : 1
- 27-bit subtractor                                     : 1
- 28-bit subtractor                                     : 1
- 29-bit subtractor                                     : 1
- 30-bit subtractor                                     : 1
- 31-bit subtractor                                     : 1
- 32-bit subtractor                                     : 322
+ 16-bit subtractor                                     : 1
+ 19-bit subtractor                                     : 1
+ 3-bit adder                                           : 1
  4-bit subtractor                                      : 2
  6-bit adder                                           : 3
  7-bit adder                                           : 2
  7-bit adder carry out                                 : 1
- 7-bit subtractor                                      : 1
- 8-bit subtractor                                      : 1
+ 7-bit subtractor                                      : 2
  9-bit subtractor                                      : 1
 # Counters                                             : 1
  4-bit up counter                                      : 1
-# Registers                                            : 33
+# Registers                                            : 35
  1-bit register                                        : 18
  10-bit register                                       : 1
- 11-bit register                                       : 1
  16-bit register                                       : 1
- 3-bit register                                        : 1
+ 19-bit register                                       : 1
+ 3-bit register                                        : 2
  7-bit register                                        : 2
- 8-bit register                                        : 9
-# Comparators                                          : 114
+ 8-bit register                                        : 10
+# Comparators                                          : 16
  10-bit comparator less                                : 2
- 11-bit comparator less                                : 2
- 12-bit comparator less                                : 1
- 13-bit comparator less                                : 1
- 14-bit comparator less                                : 1
- 15-bit comparator less                                : 1
  16-bit comparator greater                             : 1
- 16-bit comparator less                                : 1
- 17-bit comparator less                                : 1
- 18-bit comparator less                                : 1
- 19-bit comparator less                                : 1
- 20-bit comparator less                                : 1
- 21-bit comparator less                                : 1
- 22-bit comparator less                                : 1
- 23-bit comparator less                                : 1
- 24-bit comparator less                                : 1
- 25-bit comparator less                                : 1
- 26-bit comparator less                                : 1
- 27-bit comparator less                                : 1
- 28-bit comparator less                                : 1
- 29-bit comparator less                                : 1
- 30-bit comparator less                                : 1
- 31-bit comparator less                                : 1
+ 19-bit comparator greater                             : 1
+ 3-bit comparator less                                 : 1
  32-bit comparator greatequal                          : 9
- 32-bit comparator less                                : 78
  8-bit comparator greatequal                           : 1
  8-bit comparator lessequal                            : 1
+# Multiplexers                                         : 1
+ 8-bit 5-to-1 multiplexer                              : 1
 
 =========================================================================
 
@@ -860,131 +369,78 @@ Optimizing FSM <state/FSM> on signal <state[1:3]> with gray encoding.
  escreve_lcd | 111
 -------------------------
 Analyzing FSM <FSM_0> for best encoding.
-Optimizing FSM <lcd_ctrl_inst/estado/FSM> on signal <estado[1:11]> with one-hot encoding.
----------------------------
- State      | Encoding
----------------------------
- init_0     | 00000000001
- init_1     | 00000000010
- init_2     | 00000000100
- init_3     | 00000001000
- set_cursor | 00000010000
- write_1    | 00000100000
- write_2    | 00001000000
- write_3    | 00010000000
- write_4    | 00100000000
- write_5    | 01000000000
- hold       | 10000000000
----------------------------
+Optimizing FSM <lcd_ctrl_inst/estado/FSM> on signal <estado[1:9]> with one-hot encoding.
+--------------------------
+ State       | Encoding
+--------------------------
+ init_0      | 000000001
+ init_1      | 000000010
+ init_2      | 000000100
+ init_3      | 000001000
+ set_cursor  | 000010000
+ write_prep  | 000100000
+ write_pulse | 001000000
+ write_wait  | 010000000
+ hold        | 100000000
+--------------------------
 INFO:Xst:2261 - The FF/Latch <dado_reg_6> in Unit <teclado_inst> is equivalent to the following FF/Latch, which will be removed : <dado_reg_7> 
 WARNING:Xst:1293 - FF/Latch <dado_reg_6> has a constant value of 0 in block <teclado_inst>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <operador_ascii_6> has a constant value of 0 in block <top>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <operador_ascii_7> has a constant value of 0 in block <top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <a3_7> (without init value) has a constant value of 0 in block <top>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <a1_1> (without init value) has a constant value of 0 in block <top>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <a1_4> (without init value) has a constant value of 0 in block <top>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <a1_7> (without init value) has a constant value of 0 in block <top>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <a2_7> (without init value) has a constant value of 0 in block <top>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <a3_7> (without init value) has a constant value of 0 in block <top>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <a4_4> (without init value) has a constant value of 0 in block <top>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <a4_7> (without init value) has a constant value of 0 in block <top>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <a5_6> (without init value) has a constant value of 0 in block <top>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <a5_7> (without init value) has a constant value of 0 in block <top>. This FF/Latch will be trimmed during the optimization process.
 
 Synthesizing (advanced) Unit <top>.
-	Found pipelined multiplier on signal <op1_mult0000>:
-		- 1 pipeline level(s) found in a register on signal <op1>.
-		Pushing register(s) into the multiplier macro.
 	Found pipelined multiplier on signal <op2_mult0000>:
 		- 1 pipeline level(s) found in a register on signal <op2>.
 		Pushing register(s) into the multiplier macro.
-	Found pipelined multiplier on signal <calculadora_inst/resultado_int_mult0006>:
+	Found pipelined multiplier on signal <op1_mult0000>:
 		- 1 pipeline level(s) found in a register on signal <op1>.
 		Pushing register(s) into the multiplier macro.
-
-		- 1 pipeline level(s) found in a register on signal <op2>.
-		Pushing register(s) into the multiplier macro.
-	Found pipelined multiplier on signal <calculadora_inst/_mult0000>:
-		- 1 pipeline level(s) found in a register on signal <op1>.
-		Pushing register(s) into the multiplier macro.
-INFO:Xst:2385 - HDL ADVISOR - You can improve the performance of the multiplier Mmult_op1_mult0000 by adding 1 register level(s).
 INFO:Xst:2385 - HDL ADVISOR - You can improve the performance of the multiplier Mmult_op2_mult0000 by adding 1 register level(s).
-INFO:Xst:2385 - HDL ADVISOR - You can improve the performance of the multiplier calculadora_inst/Mmult_resultado_int_mult0006 by adding 1 register level(s).
-INFO:Xst:2385 - HDL ADVISOR - You can improve the performance of the multiplier calculadora_inst/Mmult__mult0000 by adding 1 register level(s).
+INFO:Xst:2385 - HDL ADVISOR - You can improve the performance of the multiplier Mmult_op1_mult0000 by adding 1 register level(s).
 Unit <top> synthesized (advanced).
 
 =========================================================================
 Advanced HDL Synthesis Report
 
 Macro Statistics
-# Multipliers                                          : 8
- 14x4-bit multiplier                                   : 1
+# FSMs                                                 : 2
+# Multipliers                                          : 5
+ 10x10-bit multiplier                                  : 2
  32x6-bit multiplier                                   : 1
- 7x4-bit registered multiplier                         : 3
- 7x7-bit registered multiplier                         : 1
- 8x4-bit multiplier                                    : 1
- 8x5-bit multiplier                                    : 1
-# Adders/Subtractors                                   : 365
+ 7x4-bit registered multiplier                         : 2
+# Adders/Subtractors                                   : 15
  10-bit adder                                          : 1
- 11-bit subtractor                                     : 2
- 12-bit subtractor                                     : 2
- 13-bit subtractor                                     : 2
- 14-bit subtractor                                     : 2
- 15-bit subtractor                                     : 2
- 16-bit subtractor                                     : 3
- 17-bit subtractor                                     : 2
- 18-bit subtractor                                     : 2
- 19-bit subtractor                                     : 2
- 20-bit subtractor                                     : 1
- 21-bit subtractor                                     : 1
- 22-bit subtractor                                     : 1
- 23-bit subtractor                                     : 1
- 24-bit subtractor                                     : 1
- 25-bit subtractor                                     : 1
- 26-bit subtractor                                     : 1
- 27-bit subtractor                                     : 1
- 28-bit subtractor                                     : 1
- 29-bit subtractor                                     : 1
- 30-bit subtractor                                     : 1
- 31-bit subtractor                                     : 1
- 32-bit subtractor                                     : 322
+ 16-bit subtractor                                     : 1
+ 19-bit subtractor                                     : 1
+ 3-bit adder                                           : 1
  4-bit subtractor                                      : 2
  6-bit adder                                           : 3
  7-bit adder                                           : 2
  7-bit adder carry out                                 : 1
- 7-bit subtractor                                      : 2
- 8-bit subtractor                                      : 1
+ 7-bit subtractor                                      : 3
 # Counters                                             : 1
  4-bit up counter                                      : 1
-# Registers                                            : 158
- Flip-Flops                                            : 158
-# Comparators                                          : 114
+# Registers                                            : 163
+ Flip-Flops                                            : 163
+# Comparators                                          : 16
  10-bit comparator less                                : 2
- 11-bit comparator less                                : 2
- 12-bit comparator less                                : 1
- 13-bit comparator less                                : 1
- 14-bit comparator less                                : 1
- 15-bit comparator less                                : 1
  16-bit comparator greater                             : 1
- 16-bit comparator less                                : 1
- 17-bit comparator less                                : 1
- 18-bit comparator less                                : 1
- 19-bit comparator less                                : 1
- 20-bit comparator less                                : 1
- 21-bit comparator less                                : 1
- 22-bit comparator less                                : 1
- 23-bit comparator less                                : 1
- 24-bit comparator less                                : 1
- 25-bit comparator less                                : 1
- 26-bit comparator less                                : 1
- 27-bit comparator less                                : 1
- 28-bit comparator less                                : 1
- 29-bit comparator less                                : 1
- 30-bit comparator less                                : 1
- 31-bit comparator less                                : 1
+ 19-bit comparator greater                             : 1
+ 3-bit comparator less                                 : 1
  32-bit comparator greatequal                          : 9
- 32-bit comparator less                                : 78
  8-bit comparator greatequal                           : 1
  8-bit comparator lessequal                            : 1
+# Multiplexers                                         : 1
+ 8-bit 5-to-1 multiplexer                              : 1
 
 =========================================================================
 
@@ -993,13 +449,13 @@ Macro Statistics
 =========================================================================
 WARNING:Xst:1293 - FF/Latch <dado_reg_6> has a constant value of 0 in block <teclado_ps2>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <dado_reg_7> has a constant value of 0 in block <teclado_ps2>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <a1_1> (without init value) has a constant value of 0 in block <top>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <a1_4> (without init value) has a constant value of 0 in block <top>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <a1_7> (without init value) has a constant value of 0 in block <top>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <a2_0> (without init value) has a constant value of 0 in block <top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <a2_0> (without init value) has a constant value of 0 in block <top>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <a2_2> (without init value) has a constant value of 0 in block <top>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <a2_3> (without init value) has a constant value of 0 in block <top>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <a2_7> (without init value) has a constant value of 0 in block <top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <a1_1> (without init value) has a constant value of 0 in block <top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <a1_4> (without init value) has a constant value of 0 in block <top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <a1_7> (without init value) has a constant value of 0 in block <top>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <a3_2> (without init value) has a constant value of 0 in block <top>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <a3_3> (without init value) has a constant value of 0 in block <top>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <a3_7> (without init value) has a constant value of 0 in block <top>. This FF/Latch will be trimmed during the optimization process.
@@ -1008,13 +464,15 @@ WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <a4_7> (without init
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <a5_6> (without init value) has a constant value of 0 in block <top>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <a5_7> (without init value) has a constant value of 0 in block <top>. This FF/Latch will be trimmed during the optimization process.
 INFO:Xst:2261 - The FF/Latch <a1_0> in Unit <top> is equivalent to the following FF/Latch, which will be removed : <a1_2> 
-INFO:Xst:2261 - The FF/Latch <a1_6> in Unit <top> is equivalent to the following 6 FFs/Latches, which will be removed : <a2_1> <a2_6> <a3_1> <a3_6> <a4_0> <a4_6> 
-INFO:Xst:2261 - The FF/Latch <a1_5> in Unit <top> is equivalent to the following 4 FFs/Latches, which will be removed : <a2_5> <a3_5> <a4_5> <a5_4> 
+INFO:Xst:2261 - The FF/Latch <a2_1> in Unit <top> is equivalent to the following 6 FFs/Latches, which will be removed : <a2_6> <a1_6> <a3_1> <a3_6> <a4_0> <a4_6> 
+INFO:Xst:2261 - The FF/Latch <a2_5> in Unit <top> is equivalent to the following 4 FFs/Latches, which will be removed : <a1_5> <a3_5> <a4_5> <a5_4> 
 INFO:Xst:2261 - The FF/Latch <a2_4> in Unit <top> is equivalent to the following 5 FFs/Latches, which will be removed : <a3_4> <a4_1> <a4_2> <a4_3> <a5_5> 
 
 Optimizing unit <top> ...
 
 Optimizing unit <teclado_ps2> ...
+
+Optimizing unit <logica_calculadora> ...
 
 Optimizing unit <lcd_controller> ...
 WARNING:Xst:1293 - FF/Latch <operador_ascii_6> has a constant value of 0 in block <top>. This FF/Latch will be trimmed during the optimization process.
@@ -1022,16 +480,7 @@ WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <operador_ascii_7> h
 
 Mapping all equations...
 Building and optimizing final netlist ...
-Found area constraint ratio of 100 (+ 5) on block top, actual ratio is 109.
-Optimizing block <top> to meet ratio 100 (+ 5) of 5888 slices :
-WARNING:Xst:2254 - Area constraint could not be met for block <top>, final ratio is 108.
-FlipFlop op2_0 has been replicated 1 time(s)
-FlipFlop op2_1 has been replicated 1 time(s)
-FlipFlop op2_2 has been replicated 1 time(s)
-FlipFlop op2_3 has been replicated 1 time(s)
-FlipFlop op2_4 has been replicated 1 time(s)
-FlipFlop op2_5 has been replicated 1 time(s)
-FlipFlop op2_6 has been replicated 1 time(s)
+Found area constraint ratio of 100 (+ 5) on block top, actual ratio is 3.
 
 Final Macro Processing ...
 
@@ -1043,8 +492,8 @@ Unit <top> processed.
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 133
- Flip-Flops                                            : 133
+# Registers                                            : 143
+ Flip-Flops                                            : 143
 # Shift Registers                                      : 1
  2-bit shift register                                  : 1
 
@@ -1075,28 +524,28 @@ Design Statistics
 # IOs                              : 17
 
 Cell Usage :
-# BELS                             : 35727
+# BELS                             : 519
 #      GND                         : 1
-#      INV                         : 8545
+#      INV                         : 36
 #      LUT1                        : 2
-#      LUT2                        : 3251
-#      LUT2_D                      : 2
-#      LUT3                        : 118
-#      LUT3_L                      : 2
-#      LUT4                        : 837
-#      LUT4_D                      : 22
-#      LUT4_L                      : 20
-#      MUXCY                       : 11926
-#      MUXF5                       : 65
+#      LUT2                        : 59
+#      LUT2_D                      : 1
+#      LUT3                        : 69
+#      LUT3_D                      : 1
+#      LUT4                        : 152
+#      LUT4_D                      : 2
+#      LUT4_L                      : 13
+#      MUXCY                       : 76
+#      MUXF5                       : 33
 #      VCC                         : 1
-#      XORCY                       : 10935
-# FlipFlops/Latches                : 134
+#      XORCY                       : 73
+# FlipFlops/Latches                : 144
 #      FD                          : 2
-#      FDE                         : 7
-#      FDR                         : 11
-#      FDRE                        : 101
-#      FDRS                        : 11
-#      FDSE                        : 2
+#      FDE                         : 3
+#      FDR                         : 34
+#      FDRE                        : 82
+#      FDRS                        : 22
+#      FDSE                        : 1
 # Shift Registers                  : 1
 #      SRL16                       : 1
 # Clock Buffers                    : 1
@@ -1104,8 +553,8 @@ Cell Usage :
 # IO Buffers                       : 16
 #      IBUF                        : 3
 #      OBUF                        : 13
-# MULTs                            : 7
-#      MULT18X18SIO                : 7
+# MULTs                            : 4
+#      MULT18X18SIO                : 4
 =========================================================================
 
 Device utilization summary:
@@ -1113,17 +562,15 @@ Device utilization summary:
 
 Selected Device : 3s700anfgg484-5 
 
- Number of Slices:                     6431  out of   5888   109% (*) 
- Number of Slice Flip Flops:            134  out of  11776     1%  
- Number of 4 input LUTs:              12800  out of  11776   108% (*) 
-    Number used as logic:             12799
+ Number of Slices:                      192  out of   5888     3%  
+ Number of Slice Flip Flops:            144  out of  11776     1%  
+ Number of 4 input LUTs:                336  out of  11776     2%  
+    Number used as logic:               335
     Number used as Shift registers:       1
  Number of IOs:                          17
  Number of bonded IOBs:                  17  out of    372     4%  
- Number of MULT18X18SIOs:                 7  out of     20    35%  
+ Number of MULT18X18SIOs:                 4  out of     20    20%  
  Number of GCLKs:                         1  out of     24     4%  
-
-WARNING:Xst:1336 -  (*) More than 100% of Device resources are used
 
 ---------------------------
 Partition Resource Summary:
@@ -1146,7 +593,7 @@ Clock Information:
 -----------------------------------+------------------------+-------+
 Clock Signal                       | Clock buffer(FF name)  | Load  |
 -----------------------------------+------------------------+-------+
-clk                                | BUFGP                  | 139   |
+clk                                | BUFGP                  | 147   |
 -----------------------------------+------------------------+-------+
 
 Asynchronous Control Signals Information:
@@ -1157,8 +604,8 @@ Timing Summary:
 ---------------
 Speed Grade: -5
 
-   Minimum period: 180.538ns (Maximum Frequency: 5.539MHz)
-   Minimum input arrival time before clock: 3.419ns
+   Minimum period: 12.199ns (Maximum Frequency: 81.976MHz)
+   Minimum input arrival time before clock: 4.116ns
    Maximum output required time after clock: 5.641ns
    Maximum combinational path delay: No path found
 
@@ -1168,291 +615,74 @@ All values displayed in nanoseconds (ns)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'clk'
-  Clock period: 180.538ns (frequency: 5.539MHz)
-  Total number of paths / destination ports: 7654032225459951777797454683963392 / 290
+  Clock period: 12.199ns (frequency: 81.976MHz)
+  Total number of paths / destination ports: 14936 / 260
 -------------------------------------------------------------------------
-Delay:               180.538ns (Levels of Logic = 232)
-  Source:            calculadora_inst/Mmult__mult0000 (MULT)
-  Destination:       calculadora_inst/resultado_int_0 (FF)
+Delay:               12.199ns (Levels of Logic = 14)
+  Source:            op1_0 (FF)
+  Destination:       calculadora_inst/res_abs_9 (FF)
   Source Clock:      clk rising
   Destination Clock: clk rising
 
-  Data Path: calculadora_inst/Mmult__mult0000 to calculadora_inst/resultado_int_0
+  Data Path: op1_0 to calculadora_inst/res_abs_9
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     MULT18X18SIO:CLK->P0    3   3.500   0.517  calculadora_inst/Mmult__mult0000 (calculadora_inst/_mult0000<0>)
-     LUT2:I1->O            1   0.562   0.000  calculadora_inst/Msub__sub0000_lut<0> (calculadora_inst/Msub__sub0000_lut<0>)
-     MUXCY:S->O            1   0.523   0.000  calculadora_inst/Msub__sub0000_cy<0> (calculadora_inst/Msub__sub0000_cy<0>)
-     XORCY:CI->O           2   0.654   0.446  calculadora_inst/Msub__sub0000_xor<1> (calculadora_inst/_sub0000<1>)
-     LUT2:I1->O            1   0.562   0.000  calculadora_inst/Msub__sub0001_lut<1> (calculadora_inst/Msub__sub0001_lut<1>)
-     MUXCY:S->O            1   0.523   0.000  calculadora_inst/Msub__sub0001_cy<1> (calculadora_inst/Msub__sub0001_cy<1>)
-     XORCY:CI->O           1   0.654   0.423  calculadora_inst/Msub__sub0001_xor<2> (calculadora_inst/_sub0001<2>)
-     LUT2:I1->O            1   0.562   0.000  calculadora_inst/Msub__sub0002_lut<2> (calculadora_inst/Msub__sub0002_lut<2>)
-     MUXCY:S->O            1   0.523   0.000  calculadora_inst/Msub__sub0002_cy<2> (calculadora_inst/Msub__sub0002_cy<2>)
-     XORCY:CI->O           1   0.654   0.423  calculadora_inst/Msub__sub0002_xor<3> (calculadora_inst/_sub0002<3>)
-     LUT2:I1->O            1   0.562   0.000  calculadora_inst/Msub__sub0003_lut<3> (calculadora_inst/Msub__sub0003_lut<3>)
-     MUXCY:S->O            1   0.523   0.000  calculadora_inst/Msub__sub0003_cy<3> (calculadora_inst/Msub__sub0003_cy<3>)
-     XORCY:CI->O           1   0.654   0.423  calculadora_inst/Msub__sub0003_xor<4> (calculadora_inst/_sub0003<4>)
-     LUT2:I1->O            1   0.562   0.000  calculadora_inst/Msub__sub0004_lut<4> (calculadora_inst/Msub__sub0004_lut<4>)
-     MUXCY:S->O            1   0.523   0.000  calculadora_inst/Msub__sub0004_cy<4> (calculadora_inst/Msub__sub0004_cy<4>)
-     XORCY:CI->O           1   0.654   0.423  calculadora_inst/Msub__sub0004_xor<5> (calculadora_inst/_sub0004<5>)
-     LUT2:I1->O            1   0.562   0.000  calculadora_inst/Msub__sub0005_lut<5> (calculadora_inst/Msub__sub0005_lut<5>)
-     MUXCY:S->O            1   0.523   0.000  calculadora_inst/Msub__sub0005_cy<5> (calculadora_inst/Msub__sub0005_cy<5>)
-     XORCY:CI->O           1   0.654   0.423  calculadora_inst/Msub__sub0005_xor<6> (calculadora_inst/_sub0005<6>)
-     LUT2:I1->O            1   0.562   0.000  calculadora_inst/Msub__sub0006_lut<6> (calculadora_inst/Msub__sub0006_lut<6>)
-     XORCY:LI->O           1   0.565   0.423  calculadora_inst/Msub__sub0006_xor<6> (calculadora_inst/_sub0006<6>)
-     LUT2:I1->O            1   0.562   0.000  calculadora_inst/Msub__sub0007_lut<6> (calculadora_inst/Msub__sub0007_lut<6>)
-     XORCY:LI->O           1   0.565   0.423  calculadora_inst/Msub__sub0007_xor<6> (calculadora_inst/_sub0007<6>)
-     LUT2:I1->O            1   0.562   0.000  calculadora_inst/Msub__sub0008_lut<6> (calculadora_inst/Msub__sub0008_lut<6>)
-     XORCY:LI->O           1   0.565   0.423  calculadora_inst/Msub__sub0008_xor<6> (calculadora_inst/_sub0008<6>)
-     LUT2:I1->O            1   0.562   0.000  calculadora_inst/Msub_numerador_sub0000_lut<6> (calculadora_inst/Msub_numerador_sub0000_lut<6>)
-     XORCY:LI->O           2   0.565   0.446  calculadora_inst/Msub_numerador_sub0000_xor<6> (calculadora_inst/numerador_sub0000<6>)
-     LUT2:I1->O            1   0.562   0.000  calculadora_inst/Msub__sub0009_lut<6> (calculadora_inst/Msub__sub0009_lut<6>)
-     XORCY:LI->O           2   0.565   0.446  calculadora_inst/Msub__sub0009_xor<6> (calculadora_inst/_sub0009<6>)
-     LUT2:I1->O            1   0.562   0.000  calculadora_inst/Msub__sub0010_lut<6> (calculadora_inst/Msub__sub0010_lut<6>)
-     XORCY:LI->O           2   0.565   0.446  calculadora_inst/Msub__sub0010_xor<6> (calculadora_inst/_sub0010<6>)
-     LUT2:I1->O            1   0.562   0.000  calculadora_inst/Msub__sub0011_lut<6> (calculadora_inst/Msub__sub0011_lut<6>)
-     XORCY:LI->O           2   0.565   0.446  calculadora_inst/Msub__sub0011_xor<6> (calculadora_inst/_sub0011<6>)
-     LUT2:I1->O            1   0.562   0.000  calculadora_inst/Msub__sub0012_lut<6> (calculadora_inst/Msub__sub0012_lut<6>)
-     XORCY:LI->O           2   0.565   0.446  calculadora_inst/Msub__sub0012_xor<6> (calculadora_inst/_sub0012<6>)
-     LUT2:I1->O            1   0.562   0.000  calculadora_inst/Msub__sub0013_lut<6> (calculadora_inst/Msub__sub0013_lut<6>)
-     XORCY:LI->O           2   0.565   0.446  calculadora_inst/Msub__sub0013_xor<6> (calculadora_inst/_sub0013<6>)
-     LUT2:I1->O            1   0.562   0.000  calculadora_inst/Msub__sub0014_lut<6> (calculadora_inst/Msub__sub0014_lut<6>)
-     XORCY:LI->O           2   0.565   0.446  calculadora_inst/Msub__sub0014_xor<6> (calculadora_inst/_sub0014<6>)
-     LUT2:I1->O            1   0.562   0.000  calculadora_inst/Msub__sub0015_lut<6> (calculadora_inst/Msub__sub0015_lut<6>)
-     XORCY:LI->O           2   0.565   0.446  calculadora_inst/Msub__sub0015_xor<6> (calculadora_inst/_sub0015<6>)
-     LUT2:I1->O            1   0.562   0.000  calculadora_inst/Msub__sub0016_lut<6> (calculadora_inst/Msub__sub0016_lut<6>)
-     XORCY:LI->O           2   0.565   0.446  calculadora_inst/Msub__sub0016_xor<6> (calculadora_inst/_sub0016<6>)
-     LUT2:I1->O            1   0.562   0.000  calculadora_inst/Msub__sub0017_lut<6> (calculadora_inst/Msub__sub0017_lut<6>)
-     XORCY:LI->O           2   0.565   0.446  calculadora_inst/Msub__sub0017_xor<6> (calculadora_inst/_sub0017<6>)
-     LUT2:I1->O            1   0.562   0.000  calculadora_inst/Msub_numerador_sub0001_lut<6> (calculadora_inst/Msub_numerador_sub0001_lut<6>)
-     XORCY:LI->O           2   0.565   0.446  calculadora_inst/Msub_numerador_sub0001_xor<6> (calculadora_inst/numerador_sub0001<6>)
-     LUT2:I1->O            1   0.562   0.000  calculadora_inst/Msub__sub0018_lut<6> (calculadora_inst/Msub__sub0018_lut<6>)
-     XORCY:LI->O           2   0.565   0.446  calculadora_inst/Msub__sub0018_xor<6> (calculadora_inst/_sub0018<6>)
-     LUT2:I1->O            1   0.562   0.000  calculadora_inst/Msub_quociente_sub0287_lut<6> (calculadora_inst/Msub_quociente_sub0287_lut<6>)
-     XORCY:LI->O           9   0.565   0.763  calculadora_inst/Msub_quociente_sub0287_xor<6> (calculadora_inst/quociente_sub0287<6>)
-     LUT2:I1->O            1   0.562   0.000  calculadora_inst/Msub_numerador_addsub0000_lut<6> (calculadora_inst/Msub_numerador_addsub0000_lut<6>)
-     XORCY:LI->O           1   0.565   0.423  calculadora_inst/Msub_numerador_addsub0000_xor<6> (calculadora_inst/numerador_addsub0000<6>)
-     LUT2:I1->O            1   0.562   0.000  calculadora_inst/Msub_numerador_addsub0001_lut<6> (calculadora_inst/Msub_numerador_addsub0001_lut<6>)
-     XORCY:LI->O           1   0.565   0.423  calculadora_inst/Msub_numerador_addsub0001_xor<6> (calculadora_inst/numerador_addsub0001<6>)
-     LUT2:I1->O            1   0.562   0.000  calculadora_inst/Msub_numerador_addsub0002_lut<6> (calculadora_inst/Msub_numerador_addsub0002_lut<6>)
-     XORCY:LI->O           1   0.565   0.423  calculadora_inst/Msub_numerador_addsub0002_xor<6> (calculadora_inst/numerador_addsub0002<6>)
-     LUT2:I1->O            1   0.562   0.000  calculadora_inst/Msub_numerador_addsub0003_lut<6> (calculadora_inst/Msub_numerador_addsub0003_lut<6>)
-     XORCY:LI->O           1   0.565   0.423  calculadora_inst/Msub_numerador_addsub0003_xor<6> (calculadora_inst/numerador_addsub0003<6>)
-     LUT2:I1->O            1   0.562   0.000  calculadora_inst/Msub_numerador_addsub0004_lut<6> (calculadora_inst/Msub_numerador_addsub0004_lut<6>)
-     XORCY:LI->O           1   0.565   0.423  calculadora_inst/Msub_numerador_addsub0004_xor<6> (calculadora_inst/numerador_addsub0004<6>)
-     LUT2:I1->O            1   0.562   0.000  calculadora_inst/Msub_numerador_addsub0005_lut<6> (calculadora_inst/Msub_numerador_addsub0005_lut<6>)
-     XORCY:LI->O           1   0.565   0.423  calculadora_inst/Msub_numerador_addsub0005_xor<6> (calculadora_inst/numerador_addsub0005<6>)
-     LUT2:I1->O            1   0.562   0.000  calculadora_inst/Msub_numerador_addsub0006_lut<6> (calculadora_inst/Msub_numerador_addsub0006_lut<6>)
-     XORCY:LI->O           1   0.565   0.423  calculadora_inst/Msub_numerador_addsub0006_xor<6> (calculadora_inst/numerador_addsub0006<6>)
-     LUT2:I1->O            1   0.562   0.000  calculadora_inst/Msub_numerador_sub0002_lut<6> (calculadora_inst/Msub_numerador_sub0002_lut<6>)
-     XORCY:LI->O           2   0.565   0.446  calculadora_inst/Msub_numerador_sub0002_xor<6> (calculadora_inst/numerador_sub0002<6>)
-     LUT2:I1->O            1   0.562   0.000  calculadora_inst/Msub_quociente_sub0300_lut<6> (calculadora_inst/Msub_quociente_sub0300_lut<6>)
-     XORCY:LI->O          10   0.565   0.816  calculadora_inst/Msub_quociente_sub0300_xor<6> (calculadora_inst/quociente_sub0300<6>)
-     LUT2:I1->O            1   0.562   0.000  calculadora_inst/Msub_numerador_addsub0007_lut<6> (calculadora_inst/Msub_numerador_addsub0007_lut<6>)
-     XORCY:LI->O           1   0.565   0.423  calculadora_inst/Msub_numerador_addsub0007_xor<6> (calculadora_inst/numerador_addsub0007<6>)
-     LUT2:I1->O            1   0.562   0.000  calculadora_inst/Msub_numerador_addsub0008_lut<6> (calculadora_inst/Msub_numerador_addsub0008_lut<6>)
-     XORCY:LI->O           1   0.565   0.423  calculadora_inst/Msub_numerador_addsub0008_xor<6> (calculadora_inst/numerador_addsub0008<6>)
-     LUT2:I1->O            1   0.562   0.000  calculadora_inst/Msub_numerador_addsub0009_lut<6> (calculadora_inst/Msub_numerador_addsub0009_lut<6>)
-     XORCY:LI->O           1   0.565   0.423  calculadora_inst/Msub_numerador_addsub0009_xor<6> (calculadora_inst/numerador_addsub0009<6>)
-     LUT2:I1->O            1   0.562   0.000  calculadora_inst/Msub_numerador_addsub0010_lut<6> (calculadora_inst/Msub_numerador_addsub0010_lut<6>)
-     XORCY:LI->O           1   0.565   0.423  calculadora_inst/Msub_numerador_addsub0010_xor<6> (calculadora_inst/numerador_addsub0010<6>)
-     LUT2:I1->O            1   0.562   0.000  calculadora_inst/Msub_numerador_addsub0011_lut<6> (calculadora_inst/Msub_numerador_addsub0011_lut<6>)
-     XORCY:LI->O           1   0.565   0.423  calculadora_inst/Msub_numerador_addsub0011_xor<6> (calculadora_inst/numerador_addsub0011<6>)
-     LUT2:I1->O            1   0.562   0.000  calculadora_inst/Msub_numerador_addsub0012_lut<6> (calculadora_inst/Msub_numerador_addsub0012_lut<6>)
-     XORCY:LI->O           1   0.565   0.423  calculadora_inst/Msub_numerador_addsub0012_xor<6> (calculadora_inst/numerador_addsub0012<6>)
-     LUT2:I1->O            1   0.562   0.000  calculadora_inst/Msub_numerador_addsub0013_lut<6> (calculadora_inst/Msub_numerador_addsub0013_lut<6>)
-     XORCY:LI->O           1   0.565   0.423  calculadora_inst/Msub_numerador_addsub0013_xor<6> (calculadora_inst/numerador_addsub0013<6>)
-     LUT2:I1->O            1   0.562   0.000  calculadora_inst/Msub_numerador_addsub0014_lut<6> (calculadora_inst/Msub_numerador_addsub0014_lut<6>)
-     XORCY:LI->O           1   0.565   0.423  calculadora_inst/Msub_numerador_addsub0014_xor<6> (calculadora_inst/numerador_addsub0014<6>)
-     LUT2:I1->O            1   0.562   0.000  calculadora_inst/Msub_numerador_sub0003_lut<6> (calculadora_inst/Msub_numerador_sub0003_lut<6>)
-     XORCY:LI->O           2   0.565   0.446  calculadora_inst/Msub_numerador_sub0003_xor<6> (calculadora_inst/numerador_sub0003<6>)
-     LUT2:I1->O            1   0.562   0.000  calculadora_inst/Msub_quociente_sub0301_lut<6> (calculadora_inst/Msub_quociente_sub0301_lut<6>)
-     XORCY:LI->O          10   0.565   0.816  calculadora_inst/Msub_quociente_sub0301_xor<6> (calculadora_inst/quociente_sub0301<6>)
-     LUT2:I1->O            1   0.562   0.000  calculadora_inst/Msub_numerador_addsub0015_lut<6> (calculadora_inst/Msub_numerador_addsub0015_lut<6>)
-     XORCY:LI->O           1   0.565   0.423  calculadora_inst/Msub_numerador_addsub0015_xor<6> (calculadora_inst/numerador_addsub0015<6>)
-     LUT2:I1->O            1   0.562   0.000  calculadora_inst/Msub_numerador_addsub0016_lut<6> (calculadora_inst/Msub_numerador_addsub0016_lut<6>)
-     XORCY:LI->O           1   0.565   0.423  calculadora_inst/Msub_numerador_addsub0016_xor<6> (calculadora_inst/numerador_addsub0016<6>)
-     LUT2:I1->O            1   0.562   0.000  calculadora_inst/Msub_numerador_addsub0017_lut<6> (calculadora_inst/Msub_numerador_addsub0017_lut<6>)
-     XORCY:LI->O           1   0.565   0.423  calculadora_inst/Msub_numerador_addsub0017_xor<6> (calculadora_inst/numerador_addsub0017<6>)
-     LUT2:I1->O            1   0.562   0.000  calculadora_inst/Msub_numerador_addsub0018_lut<6> (calculadora_inst/Msub_numerador_addsub0018_lut<6>)
-     XORCY:LI->O           1   0.565   0.423  calculadora_inst/Msub_numerador_addsub0018_xor<6> (calculadora_inst/numerador_addsub0018<6>)
-     LUT2:I1->O            1   0.562   0.000  calculadora_inst/Msub_numerador_addsub0019_lut<6> (calculadora_inst/Msub_numerador_addsub0019_lut<6>)
-     XORCY:LI->O           1   0.565   0.423  calculadora_inst/Msub_numerador_addsub0019_xor<6> (calculadora_inst/numerador_addsub0019<6>)
-     LUT2:I1->O            1   0.562   0.000  calculadora_inst/Msub_numerador_addsub0020_lut<6> (calculadora_inst/Msub_numerador_addsub0020_lut<6>)
-     XORCY:LI->O           1   0.565   0.423  calculadora_inst/Msub_numerador_addsub0020_xor<6> (calculadora_inst/numerador_addsub0020<6>)
-     LUT2:I1->O            1   0.562   0.000  calculadora_inst/Msub_numerador_addsub0021_lut<6> (calculadora_inst/Msub_numerador_addsub0021_lut<6>)
-     XORCY:LI->O           1   0.565   0.423  calculadora_inst/Msub_numerador_addsub0021_xor<6> (calculadora_inst/numerador_addsub0021<6>)
-     LUT2:I1->O            1   0.562   0.000  calculadora_inst/Msub_numerador_addsub0022_lut<6> (calculadora_inst/Msub_numerador_addsub0022_lut<6>)
-     XORCY:LI->O           1   0.565   0.423  calculadora_inst/Msub_numerador_addsub0022_xor<6> (calculadora_inst/numerador_addsub0022<6>)
-     LUT2:I1->O            1   0.562   0.000  calculadora_inst/Msub_numerador_sub0004_lut<6> (calculadora_inst/Msub_numerador_sub0004_lut<6>)
-     XORCY:LI->O           2   0.565   0.446  calculadora_inst/Msub_numerador_sub0004_xor<6> (calculadora_inst/numerador_sub0004<6>)
-     LUT2:I1->O            1   0.562   0.000  calculadora_inst/Msub_quociente_sub0302_lut<6> (calculadora_inst/Msub_quociente_sub0302_lut<6>)
-     XORCY:LI->O          10   0.565   0.816  calculadora_inst/Msub_quociente_sub0302_xor<6> (calculadora_inst/quociente_sub0302<6>)
-     LUT2:I1->O            1   0.562   0.000  calculadora_inst/Msub_numerador_addsub0023_lut<6> (calculadora_inst/Msub_numerador_addsub0023_lut<6>)
-     XORCY:LI->O           1   0.565   0.423  calculadora_inst/Msub_numerador_addsub0023_xor<6> (calculadora_inst/numerador_addsub0023<6>)
-     LUT2:I1->O            1   0.562   0.000  calculadora_inst/Msub_numerador_addsub0024_lut<6> (calculadora_inst/Msub_numerador_addsub0024_lut<6>)
-     XORCY:LI->O           1   0.565   0.423  calculadora_inst/Msub_numerador_addsub0024_xor<6> (calculadora_inst/numerador_addsub0024<6>)
-     LUT2:I1->O            1   0.562   0.000  calculadora_inst/Msub_numerador_addsub0025_lut<6> (calculadora_inst/Msub_numerador_addsub0025_lut<6>)
-     XORCY:LI->O           1   0.565   0.423  calculadora_inst/Msub_numerador_addsub0025_xor<6> (calculadora_inst/numerador_addsub0025<6>)
-     LUT2:I1->O            1   0.562   0.000  calculadora_inst/Msub_numerador_addsub0026_lut<6> (calculadora_inst/Msub_numerador_addsub0026_lut<6>)
-     XORCY:LI->O           1   0.565   0.423  calculadora_inst/Msub_numerador_addsub0026_xor<6> (calculadora_inst/numerador_addsub0026<6>)
-     LUT2:I1->O            1   0.562   0.000  calculadora_inst/Msub_numerador_addsub0027_lut<6> (calculadora_inst/Msub_numerador_addsub0027_lut<6>)
-     XORCY:LI->O           1   0.565   0.423  calculadora_inst/Msub_numerador_addsub0027_xor<6> (calculadora_inst/numerador_addsub0027<6>)
-     LUT2:I1->O            1   0.562   0.000  calculadora_inst/Msub_numerador_addsub0028_lut<6> (calculadora_inst/Msub_numerador_addsub0028_lut<6>)
-     XORCY:LI->O           1   0.565   0.423  calculadora_inst/Msub_numerador_addsub0028_xor<6> (calculadora_inst/numerador_addsub0028<6>)
-     LUT2:I1->O            1   0.562   0.000  calculadora_inst/Msub_numerador_addsub0029_lut<6> (calculadora_inst/Msub_numerador_addsub0029_lut<6>)
-     XORCY:LI->O           1   0.565   0.423  calculadora_inst/Msub_numerador_addsub0029_xor<6> (calculadora_inst/numerador_addsub0029<6>)
-     LUT2:I1->O            1   0.562   0.000  calculadora_inst/Msub_numerador_addsub0030_lut<6> (calculadora_inst/Msub_numerador_addsub0030_lut<6>)
-     XORCY:LI->O           1   0.565   0.423  calculadora_inst/Msub_numerador_addsub0030_xor<6> (calculadora_inst/numerador_addsub0030<6>)
-     LUT2:I1->O            1   0.562   0.000  calculadora_inst/Msub_numerador_sub0005_lut<6> (calculadora_inst/Msub_numerador_sub0005_lut<6>)
-     XORCY:LI->O           2   0.565   0.446  calculadora_inst/Msub_numerador_sub0005_xor<6> (calculadora_inst/numerador_sub0005<6>)
-     LUT2:I1->O            1   0.562   0.000  calculadora_inst/Msub_quociente_sub0303_lut<6> (calculadora_inst/Msub_quociente_sub0303_lut<6>)
-     XORCY:LI->O          10   0.565   0.816  calculadora_inst/Msub_quociente_sub0303_xor<6> (calculadora_inst/quociente_sub0303<6>)
-     LUT2:I1->O            1   0.562   0.000  calculadora_inst/Msub_numerador_addsub0031_lut<6> (calculadora_inst/Msub_numerador_addsub0031_lut<6>)
-     XORCY:LI->O           1   0.565   0.423  calculadora_inst/Msub_numerador_addsub0031_xor<6> (calculadora_inst/numerador_addsub0031<6>)
-     LUT2:I1->O            1   0.562   0.000  calculadora_inst/Msub_numerador_addsub0032_lut<6> (calculadora_inst/Msub_numerador_addsub0032_lut<6>)
-     XORCY:LI->O           1   0.565   0.423  calculadora_inst/Msub_numerador_addsub0032_xor<6> (calculadora_inst/numerador_addsub0032<6>)
-     LUT2:I1->O            1   0.562   0.000  calculadora_inst/Msub_numerador_addsub0033_lut<6> (calculadora_inst/Msub_numerador_addsub0033_lut<6>)
-     XORCY:LI->O           1   0.565   0.423  calculadora_inst/Msub_numerador_addsub0033_xor<6> (calculadora_inst/numerador_addsub0033<6>)
-     LUT2:I1->O            1   0.562   0.000  calculadora_inst/Msub_numerador_addsub0034_lut<6> (calculadora_inst/Msub_numerador_addsub0034_lut<6>)
-     XORCY:LI->O           1   0.565   0.423  calculadora_inst/Msub_numerador_addsub0034_xor<6> (calculadora_inst/numerador_addsub0034<6>)
-     LUT2:I1->O            1   0.562   0.000  calculadora_inst/Msub_numerador_addsub0035_lut<6> (calculadora_inst/Msub_numerador_addsub0035_lut<6>)
-     XORCY:LI->O           1   0.565   0.423  calculadora_inst/Msub_numerador_addsub0035_xor<6> (calculadora_inst/numerador_addsub0035<6>)
-     LUT2:I1->O            1   0.562   0.000  calculadora_inst/Msub_numerador_addsub0036_lut<6> (calculadora_inst/Msub_numerador_addsub0036_lut<6>)
-     XORCY:LI->O           1   0.565   0.423  calculadora_inst/Msub_numerador_addsub0036_xor<6> (calculadora_inst/numerador_addsub0036<6>)
-     LUT2:I1->O            1   0.562   0.000  calculadora_inst/Msub_numerador_addsub0037_lut<6> (calculadora_inst/Msub_numerador_addsub0037_lut<6>)
-     XORCY:LI->O           1   0.565   0.423  calculadora_inst/Msub_numerador_addsub0037_xor<6> (calculadora_inst/numerador_addsub0037<6>)
-     LUT2:I1->O            1   0.562   0.000  calculadora_inst/Msub_numerador_addsub0038_lut<6> (calculadora_inst/Msub_numerador_addsub0038_lut<6>)
-     XORCY:LI->O           1   0.565   0.423  calculadora_inst/Msub_numerador_addsub0038_xor<6> (calculadora_inst/numerador_addsub0038<6>)
-     LUT2:I1->O            1   0.562   0.000  calculadora_inst/Msub_numerador_sub0006_lut<6> (calculadora_inst/Msub_numerador_sub0006_lut<6>)
-     XORCY:LI->O           2   0.565   0.446  calculadora_inst/Msub_numerador_sub0006_xor<6> (calculadora_inst/numerador_sub0006<6>)
-     LUT2:I1->O            1   0.562   0.000  calculadora_inst/Msub_quociente_sub0304_lut<6> (calculadora_inst/Msub_quociente_sub0304_lut<6>)
-     XORCY:LI->O          10   0.565   0.816  calculadora_inst/Msub_quociente_sub0304_xor<6> (calculadora_inst/quociente_sub0304<6>)
-     LUT2:I1->O            1   0.562   0.000  calculadora_inst/Msub_numerador_addsub0039_lut<6> (calculadora_inst/Msub_numerador_addsub0039_lut<6>)
-     XORCY:LI->O           1   0.565   0.423  calculadora_inst/Msub_numerador_addsub0039_xor<6> (calculadora_inst/numerador_addsub0039<6>)
-     LUT2:I1->O            1   0.562   0.000  calculadora_inst/Msub_numerador_addsub0040_lut<6> (calculadora_inst/Msub_numerador_addsub0040_lut<6>)
-     XORCY:LI->O           1   0.565   0.423  calculadora_inst/Msub_numerador_addsub0040_xor<6> (calculadora_inst/numerador_addsub0040<6>)
-     LUT2:I1->O            1   0.562   0.000  calculadora_inst/Msub_numerador_addsub0041_lut<6> (calculadora_inst/Msub_numerador_addsub0041_lut<6>)
-     XORCY:LI->O           1   0.565   0.423  calculadora_inst/Msub_numerador_addsub0041_xor<6> (calculadora_inst/numerador_addsub0041<6>)
-     LUT2:I1->O            1   0.562   0.000  calculadora_inst/Msub_numerador_addsub0042_lut<6> (calculadora_inst/Msub_numerador_addsub0042_lut<6>)
-     MUXCY:S->O            1   0.523   0.000  calculadora_inst/Msub_numerador_addsub0042_cy<6> (calculadora_inst/Msub_numerador_addsub0042_cy<6>)
-     XORCY:CI->O           1   0.654   0.357  calculadora_inst/Msub_numerador_addsub0042_xor<7> (calculadora_inst/numerador_addsub0042<7>)
-     INV:I->O              1   0.562   0.000  calculadora_inst/Msub_numerador_addsub0043_lut<7>_INV_0 (calculadora_inst/Msub_numerador_addsub0043_lut<7>)
-     MUXCY:S->O            1   0.523   0.000  calculadora_inst/Msub_numerador_addsub0043_cy<7> (calculadora_inst/Msub_numerador_addsub0043_cy<7>)
-     XORCY:CI->O           1   0.654   0.357  calculadora_inst/Msub_numerador_addsub0043_xor<8> (calculadora_inst/numerador_addsub0043<8>)
-     INV:I->O              1   0.562   0.000  calculadora_inst/Msub_numerador_addsub0044_lut<8>_INV_0 (calculadora_inst/Msub_numerador_addsub0044_lut<8>)
-     MUXCY:S->O            1   0.523   0.000  calculadora_inst/Msub_numerador_addsub0044_cy<8> (calculadora_inst/Msub_numerador_addsub0044_cy<8>)
-     XORCY:CI->O           1   0.654   0.357  calculadora_inst/Msub_numerador_addsub0044_xor<9> (calculadora_inst/numerador_addsub0044<9>)
-     INV:I->O              1   0.562   0.000  calculadora_inst/Msub_numerador_addsub0045_lut<9>_INV_0 (calculadora_inst/Msub_numerador_addsub0045_lut<9>)
-     MUXCY:S->O            1   0.523   0.000  calculadora_inst/Msub_numerador_addsub0045_cy<9> (calculadora_inst/Msub_numerador_addsub0045_cy<9>)
-     XORCY:CI->O           1   0.654   0.357  calculadora_inst/Msub_numerador_addsub0045_xor<10> (calculadora_inst/numerador_addsub0045<10>)
-     INV:I->O              1   0.562   0.000  calculadora_inst/Msub_numerador_addsub0046_lut<10>_INV_0 (calculadora_inst/Msub_numerador_addsub0046_lut<10>)
-     MUXCY:S->O            1   0.523   0.000  calculadora_inst/Msub_numerador_addsub0046_cy<10> (calculadora_inst/Msub_numerador_addsub0046_cy<10>)
-     XORCY:CI->O           1   0.654   0.357  calculadora_inst/Msub_numerador_addsub0046_xor<11> (calculadora_inst/numerador_addsub0046<11>)
-     INV:I->O              1   0.562   0.000  calculadora_inst/Msub_numerador_sub0007_lut<11>_INV_0 (calculadora_inst/Msub_numerador_sub0007_lut<11>)
-     MUXCY:S->O            1   0.523   0.000  calculadora_inst/Msub_numerador_sub0007_cy<11> (calculadora_inst/Msub_numerador_sub0007_cy<11>)
-     XORCY:CI->O           2   0.654   0.380  calculadora_inst/Msub_numerador_sub0007_xor<12> (calculadora_inst/numerador_sub0007<12>)
-     INV:I->O              1   0.562   0.000  calculadora_inst/Msub_quociente_sub0305_lut<12>_INV_0 (calculadora_inst/Msub_quociente_sub0305_lut<12>)
-     MUXCY:S->O            1   0.523   0.000  calculadora_inst/Msub_quociente_sub0305_cy<12> (calculadora_inst/Msub_quociente_sub0305_cy<12>)
-     XORCY:CI->O          10   0.654   0.750  calculadora_inst/Msub_quociente_sub0305_xor<13> (calculadora_inst/quociente_sub0305<13>)
-     INV:I->O              1   0.562   0.000  calculadora_inst/Msub_numerador_addsub0047_lut<13>_INV_0 (calculadora_inst/Msub_numerador_addsub0047_lut<13>)
-     MUXCY:S->O            1   0.523   0.000  calculadora_inst/Msub_numerador_addsub0047_cy<13> (calculadora_inst/Msub_numerador_addsub0047_cy<13>)
-     XORCY:CI->O           1   0.654   0.357  calculadora_inst/Msub_numerador_addsub0047_xor<14> (calculadora_inst/numerador_addsub0047<14>)
-     INV:I->O              1   0.562   0.000  calculadora_inst/Msub_numerador_addsub0048_lut<14>_INV_0 (calculadora_inst/Msub_numerador_addsub0048_lut<14>)
-     MUXCY:S->O            1   0.523   0.000  calculadora_inst/Msub_numerador_addsub0048_cy<14> (calculadora_inst/Msub_numerador_addsub0048_cy<14>)
-     XORCY:CI->O           1   0.654   0.357  calculadora_inst/Msub_numerador_addsub0048_xor<15> (calculadora_inst/numerador_addsub0048<15>)
-     INV:I->O              1   0.562   0.000  calculadora_inst/Msub_numerador_addsub0049_lut<15>_INV_0 (calculadora_inst/Msub_numerador_addsub0049_lut<15>)
-     MUXCY:S->O            1   0.523   0.000  calculadora_inst/Msub_numerador_addsub0049_cy<15> (calculadora_inst/Msub_numerador_addsub0049_cy<15>)
-     XORCY:CI->O           1   0.654   0.357  calculadora_inst/Msub_numerador_addsub0049_xor<16> (calculadora_inst/numerador_addsub0049<16>)
-     INV:I->O              1   0.562   0.000  calculadora_inst/Msub_numerador_addsub0050_lut<16>_INV_0 (calculadora_inst/Msub_numerador_addsub0050_lut<16>)
-     MUXCY:S->O            1   0.523   0.000  calculadora_inst/Msub_numerador_addsub0050_cy<16> (calculadora_inst/Msub_numerador_addsub0050_cy<16>)
-     XORCY:CI->O           1   0.654   0.357  calculadora_inst/Msub_numerador_addsub0050_xor<17> (calculadora_inst/numerador_addsub0050<17>)
-     INV:I->O              1   0.562   0.000  calculadora_inst/Msub_numerador_addsub0051_lut<17>_INV_0 (calculadora_inst/Msub_numerador_addsub0051_lut<17>)
-     MUXCY:S->O            1   0.523   0.000  calculadora_inst/Msub_numerador_addsub0051_cy<17> (calculadora_inst/Msub_numerador_addsub0051_cy<17>)
-     XORCY:CI->O           1   0.654   0.357  calculadora_inst/Msub_numerador_addsub0051_xor<18> (calculadora_inst/numerador_addsub0051<18>)
-     INV:I->O              1   0.562   0.000  calculadora_inst/Msub_numerador_addsub0052_lut<18>_INV_0 (calculadora_inst/Msub_numerador_addsub0052_lut<18>)
-     MUXCY:S->O            1   0.523   0.000  calculadora_inst/Msub_numerador_addsub0052_cy<18> (calculadora_inst/Msub_numerador_addsub0052_cy<18>)
-     XORCY:CI->O           1   0.654   0.357  calculadora_inst/Msub_numerador_addsub0052_xor<19> (calculadora_inst/numerador_addsub0052<19>)
-     INV:I->O              1   0.562   0.000  calculadora_inst/Msub_numerador_addsub0053_lut<19>_INV_0 (calculadora_inst/Msub_numerador_addsub0053_lut<19>)
-     MUXCY:S->O            1   0.523   0.000  calculadora_inst/Msub_numerador_addsub0053_cy<19> (calculadora_inst/Msub_numerador_addsub0053_cy<19>)
-     XORCY:CI->O           1   0.654   0.357  calculadora_inst/Msub_numerador_addsub0053_xor<20> (calculadora_inst/numerador_addsub0053<20>)
-     INV:I->O              1   0.562   0.000  calculadora_inst/Msub_numerador_addsub0054_lut<20>_INV_0 (calculadora_inst/Msub_numerador_addsub0054_lut<20>)
-     MUXCY:S->O            1   0.523   0.000  calculadora_inst/Msub_numerador_addsub0054_cy<20> (calculadora_inst/Msub_numerador_addsub0054_cy<20>)
-     XORCY:CI->O           1   0.654   0.357  calculadora_inst/Msub_numerador_addsub0054_xor<21> (calculadora_inst/numerador_addsub0054<21>)
-     INV:I->O              1   0.562   0.000  calculadora_inst/Msub_numerador_sub0008_lut<21>_INV_0 (calculadora_inst/Msub_numerador_sub0008_lut<21>)
-     MUXCY:S->O            1   0.523   0.000  calculadora_inst/Msub_numerador_sub0008_cy<21> (calculadora_inst/Msub_numerador_sub0008_cy<21>)
-     XORCY:CI->O           2   0.654   0.380  calculadora_inst/Msub_numerador_sub0008_xor<22> (calculadora_inst/numerador_sub0008<22>)
-     INV:I->O              1   0.562   0.000  calculadora_inst/Msub_quociente_addsub0001_lut<22>_INV_0 (calculadora_inst/Msub_quociente_addsub0001_lut<22>)
-     MUXCY:S->O            1   0.523   0.000  calculadora_inst/Msub_quociente_addsub0001_cy<22> (calculadora_inst/Msub_quociente_addsub0001_cy<22>)
-     XORCY:CI->O           2   0.654   0.380  calculadora_inst/Msub_quociente_addsub0001_xor<23> (calculadora_inst/quociente_addsub0001<23>)
-     INV:I->O              1   0.562   0.000  calculadora_inst/Msub_quociente_addsub0002_lut<23>_INV_0 (calculadora_inst/Msub_quociente_addsub0002_lut<23>)
-     MUXCY:S->O            1   0.523   0.000  calculadora_inst/Msub_quociente_addsub0002_cy<23> (calculadora_inst/Msub_quociente_addsub0002_cy<23>)
-     XORCY:CI->O           2   0.654   0.380  calculadora_inst/Msub_quociente_addsub0002_xor<24> (calculadora_inst/quociente_addsub0002<24>)
-     INV:I->O              1   0.562   0.000  calculadora_inst/Msub_quociente_addsub0003_lut<24>_INV_0 (calculadora_inst/Msub_quociente_addsub0003_lut<24>)
-     MUXCY:S->O            1   0.523   0.000  calculadora_inst/Msub_quociente_addsub0003_cy<24> (calculadora_inst/Msub_quociente_addsub0003_cy<24>)
-     XORCY:CI->O           2   0.654   0.380  calculadora_inst/Msub_quociente_addsub0003_xor<25> (calculadora_inst/quociente_addsub0003<25>)
-     INV:I->O              1   0.562   0.000  calculadora_inst/Msub_quociente_addsub0004_lut<25>_INV_0 (calculadora_inst/Msub_quociente_addsub0004_lut<25>)
-     MUXCY:S->O            1   0.523   0.000  calculadora_inst/Msub_quociente_addsub0004_cy<25> (calculadora_inst/Msub_quociente_addsub0004_cy<25>)
-     XORCY:CI->O           2   0.654   0.380  calculadora_inst/Msub_quociente_addsub0004_xor<26> (calculadora_inst/quociente_addsub0004<26>)
-     INV:I->O              1   0.562   0.000  calculadora_inst/Msub_quociente_addsub0005_lut<26>_INV_0 (calculadora_inst/Msub_quociente_addsub0005_lut<26>)
-     MUXCY:S->O            1   0.523   0.000  calculadora_inst/Msub_quociente_addsub0005_cy<26> (calculadora_inst/Msub_quociente_addsub0005_cy<26>)
-     XORCY:CI->O           2   0.654   0.380  calculadora_inst/Msub_quociente_addsub0005_xor<27> (calculadora_inst/quociente_addsub0005<27>)
-     INV:I->O              1   0.562   0.000  calculadora_inst/Msub_quociente_addsub0006_lut<27>_INV_0 (calculadora_inst/Msub_quociente_addsub0006_lut<27>)
-     MUXCY:S->O            1   0.523   0.000  calculadora_inst/Msub_quociente_addsub0006_cy<27> (calculadora_inst/Msub_quociente_addsub0006_cy<27>)
-     XORCY:CI->O           2   0.654   0.380  calculadora_inst/Msub_quociente_addsub0006_xor<28> (calculadora_inst/quociente_addsub0006<28>)
-     INV:I->O              1   0.562   0.000  calculadora_inst/Msub_quociente_addsub0007_lut<28>_INV_0 (calculadora_inst/Msub_quociente_addsub0007_lut<28>)
-     MUXCY:S->O            1   0.523   0.000  calculadora_inst/Msub_quociente_addsub0007_cy<28> (calculadora_inst/Msub_quociente_addsub0007_cy<28>)
-     XORCY:CI->O           2   0.654   0.380  calculadora_inst/Msub_quociente_addsub0007_xor<29> (calculadora_inst/quociente_addsub0007<29>)
-     INV:I->O              1   0.562   0.000  calculadora_inst/Msub_quociente_addsub0008_lut<29>_INV_0 (calculadora_inst/Msub_quociente_addsub0008_lut<29>)
-     MUXCY:S->O            1   0.523   0.000  calculadora_inst/Msub_quociente_addsub0008_cy<29> (calculadora_inst/Msub_quociente_addsub0008_cy<29>)
-     XORCY:CI->O           2   0.654   0.380  calculadora_inst/Msub_quociente_addsub0008_xor<30> (calculadora_inst/quociente_addsub0008<30>)
-     INV:I->O              1   0.562   0.000  calculadora_inst/Msub_quociente_addsub0009_lut<30>_INV_0 (calculadora_inst/Msub_quociente_addsub0009_lut<30>)
-     MUXCY:S->O            0   0.523   0.000  calculadora_inst/Msub_quociente_addsub0009_cy<30> (calculadora_inst/Msub_quociente_addsub0009_cy<30>)
-     XORCY:CI->O           1   0.654   0.357  calculadora_inst/Msub_quociente_addsub0009_xor<31> (calculadora_inst/quociente_addsub0009<31>)
-     INV:I->O              1   0.562   0.000  calculadora_inst/Mcompar_quociente_cmp_lt0099_lut<13>1_INV_0 (calculadora_inst/Mcompar_quociente_cmp_lt0099_lut<13>)
-     MUXCY:S->O            3   0.637   0.453  calculadora_inst/Mcompar_quociente_cmp_lt0099_cy<13> (calculadora_inst/Mcompar_quociente_cmp_lt0099_cy<13>)
-     LUT4:I3->O            1   0.561   0.000  calculadora_inst/resultado_int_mux0001<2>306 (calculadora_inst/resultado_int_mux0001<2>)
-     FDRE:D                    0.197          calculadora_inst/resultado_int_2
+     FDR:C->Q              4   0.495   0.607  op1_0 (op1_0)
+     LUT2:I0->O            1   0.561   0.000  calculadora_inst/Msub_tmp_sub0000_lut<0> (calculadora_inst/Msub_tmp_sub0000_lut<0>)
+     MUXCY:S->O            1   0.523   0.000  calculadora_inst/Msub_tmp_sub0000_cy<0> (calculadora_inst/Msub_tmp_sub0000_cy<0>)
+     MUXCY:CI->O           1   0.065   0.000  calculadora_inst/Msub_tmp_sub0000_cy<1> (calculadora_inst/Msub_tmp_sub0000_cy<1>)
+     MUXCY:CI->O           1   0.065   0.000  calculadora_inst/Msub_tmp_sub0000_cy<2> (calculadora_inst/Msub_tmp_sub0000_cy<2>)
+     MUXCY:CI->O           1   0.065   0.000  calculadora_inst/Msub_tmp_sub0000_cy<3> (calculadora_inst/Msub_tmp_sub0000_cy<3>)
+     MUXCY:CI->O           1   0.065   0.000  calculadora_inst/Msub_tmp_sub0000_cy<4> (calculadora_inst/Msub_tmp_sub0000_cy<4>)
+     MUXCY:CI->O           0   0.065   0.000  calculadora_inst/Msub_tmp_sub0000_cy<5> (calculadora_inst/Msub_tmp_sub0000_cy<5>)
+     XORCY:CI->O          12   0.654   0.817  calculadora_inst/Msub_tmp_sub0000_xor<6> (calculadora_inst/tmp_sub0000<6>)
+     MULT18X18SIO:A6->P8    2   3.974   0.446  calculadora_inst/Mmult_tmp_mult0002 (calculadora_inst/tmp_mult0002<8>)
+     LUT2:I1->O            1   0.562   0.359  calculadora_inst/Madd_res_abs_not0000<8>_SW0 (N131)
+     LUT4:I3->O            1   0.561   0.000  calculadora_inst/Madd_res_abs_not0000<8> (calculadora_inst/Madd_res_abs_not0000<8>)
+     MUXCY:S->O            0   0.523   0.000  calculadora_inst/Madd_res_abs_addsub0000_cy<8> (calculadora_inst/Madd_res_abs_addsub0000_cy<8>)
+     XORCY:CI->O           1   0.654   0.380  calculadora_inst/Madd_res_abs_addsub0000_xor<9> (calculadora_inst/res_abs_addsub0000<9>)
+     LUT3:I2->O            1   0.561   0.000  calculadora_inst/res_abs_mux0001<9>1 (calculadora_inst/res_abs_mux0001<9>)
+     FDRE:D                    0.197          calculadora_inst/res_abs_9
     ----------------------------------------
-    Total                    180.538ns (136.002ns logic, 44.536ns route)
-                                       (75.3% logic, 24.7% route)
+    Total                     12.199ns (9.590ns logic, 2.609ns route)
+                                       (78.6% logic, 21.4% route)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
-  Total number of paths / destination ports: 137 / 137
+  Total number of paths / destination ports: 153 / 153
 -------------------------------------------------------------------------
-Offset:              3.419ns (Levels of Logic = 2)
+Offset:              4.116ns (Levels of Logic = 3)
   Source:            reset (PAD)
-  Destination:       teclado_inst/bit_count_3 (FF)
+  Destination:       teclado_inst/recebido (FF)
   Destination Clock: clk rising
 
-  Data Path: reset to teclado_inst/bit_count_3
+  Data Path: reset to teclado_inst/recebido
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IBUF:I->O           125   0.824   1.100  reset_IBUF (reset_IBUF)
-     LUT4:I3->O            4   0.561   0.499  teclado_inst/bit_count_or00003 (teclado_inst/bit_count_or0000)
-     FDRE:R                    0.435          teclado_inst/bit_count_0
+     IBUF:I->O           140   0.824   1.210  reset_IBUF (reset_IBUF)
+     LUT4:I0->O            2   0.561   0.446  teclado_inst/recebido_not000111 (teclado_inst/recebido_mux0000)
+     LUT2:I1->O            1   0.562   0.357  teclado_inst/recebido_not00011 (teclado_inst/recebido_not0001)
+     FDE:CE                    0.156          teclado_inst/recebido
     ----------------------------------------
-    Total                      3.419ns (1.820ns logic, 1.599ns route)
-                                       (53.2% logic, 46.8% route)
+    Total                      4.116ns (2.103ns logic, 2.013ns route)
+                                       (51.1% logic, 48.9% route)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
   Total number of paths / destination ports: 12 / 12
 -------------------------------------------------------------------------
 Offset:              5.641ns (Levels of Logic = 1)
-  Source:            calculadora_inst/erro_reg (FF)
+  Source:            calculadora_inst/erro_r (FF)
   Destination:       erro_div_zero (PAD)
   Source Clock:      clk rising
 
-  Data Path: calculadora_inst/erro_reg to erro_div_zero
+  Data Path: calculadora_inst/erro_r to erro_div_zero
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDRE:C->Q            10   0.495   0.750  calculadora_inst/erro_reg (calculadora_inst/erro_reg)
+     FDRE:C->Q            10   0.495   0.750  calculadora_inst/erro_r (calculadora_inst/erro_r)
      OBUF:I->O                 4.396          erro_div_zero_OBUF (erro_div_zero)
     ----------------------------------------
     Total                      5.641ns (4.891ns logic, 0.750ns route)
@@ -1461,15 +691,15 @@ Offset:              5.641ns (Levels of Logic = 1)
 =========================================================================
 
 
-Total REAL time to Xst completion: 169.00 secs
-Total CPU time to Xst completion: 37.18 secs
+Total REAL time to Xst completion: 8.00 secs
+Total CPU time to Xst completion: 1.55 secs
  
 --> 
 
 
-Total memory usage is 924428 kilobytes
+Total memory usage is 632928 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :   42 (   0 filtered)
-Number of infos    :   10 (   0 filtered)
+Number of warnings :   37 (   0 filtered)
+Number of infos    :    8 (   0 filtered)
 

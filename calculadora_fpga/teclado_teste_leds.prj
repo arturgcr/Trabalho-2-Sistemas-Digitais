@@ -1,0 +1,2 @@
+vhdl work "src/teclado_ps2.vhd"
+vhdl work "teclado_teste_leds.vhd"

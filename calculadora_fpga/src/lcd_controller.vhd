@@ -1,45 +1,34 @@
-library IEEE;
-use IEEE.STD_LOGIC_1164.ALL;
-use IEEE.NUMERIC_STD.ALL;
-
-entity lcd_controller is
-    Port (
-        clk         : in  std_logic;
-        reset       : in  std_logic;
-        escrever    : in  std_logic;
-        ascii1      : in  std_logic_vector(7 downto 0);
-        ascii2      : in  std_logic_vector(7 downto 0);
-        ascii3      : in  std_logic_vector(7 downto 0);
-        ascii4      : in  std_logic_vector(7 downto 0);
-        ascii5      : in  std_logic_vector(7 downto 0);
-
-        lcd_rs      : out std_logic;
-        lcd_rw      : out std_logic;
-        lcd_enable  : out std_logic;
-        lcd_data    : out std_logic_vector(7 downto 0)
-    );
-end lcd_controller;
-
 architecture Behavioral of lcd_controller is
 
     type estado_type is (
         INIT_0, INIT_1, INIT_2, INIT_3,
         SET_CURSOR,
-        WRITE_1, WRITE_2, WRITE_3, WRITE_4, WRITE_5,
+        WRITE_PREP, WRITE_PULSE, WRITE_WAIT,
         HOLD
     );
-    signal estado     : estado_type := INIT_0;
-    signal contador   : integer range 0 to 50000 := 0;  -- delay interno
-    signal enable_reg : std_logic := '0';
-    signal rs_reg     : std_logic := '0';
-    signal data_reg   : std_logic_vector(7 downto 0) := (others => '0');
+    signal estado       : estado_type := INIT_0;
+    signal contador     : integer range 0 to 65535 := 0;
+    signal write_index  : integer range 0 to 4 := 0;
+
+    signal enable_reg   : std_logic := '0';
+    signal rs_reg       : std_logic := '0';
+    signal data_reg     : std_logic_vector(7 downto 0) := (others => '0');
+
+    type ascii_array is array(0 to 4) of std_logic_vector(7 downto 0);
+    signal ascii_vec : ascii_array;
 
 begin
 
+    ascii_vec(0) <= ascii1;
+    ascii_vec(1) <= ascii2;
+    ascii_vec(2) <= ascii3;
+    ascii_vec(3) <= ascii4;
+    ascii_vec(4) <= ascii5;
+
     lcd_enable <= enable_reg;
-    lcd_rs <= rs_reg;
-    lcd_rw <= '0';  -- sempre escrita
-    lcd_data <= data_reg;
+    lcd_rs     <= rs_reg;
+    lcd_rw     <= '0';
+    lcd_data   <= data_reg;
 
     process(clk)
     begin
@@ -49,33 +38,33 @@ begin
                 contador <= 0;
                 enable_reg <= '0';
                 data_reg <= (others => '0');
+                write_index <= 0;
 
             elsif contador > 0 then
                 contador <= contador - 1;
-                enable_reg <= '0';
+                enable_reg <= '0'; -- mantém enable desativado enquanto espera
 
             else
                 case estado is
-
                     when INIT_0 =>
-                        data_reg <= x"38";  -- 2 linhas, 5x8
+                        data_reg <= x"38";
                         rs_reg <= '0';
                         enable_reg <= '1';
-                        contador <= 10000;
+                        contador <= 2000;
                         estado <= INIT_1;
 
                     when INIT_1 =>
-                        data_reg <= x"0C";  -- display ON, cursor OFF
+                        data_reg <= x"0C";
                         rs_reg <= '0';
                         enable_reg <= '1';
-                        contador <= 10000;
+                        contador <= 2000;
                         estado <= INIT_2;
 
                     when INIT_2 =>
-                        data_reg <= x"01";  -- clear display
+                        data_reg <= x"01";
                         rs_reg <= '0';
                         enable_reg <= '1';
-                        contador <= 20000;
+                        contador <= 5000;
                         estado <= INIT_3;
 
                     when INIT_3 =>
@@ -84,51 +73,38 @@ begin
                         end if;
 
                     when SET_CURSOR =>
-                        data_reg <= x"80";  -- cursor posição 0
+                        data_reg <= x"80";
                         rs_reg <= '0';
                         enable_reg <= '1';
-                        contador <= 10000;
-                        estado <= WRITE_1;
+                        contador <= 2000;
+                        write_index <= 0;
+                        estado <= WRITE_PREP;
 
-                    when WRITE_1 =>
-                        data_reg <= ascii1;
+                    when WRITE_PREP =>
+                        data_reg <= ascii_vec(write_index);
                         rs_reg <= '1';
-                        enable_reg <= '1';
-                        contador <= 5000;
-                        estado <= WRITE_2;
+                        estado <= WRITE_PULSE;
 
-                    when WRITE_2 =>
-                        data_reg <= ascii2;
-                        rs_reg <= '1';
+                    when WRITE_PULSE =>
                         enable_reg <= '1';
-                        contador <= 5000;
-                        estado <= WRITE_3;
+                        contador <= 500;
+                        estado <= WRITE_WAIT;
 
-                    when WRITE_3 =>
-                        data_reg <= ascii3;
-                        rs_reg <= '1';
-                        enable_reg <= '1';
-                        contador <= 5000;
-                        estado <= WRITE_4;
-
-                    when WRITE_4 =>
-                        data_reg <= ascii4;
-                        rs_reg <= '1';
-                        enable_reg <= '1';
-                        contador <= 5000;
-                        estado <= WRITE_5;
-
-                    when WRITE_5 =>
-                        data_reg <= ascii5;
-                        rs_reg <= '1';
-                        enable_reg <= '1';
-                        contador <= 5000;
-                        estado <= HOLD;
+                    when WRITE_WAIT =>
+                        enable_reg <= '0';
+                        contador <= 2000;
+                        if write_index < 4 then
+                            write_index <= write_index + 1;
+                            estado <= WRITE_PREP;
+                        else
+                            estado <= HOLD;
+                        end if;
 
                     when HOLD =>
                         if escrever = '0' then
                             estado <= INIT_3;
                         end if;
+
                 end case;
             end if;
         end if;

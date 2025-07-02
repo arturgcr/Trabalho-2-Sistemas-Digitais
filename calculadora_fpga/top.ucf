@@ -1,0 +1,46 @@
+
+# PlanAhead Generated physical constraints 
+
+NET "lcd_data[7]" LOC = Y15;
+NET "lcd_data[6]" LOC = AB16;
+NET "lcd_data[5]" LOC = Y16;
+NET "lcd_data[4]" LOC = AA12;
+NET "lcd_data[3]" LOC = AB12;
+NET "lcd_data[2]" LOC = AB17;
+NET "lcd_data[1]" LOC = AB18;
+NET "lcd_data[0]" LOC = Y13;
+
+# PlanAhead Generated IO constraints 
+
+NET "lcd_data[7]" IOSTANDARD = LVCMOS33;
+NET "lcd_data[6]" IOSTANDARD = LVCMOS33;
+NET "lcd_data[5]" IOSTANDARD = LVCMOS33;
+NET "lcd_data[4]" IOSTANDARD = LVCMOS33;
+NET "lcd_data[3]" IOSTANDARD = LVCMOS33;
+NET "lcd_data[2]" IOSTANDARD = LVCMOS33;
+NET "lcd_data[1]" IOSTANDARD = LVCMOS33;
+NET "lcd_data[0]" IOSTANDARD = LVCMOS33;
+NET "clk" IOSTANDARD = LVCMOS33;
+
+# PlanAhead Generated physical constraints 
+
+NET "clk" LOC = E12;
+NET "erro_div_zero" LOC = W21;
+NET "lcd_enable" LOC = AB4;
+NET "lcd_rs" LOC = Y14;
+NET "lcd_rw" LOC = W13;
+NET "ps2_clk" LOC = W12;
+NET "ps2_data" LOC = V11;
+NET "reset" LOC = T15;
+NET "resultado_pronto" LOC = Y22;
+
+# PlanAhead Generated IO constraints 
+
+NET "resultado_pronto" IOSTANDARD = LVCMOS33;
+NET "erro_div_zero" IOSTANDARD = LVCMOS33;
+NET "lcd_enable" IOSTANDARD = LVCMOS33;
+NET "lcd_rs" IOSTANDARD = LVCMOS33;
+NET "lcd_rw" IOSTANDARD = LVCMOS33;
+NET "ps2_clk" IOSTANDARD = LVCMOS33;
+NET "reset" IOSTANDARD = LVCMOS33;
+NET "ps2_data" IOSTANDARD = LVCMOS33;

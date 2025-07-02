@@ -4,98 +4,76 @@ use IEEE.NUMERIC_STD.ALL;
 
 entity logica_calculadora is
     Port (
-        clk         : in  std_logic;
-        reset       : in  std_logic;
-        start       : in  std_logic;
+        clk       : in  std_logic;
+        reset     : in  std_logic;
+        start     : in  std_logic;
 
-        op1         : in  integer range 0 to 99;
-        op2         : in  integer range 0 to 99;
-        operador    : in  std_logic_vector(7 downto 0);
+        op1       : in  integer range 0 to 99;
+        op2       : in  integer range 0 to 99;
+        operador  : in  std_logic_vector(7 downto 0);
 
-        resultado   : out integer range 0 to 999;
-        negativo    : out std_logic;
-        erro        : out std_logic;
-        pronto      : out std_logic
+        resultado : out integer range 0 to 999;
+        negativo  : out std_logic;
+        erro      : out std_logic;
+        pronto    : out std_logic
     );
 end logica_calculadora;
 
 architecture Behavioral of logica_calculadora is
-    signal resultado_int : integer range -999 to 999 := 0;
-    signal pronto_reg    : std_logic := '0';
-    signal erro_reg      : std_logic := '0';
-    signal negativo_reg  : std_logic := '0';
-    signal resultado_abs : integer range 0 to 999 := 0;
+    signal res_int   : signed(9 downto 0) := (others => '0');
+    signal pronto_r  : std_logic := '0';
+    signal erro_r    : std_logic := '0';
+    signal neg_r     : std_logic := '0';
+    signal res_abs   : unsigned(9 downto 0) := (others => '0');
 begin
 
     process(clk)
-        variable numerador   : integer;
-        variable denominador : integer;
-        variable quociente   : integer;
+        variable tmp : signed(9 downto 0);
     begin
         if rising_edge(clk) then
             if reset = '1' then
-                resultado_int <= 0;
-                resultado_abs <= 0;
-                pronto_reg <= '0';
-                erro_reg <= '0';
-                negativo_reg <= '0';
+                res_int   <= (others => '0');
+                res_abs   <= (others => '0');
+                pronto_r  <= '0';
+                erro_r    <= '0';
+                neg_r     <= '0';
 
             elsif start = '1' then
-                pronto_reg <= '0';
-                erro_reg <= '0';
-                negativo_reg <= '0';
+                pronto_r <= '0';
+                erro_r   <= '0';
+                neg_r    <= '0';
 
                 case operador is
                     when x"2B" =>  -- '+'
-                        resultado_int <= (op1 + op2) * 10;
+                        tmp := resize(to_signed(op1 + op2, 10) * 10, 10);
 
                     when x"2D" =>  -- '-'
-                        resultado_int <= (op1 - op2) * 10;
-
-                    when x"2A" =>  -- '*'
-                        resultado_int <= (op1 * op2) * 10;
-
-                    when x"2F" =>  -- '/'
-                        if op2 = 0 then
-                            resultado_int <= 0;
-                            erro_reg <= '1';
-                        else
-                            numerador   := op1 * 10;
-                            denominador := op2;
-                            quociente   := 0;
-
-                            -- loop limitado para evitar erro de síntese
-                            for i in 0 to 99 loop
-                                exit when numerador < denominador;
-                                numerador := numerador - denominador;
-                                quociente := quociente + 1;
-                            end loop;
-
-                            resultado_int <= quociente;
-                        end if;
+                        tmp := resize(to_signed(op1 - op2, 10) * 10, 10);
 
                     when others =>
-                        resultado_int <= 0;
-                        erro_reg <= '1';
+                        tmp := (others => '0');
+                        erro_r <= '1';
                 end case;
 
-                if resultado_int < 0 then
-                    negativo_reg <= '1';
-                    resultado_abs <= -resultado_int;
+                res_int <= tmp;
+
+                if tmp < 0 then
+                    neg_r <= '1';
+                    res_abs <= unsigned(-tmp);
                 else
-                    negativo_reg <= '0';
-                    resultado_abs <= resultado_int;
+                    neg_r <= '0';
+                    res_abs <= unsigned(tmp);
                 end if;
 
-                pronto_reg <= '1';
+                pronto_r <= '1';
             end if;
         end if;
     end process;
 
     -- Saídas
-    resultado <= resultado_abs;
-    negativo  <= negativo_reg;
-    erro      <= erro_reg;
-    pronto    <= pronto_reg;
+    resultado <= to_integer(res_abs);
+    negativo  <= neg_r;
+    erro      <= erro_r;
+    pronto    <= pronto_r;
 
 end Behavioral;

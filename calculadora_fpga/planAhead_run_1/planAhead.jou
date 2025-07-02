@@ -1,0 +1,79 @@
+#-----------------------------------------------------------
+# PlanAhead v14.7 (64-bit)
+# Build 321239 by xbuild on Fri Sep 27 19:24:36 MDT 2013
+# Start of session at: Tue Jul  1 18:51:36 2025
+# Process ID: 3384
+# Log file: /home/ise/VirtualBox/Trabalho-2-Sistemas-Digitais/calculadora_fpga/planAhead_run_1/planAhead.log
+# Journal file: /home/ise/VirtualBox/Trabalho-2-Sistemas-Digitais/calculadora_fpga/planAhead_run_1/planAhead.jou
+#-----------------------------------------------------------
+start_gui
+source /home/ise/VirtualBox/Trabalho-2-Sistemas-Digitais/calculadora_fpga/pa.fromHdl.tcl
+update_compile_order -fileset sim_1
+set_property package_pin "" [get_ports [list  {lcd_data[7]}]]
+startgroup
+set_property package_pin Y15 [get_ports {lcd_data[7]}]
+endgroup
+startgroup
+set_property package_pin AB16 [get_ports {lcd_data[6]}]
+endgroup
+startgroup
+set_property package_pin Y16 [get_ports {lcd_data[5]}]
+endgroup
+startgroup
+set_property package_pin AA12 [get_ports {lcd_data[4]}]
+endgroup
+startgroup
+set_property package_pin AA12 [get_ports {lcd_data[4]}]
+endgroup
+startgroup
+set_property package_pin AB12 [get_ports {lcd_data[3]}]
+endgroup
+startgroup
+set_property package_pin AB17 [get_ports {lcd_data[2]}]
+endgroup
+startgroup
+set_property package_pin AB18 [get_ports {lcd_data[1]}]
+endgroup
+startgroup
+set_property package_pin Y13 [get_ports {lcd_data[0]}]
+endgroup
+set_property iostandard LVCMOS33 [get_ports [list {lcd_data[7]} {lcd_data[6]} {lcd_data[5]} {lcd_data[4]} {lcd_data[3]} {lcd_data[2]} {lcd_data[1]} {lcd_data[0]}]]
+set_property iostandard LVCMOS25 [get_ports [list lcd_rs]]
+set_property iostandard LVCMOS33 [get_ports [list clk]]
+startgroup
+set_property package_pin E12 [get_ports clk]
+endgroup
+startgroup
+set_property package_pin W21 [get_ports erro_div_zero]
+endgroup
+startgroup
+set_property package_pin AB4 [get_ports lcd_enable]
+endgroup
+startgroup
+set_property package_pin Y14 [get_ports lcd_rs]
+endgroup
+startgroup
+set_property package_pin W13 [get_ports lcd_rw]
+endgroup
+startgroup
+set_property package_pin W12 [get_ports ps2_clk]
+endgroup
+startgroup
+set_property package_pin V11 [get_ports ps2_data]
+endgroup
+startgroup
+set_property package_pin T15 [get_ports reset]
+endgroup
+startgroup
+set_property package_pin Y22 [get_ports resultado_pronto]
+endgroup
+set_property iostandard LVCMOS33 [get_ports [list resultado_pronto]]
+set_property iostandard LVCMOS33 [get_ports [list erro_div_zero]]
+set_property iostandard LVCMOS33 [get_ports [list lcd_enable]]
+set_property iostandard LVCMOS33 [get_ports [list lcd_rs]]
+set_property iostandard LVCMOS33 [get_ports [list lcd_rw]]
+set_property iostandard LVCMOS25 [get_ports [list ps2_clk]]
+set_property iostandard LVCMOS33 [get_ports [list ps2_clk]]
+set_property iostandard LVCMOS33 [get_ports [list reset]]
+set_property iostandard LVCMOS33 [get_ports [list ps2_data]]
+save_constraints
