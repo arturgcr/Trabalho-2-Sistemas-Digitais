@@ -4,35 +4,35 @@ use IEEE.NUMERIC_STD.ALL;
 
 entity ascii_converter is
     Port (
-        valor       : in  integer range 0 to 999;
-        negativo    : in  std_logic;
+        valor       : in  integer range 0 to 999;           -- Input value to be converted
+        negativo    : in  std_logic;                        -- Signal for negative number
 
-        ascii1      : out std_logic_vector(7 downto 0);
-        ascii2      : out std_logic_vector(7 downto 0);
-        ascii3      : out std_logic_vector(7 downto 0);
-        ascii4      : out std_logic_vector(7 downto 0);
-        ascii5      : out std_logic_vector(7 downto 0)
+        ascii1      : out std_logic_vector(7 downto 0);     -- Sign character ('-' or space)
+        ascii2      : out std_logic_vector(7 downto 0);     -- Tens digit ASCII
+        ascii3      : out std_logic_vector(7 downto 0);     -- Units digit ASCII
+        ascii4      : out std_logic_vector(7 downto 0);     -- Decimal point '.'
+        ascii5      : out std_logic_vector(7 downto 0)      -- Decimal part ASCII
     );
 end ascii_converter;
 
 architecture Behavioral of ascii_converter is
-    signal inteiro : integer range 0 to 99 := 0;
-    signal decimal : integer range 0 to 9 := 0;
-    signal dezena  : integer range 0 to 9 := 0;
-    signal unidade : integer range 0 to 9 := 0;
+    signal inteiro : integer range 0 to 99 := 0;            -- Whole number part
+    signal decimal : integer range 0 to 9 := 0;             -- Decimal part (1 digit)
+    signal dezena  : integer range 0 to 9 := 0;             -- Tens digit
+    signal unidade : integer range 0 to 9 := 0;             -- Units digit
 begin
     process(valor, negativo)
         variable i : integer := 0;
     begin
-        -- Estimar valor / 10 por subtrações
+        -- Estimate valor / 10 using repeated subtractions
         i := 0;
         while ((i + 1) * 10 <= valor) loop
             i := i + 1;
         end loop;
-        inteiro <= i;                             -- Parte inteira (0–99)
-        decimal <= valor - (i * 10);              -- Parte decimal (resto da divisão)
+        inteiro <= i;                        -- The full part, up to 99
+        decimal <= valor - (i * 10);         -- Decimal digit is the remainr
 
-        -- Separar dezena e unidade da parte inteira (0–9)
+        -- Extract tens and units from the whole part
         if i >= 90 then
             dezena <= 9; unidade <= i - 90;
         elsif i >= 80 then
@@ -55,21 +55,21 @@ begin
             dezena <= 0; unidade <= i;
         end if;
 
-        -- ascii1: sinal
+        -- ascii1 holds sign: '-' if negative, space otherwise
         if negativo = '1' then
             ascii1 <= x"2D"; -- '-'
         else
-            ascii1 <= x"20"; -- espaço
+            ascii1 <= x"20"; -- whitespace
         end if;
 
-        -- ascii2 e ascii3: parte inteira
+        -- Convert tens and units to ASCII digits
         ascii2 <= std_logic_vector(to_unsigned(dezena + 48, 8));
         ascii3 <= std_logic_vector(to_unsigned(unidade + 48, 8));
 
-        -- ascii4: ponto
-        ascii4 <= x"2E";
+        -- ascii4 is decimal point
+        ascii4 <= x"2E";  -- '.'
 
-        -- ascii5: decimal
+        -- ascii5: last is de decimal digit
         ascii5 <= std_logic_vector(to_unsigned(decimal + 48, 8));
     end process;
 end Behavioral;

@@ -19,35 +19,43 @@ end top;
 
 architecture Behavioral of top is
 
+    -- State machine definition
     type state_type is (IDLE, DIG1, OPERADOR, DIG2, CALCULA, ESCREVE_LCD);
     signal state : state_type := IDLE;
 
+    -- Signals for keyboard input and ASCII decoding
     signal ascii_tecla  : std_logic_vector(7 downto 0);
     signal tecla_pronta : std_logic;
     signal tecla_lida   : std_logic := '0';
 
+    -- Operands and operator
     signal op1, op2 : integer range 0 to 99 := 0;
     signal operador_ascii : std_logic_vector(7 downto 0) := (others => '0');
 
+    -- Calculation control
     signal iniciar_calc : std_logic := '0';
     signal calc_pronto  : std_logic := '0';
     signal resultado    : integer range 0 to 999 := 0;
     signal sinal_neg    : std_logic := '0';
     signal erro         : std_logic := '0';
 
+    -- ASCII representation of result
     signal conv1, conv2, conv3, conv4, conv5 : std_logic_vector(7 downto 0);
     signal a1, a2, a3, a4, a5 : std_logic_vector(7 downto 0);
 
+    -- LCD writing logic
     signal escrever_lcd : std_logic := '0';
     signal lcd_wait_counter : integer range 0 to 500000 := 0;
     constant LCD_WAIT_TIME  : integer := 250000;
 
+    -- Individual digits for operands
     signal op1_ascii1, op1_ascii2 : std_logic_vector(7 downto 0);
     signal op2_ascii1, op2_ascii2 : std_logic_vector(7 downto 0);
     signal op1_dig_count, op2_dig_count : integer range 0 to 2 := 0;
 
 begin
 
+    -- Keyboard input module instance
     teclado_inst : entity work.teclado_ps2
         port map (
             clk        => clk,
@@ -58,6 +66,7 @@ begin
             pronto     => tecla_pronta
         );
 
+    -- Calculator logic instance
     calculadora_inst : entity work.logica_calculadora
         port map (
             clk       => clk,
@@ -72,6 +81,7 @@ begin
             pronto    => calc_pronto
         );
 
+    -- Result to ASCII converter
     ascii_conv_inst : entity work.ascii_converter
         port map (
             valor     => resultado,
@@ -83,6 +93,7 @@ begin
             ascii5    => conv5
         );
 
+    -- LCD controller instance
     lcd_ctrl_inst : entity work.lcd_controller
         port map (
             clk         => clk,
@@ -99,10 +110,12 @@ begin
             lcd_data    => lcd_data
         );
 
+    -- Main FSM process
     process(clk)
     begin
         if rising_edge(clk) then
             if reset = '1' then
+                -- Reset all states and variables
                 state <= IDLE;
                 op1 <= 0; op2 <= 0;
                 operador_ascii <= (others => '0');
@@ -111,6 +124,7 @@ begin
                 lcd_wait_counter <= 0;
                 tecla_lida <= '0';
 
+                -- Clear LCD output buffer
                 a1 <= (others => '0'); a2 <= (others => '0');
                 a3 <= (others => '0'); a4 <= (others => '0');
                 a5 <= (others => '0');
@@ -123,6 +137,7 @@ begin
 
                     case state is
                         when IDLE =>
+                            -- Wait for first digit of op1
                             if ascii_tecla >= x"30" and ascii_tecla <= x"39" then
                                 op1 <= to_integer(unsigned(ascii_tecla)) - 48;
                                 op1_ascii1 <= ascii_tecla;
@@ -135,6 +150,7 @@ begin
                             end if;
 
                         when DIG1 =>
+                            -- Append second digit or get operator
                             if ascii_tecla >= x"30" and ascii_tecla <= x"39" then
                                 op1 <= op1 * 10 + (to_integer(unsigned(ascii_tecla)) - 48);
                                 op1_ascii2 <= ascii_tecla;
@@ -152,6 +168,7 @@ begin
                             end if;
 
                         when OPERADOR =>
+                            -- Wait for first digit of second operand
                             if ascii_tecla >= x"30" and ascii_tecla <= x"39" then
                                 op2 <= to_integer(unsigned(ascii_tecla)) - 48;
                                 op2_ascii1 <= ascii_tecla;
@@ -163,6 +180,7 @@ begin
                             end if;
 
                         when DIG2 =>
+                            -- Receiv da second digit or '='
                             if ascii_tecla >= x"30" and ascii_tecla <= x"39" then
                                 op2 <= op2 * 10 + (to_integer(unsigned(ascii_tecla)) - 48);
                                 op2_ascii2 <= ascii_tecla;
@@ -180,20 +198,25 @@ begin
                     end case;
 
                 elsif tecla_pronta = '0' then
+                    -- Reset read flag when key released
                     tecla_lida <= '0';
                 end if;
 
                 case state is
                     when CALCULA =>
+                        -- Start calculation
                         if iniciar_calc = '1' then
                             iniciar_calc <= '0';
                         end if;
 
+                        -- Wait for calc done
                         if calc_pronto = '1' then
                             if erro = '1' then
+                                -- Show "ERROR" on LCD
                                 a1 <= x"45"; a2 <= x"52"; a3 <= x"52";
                                 a4 <= x"4F"; a5 <= x"20";
                             else
+                                -- Show the result ascii
                                 a1 <= conv1; a2 <= conv2;
                                 a3 <= conv3; a4 <= conv4; a5 <= conv5;
                             end if;
@@ -205,8 +228,10 @@ begin
                     when ESCREVE_LCD =>
                         escrever_lcd <= '0';
                         if lcd_wait_counter > 0 then
+                            -- Wait until LCD delay is over
                             lcd_wait_counter <= lcd_wait_counter - 1;
                         else
+                            -- Go bak to IDLE
                             state <= IDLE;
                         end if;
 
@@ -216,6 +241,7 @@ begin
         end if;
     end process;
 
+    -- Output status signals
     resultado_pronto <= calc_pronto;
     erro_div_zero <= erro;
 
