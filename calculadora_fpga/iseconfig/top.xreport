@@ -1,11 +1,11 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <report-views version="2.0" >
  <header>
-  <DateModified>2025-07-02T03:33:57</DateModified>
+  <DateModified>2025-07-09T01:53:04</DateModified>
   <ModuleName>top</ModuleName>
   <SummaryTimeStamp>2025-07-02T03:27:26</SummaryTimeStamp>
-  <SavedFilePath>/home/ise/VirtualBox/Trabalho-2-Sistemas-Digitais/calculadora_fpga/iseconfig/top.xreport</SavedFilePath>
-  <ImplementationReportsDirectory>/home/ise/VirtualBox/Trabalho-2-Sistemas-Digitais/calculadora_fpga/</ImplementationReportsDirectory>
+  <SavedFilePath>C:/Users/rafam/OneDrive/Documentos/Facul/Sistemas Digitais/Trabalho 2/Trabalho-2-Sistemas-Digitais/calculadora_fpga/iseconfig/top.xreport</SavedFilePath>
+  <ImplementationReportsDirectory>C:/Users/rafam/OneDrive/Documentos/Facul/Sistemas Digitais/Trabalho 2/Trabalho-2-Sistemas-Digitais/calculadora_fpga\</ImplementationReportsDirectory>
   <DateInitialized>2025-07-02T03:33:00</DateInitialized>
   <EnableMessageFiltering>false</EnableMessageFiltering>
  </header>

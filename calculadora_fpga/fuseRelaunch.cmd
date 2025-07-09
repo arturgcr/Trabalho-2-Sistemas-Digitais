@@ -1,0 +1,1 @@
+-intstyle "ise" -incremental -o "C:/Users/rafam/OneDrive/Documentos/Facul/Sistemas Digitais/Trabalho 2/Trabalho-2-Sistemas-Digitais/calculadora_fpga/teclado_ps2_tb_isim_beh.exe" -prj "C:/Users/rafam/OneDrive/Documentos/Facul/Sistemas Digitais/Trabalho 2/Trabalho-2-Sistemas-Digitais/calculadora_fpga/teclado_ps2_tb_beh.prj" "work.teclado_ps2_tb" 

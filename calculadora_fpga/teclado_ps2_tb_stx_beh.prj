@@ -1,0 +1,2 @@
+vhdl isim_temp "src/teclado_ps2.vhd"
+vhdl isim_temp "src/teclado_ps2_tb.vhd"
