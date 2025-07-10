@@ -1,12 +1,12 @@
-AR logica_calculadora behavioral "C:/Users/rafam/OneDrive/Documentos/Facul/Sistemas Digitais/Trabalho 2/Trabalho-2-Sistemas-Digitais/calculadora_fpga/src/logica_calculadora.vhd" sub00/vhpl03 1752130112
-AR final_lcd behavioral "C:/Users/rafam/OneDrive/Documentos/Facul/Sistemas Digitais/Trabalho 2/Trabalho-2-Sistemas-Digitais/calculadora_fpga/src/final_lcd.vhd" sub00/vhpl11 1752130116
-AR ascii_converter behavioral "C:/Users/rafam/OneDrive/Documentos/Facul/Sistemas Digitais/Trabalho 2/Trabalho-2-Sistemas-Digitais/calculadora_fpga/src/ascii_converter.vhd" sub00/vhpl05 1752130114
+AR logica_calculadora behavioral "C:/Users/rafam/OneDrive/Documentos/Facul/Sistemas Digitais/Trabalho 2/Trabalho-2-Sistemas-Digitais/calculadora_fpga/src/logica_calculadora.vhd" sub00/vhpl03 1752131084
+AR final_lcd behavioral "C:/Users/rafam/OneDrive/Documentos/Facul/Sistemas Digitais/Trabalho 2/Trabalho-2-Sistemas-Digitais/calculadora_fpga/src/final_lcd.vhd" sub00/vhpl11 1752131088
+AR ascii_converter behavioral "C:/Users/rafam/OneDrive/Documentos/Facul/Sistemas Digitais/Trabalho 2/Trabalho-2-Sistemas-Digitais/calculadora_fpga/src/ascii_converter.vhd" sub00/vhpl05 1752131086
 EN lcd_controller NULL /home/ise/VirtualBox/Trabalho-2-Sistemas-Digitais/calculadora_fpga/src/lcd_controller.vhd sub00/vhpl07 1751431118
-EN teclado_ps2 NULL "C:/Users/rafam/OneDrive/Documentos/Facul/Sistemas Digitais/Trabalho 2/Trabalho-2-Sistemas-Digitais/calculadora_fpga/src/teclado_ps2.vhd" sub00/vhpl00 1752130109
-AR teclado_ps2 behavioral "C:/Users/rafam/OneDrive/Documentos/Facul/Sistemas Digitais/Trabalho 2/Trabalho-2-Sistemas-Digitais/calculadora_fpga/src/teclado_ps2.vhd" sub00/vhpl01 1752130110
-EN top NULL "C:/Users/rafam/OneDrive/Documentos/Facul/Sistemas Digitais/Trabalho 2/Trabalho-2-Sistemas-Digitais/calculadora_fpga/src/top.vhd" sub00/vhpl06 1752130117
-EN logica_calculadora NULL "C:/Users/rafam/OneDrive/Documentos/Facul/Sistemas Digitais/Trabalho 2/Trabalho-2-Sistemas-Digitais/calculadora_fpga/src/logica_calculadora.vhd" sub00/vhpl02 1752130111
-EN ascii_converter NULL "C:/Users/rafam/OneDrive/Documentos/Facul/Sistemas Digitais/Trabalho 2/Trabalho-2-Sistemas-Digitais/calculadora_fpga/src/ascii_converter.vhd" sub00/vhpl04 1752130113
+EN teclado_ps2 NULL "C:/Users/rafam/OneDrive/Documentos/Facul/Sistemas Digitais/Trabalho 2/Trabalho-2-Sistemas-Digitais/calculadora_fpga/src/teclado_ps2.vhd" sub00/vhpl00 1752131081
+AR teclado_ps2 behavioral "C:/Users/rafam/OneDrive/Documentos/Facul/Sistemas Digitais/Trabalho 2/Trabalho-2-Sistemas-Digitais/calculadora_fpga/src/teclado_ps2.vhd" sub00/vhpl01 1752131082
+EN top NULL "C:/Users/rafam/OneDrive/Documentos/Facul/Sistemas Digitais/Trabalho 2/Trabalho-2-Sistemas-Digitais/calculadora_fpga/src/top.vhd" sub00/vhpl06 1752131089
+EN logica_calculadora NULL "C:/Users/rafam/OneDrive/Documentos/Facul/Sistemas Digitais/Trabalho 2/Trabalho-2-Sistemas-Digitais/calculadora_fpga/src/logica_calculadora.vhd" sub00/vhpl02 1752131083
+EN ascii_converter NULL "C:/Users/rafam/OneDrive/Documentos/Facul/Sistemas Digitais/Trabalho 2/Trabalho-2-Sistemas-Digitais/calculadora_fpga/src/ascii_converter.vhd" sub00/vhpl04 1752131085
 AR lcd_controller behavioral /home/ise/VirtualBox/Trabalho-2-Sistemas-Digitais/calculadora_fpga/src/lcd_controller.vhd sub00/vhpl08 1751431119
-EN final_lcd NULL "C:/Users/rafam/OneDrive/Documentos/Facul/Sistemas Digitais/Trabalho 2/Trabalho-2-Sistemas-Digitais/calculadora_fpga/src/final_lcd.vhd" sub00/vhpl10 1752130115
-AR top behavioral "C:/Users/rafam/OneDrive/Documentos/Facul/Sistemas Digitais/Trabalho 2/Trabalho-2-Sistemas-Digitais/calculadora_fpga/src/top.vhd" sub00/vhpl09 1752130118
+EN final_lcd NULL "C:/Users/rafam/OneDrive/Documentos/Facul/Sistemas Digitais/Trabalho 2/Trabalho-2-Sistemas-Digitais/calculadora_fpga/src/final_lcd.vhd" sub00/vhpl10 1752131087
+AR top behavioral "C:/Users/rafam/OneDrive/Documentos/Facul/Sistemas Digitais/Trabalho 2/Trabalho-2-Sistemas-Digitais/calculadora_fpga/src/top.vhd" sub00/vhpl09 1752131090

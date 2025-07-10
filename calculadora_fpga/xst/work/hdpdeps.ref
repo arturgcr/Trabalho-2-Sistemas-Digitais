@@ -12,39 +12,39 @@ FL /home/ise/VirtualBox/Trabalho-2-Sistemas-Digitais/calculadora_fpga/src/teclad
 FL /home/ise/VirtualBox/Trabalho-2-Sistemas-Digitais/calculadora_fpga/src/top.vhd 2025/07/02.04:38:28 P.20131013
 FL "C:/Users/rafam/OneDrive/Documentos/Facul/Sistemas Digitais/Trabalho 2/Trabalho-2-Sistemas-Digitais/calculadora_fpga/final_lcd.vhd" 2025/07/10.04:16:14 P.20131013
 FL "C:/Users/rafam/OneDrive/Documentos/Facul/Sistemas Digitais/Trabalho 2/Trabalho-2-Sistemas-Digitais/calculadora_fpga/src/ascii_converter.vhd" 2025/07/08.03:29:58 P.20131013
-EN work/ascii_converter 1752130113 \
+EN work/ascii_converter 1752131085 \
       FL "C:/Users/rafam/OneDrive/Documentos/Facul/Sistemas Digitais/Trabalho 2/Trabalho-2-Sistemas-Digitais/calculadora_fpga/src/ascii_converter.vhd" \
       PB ieee/std_logic_1164 1381692176 PB ieee/NUMERIC_STD 1381692181
-AR work/ascii_converter/Behavioral 1752130114 \
+AR work/ascii_converter/Behavioral 1752131086 \
       FL "C:/Users/rafam/OneDrive/Documentos/Facul/Sistemas Digitais/Trabalho 2/Trabalho-2-Sistemas-Digitais/calculadora_fpga/src/ascii_converter.vhd" \
-      EN work/ascii_converter 1752130113
+      EN work/ascii_converter 1752131085
 FL "C:/Users/rafam/OneDrive/Documentos/Facul/Sistemas Digitais/Trabalho 2/Trabalho-2-Sistemas-Digitais/calculadora_fpga/src/final_lcd.vhd" 2025/07/10.04:16:14 P.20131013
-EN work/final_lcd 1752130115 \
+EN work/final_lcd 1752131087 \
       FL "C:/Users/rafam/OneDrive/Documentos/Facul/Sistemas Digitais/Trabalho 2/Trabalho-2-Sistemas-Digitais/calculadora_fpga/src/final_lcd.vhd" \
       PB ieee/std_logic_1164 1381692176 PB ieee/std_logic_arith 1381692177 \
       PB ieee/STD_LOGIC_UNSIGNED 1381692179 PB ieee/NUMERIC_STD 1381692181
-AR work/final_lcd/Behavioral 1752130116 \
+AR work/final_lcd/Behavioral 1752131088 \
       FL "C:/Users/rafam/OneDrive/Documentos/Facul/Sistemas Digitais/Trabalho 2/Trabalho-2-Sistemas-Digitais/calculadora_fpga/src/final_lcd.vhd" \
-      EN work/final_lcd 1752130115
+      EN work/final_lcd 1752131087
 FL "C:/Users/rafam/OneDrive/Documentos/Facul/Sistemas Digitais/Trabalho 2/Trabalho-2-Sistemas-Digitais/calculadora_fpga/src/logica_calculadora.vhd" 2025/07/08.03:29:58 P.20131013
-EN work/logica_calculadora 1752130111 \
+EN work/logica_calculadora 1752131083 \
       FL "C:/Users/rafam/OneDrive/Documentos/Facul/Sistemas Digitais/Trabalho 2/Trabalho-2-Sistemas-Digitais/calculadora_fpga/src/logica_calculadora.vhd" \
       PB ieee/std_logic_1164 1381692176 PB ieee/NUMERIC_STD 1381692181
-AR work/logica_calculadora/Behavioral 1752130112 \
+AR work/logica_calculadora/Behavioral 1752131084 \
       FL "C:/Users/rafam/OneDrive/Documentos/Facul/Sistemas Digitais/Trabalho 2/Trabalho-2-Sistemas-Digitais/calculadora_fpga/src/logica_calculadora.vhd" \
-      EN work/logica_calculadora 1752130111
+      EN work/logica_calculadora 1752131083
 FL "C:/Users/rafam/OneDrive/Documentos/Facul/Sistemas Digitais/Trabalho 2/Trabalho-2-Sistemas-Digitais/calculadora_fpga/src/teclado_ps2.vhd" 2025/07/10.04:35:55 P.20131013
-EN work/teclado_ps2 1752130109 \
+EN work/teclado_ps2 1752131081 \
       FL "C:/Users/rafam/OneDrive/Documentos/Facul/Sistemas Digitais/Trabalho 2/Trabalho-2-Sistemas-Digitais/calculadora_fpga/src/teclado_ps2.vhd" \
       PB ieee/std_logic_1164 1381692176 PB ieee/NUMERIC_STD 1381692181
-AR work/teclado_ps2/Behavioral 1752130110 \
+AR work/teclado_ps2/Behavioral 1752131082 \
       FL "C:/Users/rafam/OneDrive/Documentos/Facul/Sistemas Digitais/Trabalho 2/Trabalho-2-Sistemas-Digitais/calculadora_fpga/src/teclado_ps2.vhd" \
-      EN work/teclado_ps2 1752130109
+      EN work/teclado_ps2 1752131081
 FL "C:/Users/rafam/OneDrive/Documentos/Facul/Sistemas Digitais/Trabalho 2/Trabalho-2-Sistemas-Digitais/calculadora_fpga/src/top.vhd" 2025/07/10.05:20:36 P.20131013
-EN work/top 1752130117 \
+EN work/top 1752131089 \
       FL "C:/Users/rafam/OneDrive/Documentos/Facul/Sistemas Digitais/Trabalho 2/Trabalho-2-Sistemas-Digitais/calculadora_fpga/src/top.vhd" \
       PB ieee/std_logic_1164 1381692176 PB ieee/NUMERIC_STD 1381692181
-AR work/top/Behavioral 1752130118 \
+AR work/top/Behavioral 1752131090 \
       FL "C:/Users/rafam/OneDrive/Documentos/Facul/Sistemas Digitais/Trabalho 2/Trabalho-2-Sistemas-Digitais/calculadora_fpga/src/top.vhd" \
-      EN work/top 1752130117 CP work/teclado_ps2 CP work/logica_calculadora \
+      EN work/top 1752131089 CP work/teclado_ps2 CP work/logica_calculadora \
       CP work/ascii_converter CP work/final_lcd
