@@ -1,0 +1,29 @@
+Command line:
+   tb_logica_calculadora_isim_beh.exe
+     -simmode  gui
+     -simrunnum  0
+     -socket  64008
+
+Thu Jul 10 04:55:33 2025
+
+
+ Elaboration Time: 0.046875 sec
+
+ Current Memory Usage: 5150.38 Meg
+
+ Total Signals          : 25
+ Total Nets             : 22
+ Total Signal Drivers   : 15
+ Total Blocks           : 4
+ Total Primitive Blocks : 3
+ Total Processes        : 7
+ Total Traceable Variables  : 15
+ Total Scalar Nets and Variables : 605
+Total Line Count : 79
+
+ Total Simulation Time: 0.046875 sec
+
+ Current Memory Usage: 4678.52 Meg
+
+Thu Jul 10 05:41:45 2025
+

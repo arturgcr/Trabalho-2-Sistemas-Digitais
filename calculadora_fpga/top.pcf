@@ -1,24 +1,25 @@
 //! **************************************************************************
-// Written by: Map P.20131013 on Wed Jul 02 04:39:10 2025
+// Written by: Map P.20131013 on Thu Jul 10 05:49:00 2025
 //! **************************************************************************
 
 SCHEMATIC START;
+COMP "OE" LOCATE = SITE "AB4" LEVEL 1;
+COMP "RS" LOCATE = SITE "Y14" LEVEL 1;
+COMP "RW" LOCATE = SITE "W13" LEVEL 1;
+COMP "LED" LOCATE = SITE "V20" LEVEL 1;
 COMP "clk" LOCATE = SITE "E12" LEVEL 1;
 COMP "erro_div_zero" LOCATE = SITE "W21" LEVEL 1;
-COMP "lcd_data<0>" LOCATE = SITE "Y13" LEVEL 1;
-COMP "lcd_data<1>" LOCATE = SITE "AB18" LEVEL 1;
-COMP "lcd_data<2>" LOCATE = SITE "AB17" LEVEL 1;
-COMP "lcd_data<3>" LOCATE = SITE "AB12" LEVEL 1;
-COMP "lcd_data<4>" LOCATE = SITE "AA12" LEVEL 1;
-COMP "lcd_data<5>" LOCATE = SITE "Y16" LEVEL 1;
-COMP "lcd_data<6>" LOCATE = SITE "AB16" LEVEL 1;
-COMP "lcd_data<7>" LOCATE = SITE "Y15" LEVEL 1;
 COMP "ps2_clk" LOCATE = SITE "W12" LEVEL 1;
 COMP "reset" LOCATE = SITE "T15" LEVEL 1;
-COMP "lcd_enable" LOCATE = SITE "AB4" LEVEL 1;
 COMP "ps2_data" LOCATE = SITE "V11" LEVEL 1;
-COMP "lcd_rs" LOCATE = SITE "Y14" LEVEL 1;
-COMP "lcd_rw" LOCATE = SITE "W13" LEVEL 1;
+COMP "LCD_DB<0>" LOCATE = SITE "Y13" LEVEL 1;
+COMP "LCD_DB<1>" LOCATE = SITE "AB18" LEVEL 1;
+COMP "LCD_DB<2>" LOCATE = SITE "AB17" LEVEL 1;
+COMP "LCD_DB<3>" LOCATE = SITE "AB12" LEVEL 1;
+COMP "LCD_DB<4>" LOCATE = SITE "AA12" LEVEL 1;
+COMP "LCD_DB<5>" LOCATE = SITE "Y16" LEVEL 1;
+COMP "LCD_DB<6>" LOCATE = SITE "AB16" LEVEL 1;
+COMP "LCD_DB<7>" LOCATE = SITE "Y15" LEVEL 1;
 COMP "resultado_pronto" LOCATE = SITE "Y22" LEVEL 1;
 SCHEMATIC END;
 

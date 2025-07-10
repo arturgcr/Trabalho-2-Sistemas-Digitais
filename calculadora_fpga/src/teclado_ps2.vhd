@@ -92,7 +92,7 @@ begin
                     when x"7B" => dado_reg <= x"2D"; -- '-'
                     when x"7C" => dado_reg <= x"2A"; -- '*'
                     when x"4A" => dado_reg <= x"2F"; -- '/'
-                    when x"5A" => dado_reg <= x"3D"; -- '='
+                    when x"5A" => dado_reg <= x"3D"; -- 'Enter (numpad)'
 
                     -- Special keys
                     when x"66" => dado_reg <= x"08"; -- Backspace

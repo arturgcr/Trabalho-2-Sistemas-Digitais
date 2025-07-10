@@ -1,0 +1,2 @@
+vhdl isim_temp "src/logica_calculadora.vhd"
+vhdl isim_temp "logica_calculadora_tb.vhd"
