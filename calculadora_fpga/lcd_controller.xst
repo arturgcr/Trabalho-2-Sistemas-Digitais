@@ -1,5 +1,0 @@
-set -tmpdir "/home/ise/VirtualBox/Trabalho-2-Sistemas-Digitais/calculadora_fpga/xst/projnav.tmp"
-set -xsthdpdir "/home/ise/VirtualBox/Trabalho-2-Sistemas-Digitais/calculadora_fpga/xst"
-elaborate
--ifn lcd_controller.prj
--ifmt mixed

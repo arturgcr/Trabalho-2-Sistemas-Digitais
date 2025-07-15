@@ -1,0 +1,8 @@
+INTSTYLE=impact
+INFILE=/home/sd/Desktop/teste3/Trabalho-2-Sistemas-Digitais/calculadora_fpga/impact.xsl
+OUTFILE=/home/sd/Desktop/teste3/Trabalho-2-Sistemas-Digitais/calculadora_fpga/impact.xsl
+FAMILY=Multiple
+PART=Multiple
+WORKINGDIR=/home/sd/Desktop/teste3/Trabalho-2-Sistemas-Digitais/calculadora_fpga
+LICENSE=iMPACT
+USER_INFO=iMPACT

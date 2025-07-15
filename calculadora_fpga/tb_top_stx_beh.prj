@@ -1,0 +1,6 @@
+vhdl isim_temp "src/teclado_ps2.vhd"
+vhdl isim_temp "src/logica_calculadora.vhd"
+vhdl isim_temp "src/final_lcd.vhd"
+vhdl isim_temp "src/ascii_converter.vhd"
+vhdl isim_temp "src/top.vhd"
+vhdl isim_temp "top_tb.vhd"

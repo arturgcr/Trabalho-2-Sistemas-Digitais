@@ -1,0 +1,473 @@
+Release 14.7 - xst P.20131013 (lin64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+--> 
+Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.08 secs
+ 
+--> 
+Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.08 secs
+ 
+--> 
+Reading design: modified_lcd.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Compilation
+  3) Design Hierarchy Analysis
+  4) HDL Analysis
+  5) HDL Synthesis
+     5.1) HDL Synthesis Report
+  6) Advanced HDL Synthesis
+     6.1) Advanced HDL Synthesis Report
+  7) Low Level Synthesis
+  8) Partition Report
+  9) Final Report
+	9.1) Device utilization summary
+	9.2) Partition Resource Summary
+	9.3) TIMING REPORT
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "modified_lcd.prj"
+Input Format                       : mixed
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "modified_lcd"
+Output Format                      : NGC
+Target Device                      : xc3s700an-5-fgg484
+
+---- Source Options
+Top Module Name                    : modified_lcd
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Mux Style                          : Auto
+Decoder Extraction                 : YES
+Priority Encoder Extraction        : Yes
+Shift Register Extraction          : YES
+Logical Shifter Extraction         : YES
+XOR Collapsing                     : YES
+ROM Style                          : Auto
+Mux Extraction                     : Yes
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Multiplier Style                   : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 100000
+Add Generic Clock Buffer(BUFG)     : 24
+Register Duplication               : YES
+Slice Packing                      : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Yes
+Use Synchronous Set                : Yes
+Use Synchronous Reset              : Yes
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+Verilog 2001                       : YES
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Compilation                              *
+=========================================================================
+Compiling vhdl file "/home/sd/Desktop/teste3/Trabalho-2-Sistemas-Digitais/calculadora_fpga/src/modified_lcd.vhd" in Library work.
+Architecture behavioral of Entity modified_lcd is up to date.
+
+=========================================================================
+*                     Design Hierarchy Analysis                         *
+=========================================================================
+Analyzing hierarchy for entity <modified_lcd> in library <work> (architecture <behavioral>).
+
+
+=========================================================================
+*                            HDL Analysis                               *
+=========================================================================
+Analyzing Entity <modified_lcd> in library <work> (Architecture <behavioral>).
+Entity <modified_lcd> analyzed. Unit <modified_lcd> generated.
+
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Performing bidirectional port resolution...
+
+Synthesizing Unit <modified_lcd>.
+    Related source file is "/home/sd/Desktop/teste3/Trabalho-2-Sistemas-Digitais/calculadora_fpga/src/modified_lcd.vhd".
+    Found 24x10-bit ROM for signal <RS$rom0000> created at line 218.
+    Found finite state machine <FSM_0> for signal <stCurW>.
+    -----------------------------------------------------------------------
+    | States             | 3                                              |
+    | Transitions        | 4                                              |
+    | Inputs             | 1                                              |
+    | Outputs            | 1                                              |
+    | Clock              | OneUSClk                  (rising_edge)        |
+    | Reset              | rst                       (positive)           |
+    | Reset type         | synchronous                                    |
+    | Reset State        | stidle                                         |
+    | Power Up State     | stidle                                         |
+    | Encoding           | automatic                                      |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Using one-hot encoding for signal <stCur>.
+    Using one-hot encoding for signal <stNext>.
+    Found 32-bit up counter for signal <clkCount>.
+    Found 17-bit up counter for signal <count>.
+    Found 5-bit up counter for signal <lcd_cmd_ptr>.
+    Found 1-bit register for signal <OneUSClk>.
+    Found 10-bit register for signal <stCur>.
+    Summary:
+	inferred   1 Finite State Machine(s).
+	inferred   1 ROM(s).
+	inferred   3 Counter(s).
+	inferred  11 D-type flip-flop(s).
+Unit <modified_lcd> synthesized.
+
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# ROMs                                                 : 1
+ 24x10-bit ROM                                         : 1
+# Counters                                             : 3
+ 17-bit up counter                                     : 1
+ 32-bit up counter                                     : 1
+ 5-bit up counter                                      : 1
+# Registers                                            : 2
+ 1-bit register                                        : 1
+ 10-bit register                                       : 1
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+Analyzing FSM <FSM_0> for best encoding.
+Optimizing FSM <stCurW/FSM> on signal <stCurW[1:2]> with user encoding.
+----------------------
+ State    | Encoding
+----------------------
+ strw     | 00
+ stenable | 01
+ stidle   | 10
+----------------------
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# FSMs                                                 : 1
+# ROMs                                                 : 1
+ 24x10-bit ROM                                         : 1
+# Counters                                             : 3
+ 17-bit up counter                                     : 1
+ 32-bit up counter                                     : 1
+ 5-bit up counter                                      : 1
+# Registers                                            : 11
+ Flip-Flops                                            : 11
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+
+Optimizing unit <modified_lcd> ...
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block modified_lcd, actual ratio is 1.
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 67
+ Flip-Flops                                            : 67
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Final Report                               *
+=========================================================================
+Final Results
+RTL Top Level Output File Name     : modified_lcd.ngr
+Top Level Output File Name         : modified_lcd
+Output Format                      : NGC
+Optimization Goal                  : Speed
+Keep Hierarchy                     : No
+
+Design Statistics
+# IOs                              : 13
+
+Cell Usage :
+# BELS                             : 223
+#      GND                         : 1
+#      INV                         : 4
+#      LUT1                        : 47
+#      LUT2                        : 7
+#      LUT2_L                      : 3
+#      LUT3                        : 9
+#      LUT3_D                      : 1
+#      LUT3_L                      : 1
+#      LUT4                        : 36
+#      LUT4_L                      : 2
+#      MUXCY                       : 55
+#      MUXF5                       : 7
+#      VCC                         : 1
+#      XORCY                       : 49
+# FlipFlops/Latches                : 67
+#      FDE                         : 1
+#      FDR                         : 55
+#      FDRE                        : 5
+#      FDRSE                       : 4
+#      FDS                         : 1
+#      FDSE                        : 1
+# Clock Buffers                    : 2
+#      BUFG                        : 1
+#      BUFGP                       : 1
+# IO Buffers                       : 12
+#      IBUF                        : 1
+#      OBUF                        : 11
+=========================================================================
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 3s700anfgg484-5 
+
+ Number of Slices:                       56  out of   5888     0%  
+ Number of Slice Flip Flops:             67  out of  11776     0%  
+ Number of 4 input LUTs:                110  out of  11776     0%  
+ Number of IOs:                          13
+ Number of bonded IOBs:                  13  out of    372     3%  
+ Number of GCLKs:                         2  out of     24     8%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+TIMING REPORT
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-----------------------------------+------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)  | Load  |
+-----------------------------------+------------------------+-------+
+CLK                                | BUFGP                  | 33    |
+OneUSClk1                          | BUFG                   | 34    |
+-----------------------------------+------------------------+-------+
+
+Asynchronous Control Signals Information:
+----------------------------------------
+No asynchronous control signals found in this design
+
+Timing Summary:
+---------------
+Speed Grade: -5
+
+   Minimum period: 6.538ns (Maximum Frequency: 152.941MHz)
+   Minimum input arrival time before clock: 2.076ns
+   Maximum output required time after clock: 7.798ns
+   Maximum combinational path delay: No path found
+
+Timing Detail:
+--------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'CLK'
+  Clock period: 4.803ns (frequency: 208.205MHz)
+  Total number of paths / destination ports: 1585 / 66
+-------------------------------------------------------------------------
+Delay:               4.803ns (Levels of Logic = 32)
+  Source:            clkCount_1 (FF)
+  Destination:       clkCount_31 (FF)
+  Source Clock:      CLK rising
+  Destination Clock: CLK rising
+
+  Data Path: clkCount_1 to clkCount_31
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDR:C->Q              2   0.495   0.488  clkCount_1 (clkCount_1)
+     LUT1:I0->O            1   0.561   0.000  Mcount_clkCount_cy<1>_rt (Mcount_clkCount_cy<1>_rt)
+     MUXCY:S->O            1   0.523   0.000  Mcount_clkCount_cy<1> (Mcount_clkCount_cy<1>)
+     MUXCY:CI->O           1   0.065   0.000  Mcount_clkCount_cy<2> (Mcount_clkCount_cy<2>)
+     MUXCY:CI->O           1   0.065   0.000  Mcount_clkCount_cy<3> (Mcount_clkCount_cy<3>)
+     MUXCY:CI->O           1   0.065   0.000  Mcount_clkCount_cy<4> (Mcount_clkCount_cy<4>)
+     MUXCY:CI->O           1   0.065   0.000  Mcount_clkCount_cy<5> (Mcount_clkCount_cy<5>)
+     MUXCY:CI->O           1   0.065   0.000  Mcount_clkCount_cy<6> (Mcount_clkCount_cy<6>)
+     MUXCY:CI->O           1   0.065   0.000  Mcount_clkCount_cy<7> (Mcount_clkCount_cy<7>)
+     MUXCY:CI->O           1   0.065   0.000  Mcount_clkCount_cy<8> (Mcount_clkCount_cy<8>)
+     MUXCY:CI->O           1   0.065   0.000  Mcount_clkCount_cy<9> (Mcount_clkCount_cy<9>)
+     MUXCY:CI->O           1   0.065   0.000  Mcount_clkCount_cy<10> (Mcount_clkCount_cy<10>)
+     MUXCY:CI->O           1   0.065   0.000  Mcount_clkCount_cy<11> (Mcount_clkCount_cy<11>)
+     MUXCY:CI->O           1   0.065   0.000  Mcount_clkCount_cy<12> (Mcount_clkCount_cy<12>)
+     MUXCY:CI->O           1   0.065   0.000  Mcount_clkCount_cy<13> (Mcount_clkCount_cy<13>)
+     MUXCY:CI->O           1   0.065   0.000  Mcount_clkCount_cy<14> (Mcount_clkCount_cy<14>)
+     MUXCY:CI->O           1   0.065   0.000  Mcount_clkCount_cy<15> (Mcount_clkCount_cy<15>)
+     MUXCY:CI->O           1   0.065   0.000  Mcount_clkCount_cy<16> (Mcount_clkCount_cy<16>)
+     MUXCY:CI->O           1   0.065   0.000  Mcount_clkCount_cy<17> (Mcount_clkCount_cy<17>)
+     MUXCY:CI->O           1   0.065   0.000  Mcount_clkCount_cy<18> (Mcount_clkCount_cy<18>)
+     MUXCY:CI->O           1   0.065   0.000  Mcount_clkCount_cy<19> (Mcount_clkCount_cy<19>)
+     MUXCY:CI->O           1   0.065   0.000  Mcount_clkCount_cy<20> (Mcount_clkCount_cy<20>)
+     MUXCY:CI->O           1   0.065   0.000  Mcount_clkCount_cy<21> (Mcount_clkCount_cy<21>)
+     MUXCY:CI->O           1   0.065   0.000  Mcount_clkCount_cy<22> (Mcount_clkCount_cy<22>)
+     MUXCY:CI->O           1   0.065   0.000  Mcount_clkCount_cy<23> (Mcount_clkCount_cy<23>)
+     MUXCY:CI->O           1   0.065   0.000  Mcount_clkCount_cy<24> (Mcount_clkCount_cy<24>)
+     MUXCY:CI->O           1   0.065   0.000  Mcount_clkCount_cy<25> (Mcount_clkCount_cy<25>)
+     MUXCY:CI->O           1   0.065   0.000  Mcount_clkCount_cy<26> (Mcount_clkCount_cy<26>)
+     MUXCY:CI->O           1   0.065   0.000  Mcount_clkCount_cy<27> (Mcount_clkCount_cy<27>)
+     MUXCY:CI->O           1   0.065   0.000  Mcount_clkCount_cy<28> (Mcount_clkCount_cy<28>)
+     MUXCY:CI->O           1   0.065   0.000  Mcount_clkCount_cy<29> (Mcount_clkCount_cy<29>)
+     MUXCY:CI->O           0   0.065   0.000  Mcount_clkCount_cy<30> (Mcount_clkCount_cy<30>)
+     XORCY:CI->O           1   0.654   0.000  Mcount_clkCount_xor<31> (Result<31>)
+     FDR:D                     0.197          clkCount_31
+    ----------------------------------------
+    Total                      4.803ns (4.315ns logic, 0.488ns route)
+                                       (89.8% logic, 10.2% route)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'OneUSClk1'
+  Clock period: 6.538ns (frequency: 152.941MHz)
+  Total number of paths / destination ports: 1721 / 65
+-------------------------------------------------------------------------
+Delay:               6.538ns (Levels of Logic = 5)
+  Source:            count_0 (FF)
+  Destination:       lcd_cmd_ptr_0 (FF)
+  Source Clock:      OneUSClk1 rising
+  Destination Clock: OneUSClk1 rising
+
+  Data Path: count_0 to lcd_cmd_ptr_0
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDR:C->Q              4   0.495   0.607  count_0 (count_0)
+     LUT2_L:I0->LO         1   0.561   0.102  delayOK_or000092 (delayOK_or000092)
+     LUT4:I3->O            1   0.561   0.359  delayOK_or0000101 (delayOK_or0000101)
+     LUT4:I3->O            2   0.561   0.403  delayOK_or0000143 (delayOK_or0000143)
+     LUT4:I2->O           27   0.561   1.074  delayOK_or0000199 (delayOK)
+     LUT4:I3->O            5   0.561   0.538  lcd_cmd_ptr_and000120 (lcd_cmd_ptr_and0001)
+     FDRE:CE                   0.156          lcd_cmd_ptr_0
+    ----------------------------------------
+    Total                      6.538ns (3.456ns logic, 3.082ns route)
+                                       (52.9% logic, 47.1% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'OneUSClk1'
+  Total number of paths / destination ports: 12 / 12
+-------------------------------------------------------------------------
+Offset:              2.076ns (Levels of Logic = 1)
+  Source:            rst (PAD)
+  Destination:       stCurW_FSM_FFd1 (FF)
+  Destination Clock: OneUSClk1 rising
+
+  Data Path: rst to stCurW_FSM_FFd1
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O            12   0.824   0.817  rst_IBUF (rst_IBUF)
+     FDS:S                     0.435          stCurW_FSM_FFd1
+    ----------------------------------------
+    Total                      2.076ns (1.259ns logic, 0.817ns route)
+                                       (60.6% logic, 39.4% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'OneUSClk1'
+  Total number of paths / destination ports: 69 / 9
+-------------------------------------------------------------------------
+Offset:              7.798ns (Levels of Logic = 3)
+  Source:            lcd_cmd_ptr_1 (FF)
+  Destination:       RS (PAD)
+  Source Clock:      OneUSClk1 rising
+
+  Data Path: lcd_cmd_ptr_1 to RS
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDRE:C->Q            18   0.495   0.974  lcd_cmd_ptr_1 (lcd_cmd_ptr_1)
+     LUT3_D:I1->O          3   0.562   0.453  Mrom_RS_rom0000511 (N2)
+     LUT4:I3->O            1   0.561   0.357  Mrom_RS_rom000091 (RS_OBUF)
+     OBUF:I->O                 4.396          RS_OBUF (RS)
+    ----------------------------------------
+    Total                      7.798ns (6.014ns logic, 1.784ns route)
+                                       (77.1% logic, 22.9% route)
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 6.00 secs
+Total CPU time to Xst completion: 6.28 secs
+ 
+--> 
+
+
+Total memory usage is 610896 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :    0 (   0 filtered)
+Number of infos    :    0 (   0 filtered)
+

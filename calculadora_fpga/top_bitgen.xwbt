@@ -1,8 +1,8 @@
 INTSTYLE=ise
-INFILE=C:\Users\rafam\OneDrive\Documentos\Facul\Sistemas Digitais\Trabalho 2\Trabalho-2-Sistemas-Digitais\calculadora_fpga\top.ncd
-OUTFILE=C:\Users\rafam\OneDrive\Documentos\Facul\Sistemas Digitais\Trabalho 2\Trabalho-2-Sistemas-Digitais\calculadora_fpga\top.bit
+INFILE=/home/sd/Desktop/teste3/Trabalho-2-Sistemas-Digitais/calculadora_fpga/top.ncd
+OUTFILE=/home/sd/Desktop/teste3/Trabalho-2-Sistemas-Digitais/calculadora_fpga/top.bit
 FAMILY=Spartan3A and Spartan3AN
 PART=xc3s700an-5fgg484
-WORKINGDIR=C:\Users\rafam\OneDrive\Documentos\Facul\Sistemas Digitais\Trabalho 2\Trabalho-2-Sistemas-Digitais\calculadora_fpga
+WORKINGDIR=/home/sd/Desktop/teste3/Trabalho-2-Sistemas-Digitais/calculadora_fpga
 LICENSE=WebPack
-USER_INFO=213400236_0_0_839
+USER_INFO=211545305_0_0_116

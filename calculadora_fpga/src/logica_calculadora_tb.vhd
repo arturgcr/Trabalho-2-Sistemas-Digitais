@@ -79,6 +79,10 @@ begin
         wait for CLK_PERIOD;
         start <= '0';
         wait for 100 ns;
+		  
+		  reset <= '1';
+        wait for 50 ns;
+        reset <= '0';
 
         -- Test 2: 50 - 90 ? negative result
         op1 <= 50; op2 <= 90;
@@ -87,6 +91,10 @@ begin
         wait for CLK_PERIOD;
         start <= '0';
         wait for 100 ns;
+		  
+		  reset <= '1';
+        wait for 50 ns;
+        reset <= '0';
 
         -- Test 3: 6 * 7
         op1 <= 6; op2 <= 7;

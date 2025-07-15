@@ -1,10 +1,10 @@
 
 # PlanAhead Launch Script for Pre-Synthesis Floorplanning, created by Project Navigator
 
-create_project -name calculadora_fpga -dir "C:/Users/rafam/OneDrive/Documentos/Facul/Sistemas Digitais/Trabalho 2/Trabalho-2-Sistemas-Digitais/calculadora_fpga/planAhead_run_4" -part xc3s700anfgg484-5
+create_project -name calculadora_fpga -dir "/home/sd/Desktop/teste3/Trabalho-2-Sistemas-Digitais/calculadora_fpga/planAhead_run_3" -part xc3s700anfgg484-5
 set_param project.pinAheadLayout yes
 set srcset [get_property srcset [current_run -impl]]
-set_property target_constrs_file "C:/Users/rafam/OneDrive/Documentos/Facul/Sistemas Digitais/Trabalho 2/Trabalho-2-Sistemas-Digitais/calculadora_fpga/ucf/calculadora.ucf" [current_fileset -constrset]
+set_property target_constrs_file "/home/sd/Desktop/teste3/Trabalho-2-Sistemas-Digitais/calculadora_fpga/ucf/calculadora.ucf" [current_fileset -constrset]
 set hdlfile [add_files [list {src/teclado_ps2.vhd}]]
 set_property file_type VHDL $hdlfile
 set_property library work $hdlfile
@@ -21,5 +21,5 @@ set hdlfile [add_files [list {src/top.vhd}]]
 set_property file_type VHDL $hdlfile
 set_property library work $hdlfile
 set_property top top $srcset
-add_files [list {C:/Users/rafam/OneDrive/Documentos/Facul/Sistemas Digitais/Trabalho 2/Trabalho-2-Sistemas-Digitais/calculadora_fpga/ucf/calculadora.ucf}] -fileset [get_property constrset [current_run]]
+add_files [list {/home/sd/Desktop/teste3/Trabalho-2-Sistemas-Digitais/calculadora_fpga/ucf/calculadora.ucf}] -fileset [get_property constrset [current_run]]
 open_rtl_design -part xc3s700anfgg484-5

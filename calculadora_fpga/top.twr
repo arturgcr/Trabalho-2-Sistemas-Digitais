@@ -1,9 +1,9 @@
 --------------------------------------------------------------------------------
-Release 14.7 Trace  (nt64)
+Release 14.7 Trace  (lin64)
 Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
-C:\Xilinx\14.7\ISE_DS\ISE\bin\nt64\unwrapped\trce.exe -intstyle ise -v 3 -s 5
--n 3 -fastpaths -xml top.twx top.ncd -o top.twr top.pcf
+/opt/Xilinx/14.7/ISE_DS/ISE/bin/lin64/unwrapped/trce -intstyle ise -v 3 -s 5 -n
+3 -fastpaths -xml top.twx top.ncd -o top.twr top.pcf
 
 Design file:              top.ncd
 Physical constraint file: top.pcf
@@ -44,9 +44,9 @@ Setup/Hold to clock clk
             |Max Setup to|Max Hold to |                  | Clock  |
 Source      | clk (edge) | clk (edge) |Internal Clock(s) | Phase  |
 ------------+------------+------------+------------------+--------+
-ps2_clk     |    0.279(R)|    0.751(R)|clk_BUFGP         |   0.000|
-ps2_data    |    1.492(R)|   -0.004(R)|clk_BUFGP         |   0.000|
-reset       |    4.547(R)|   -0.224(R)|clk_BUFGP         |   0.000|
+ps2_clk     |    0.975(R)|    0.191(R)|clk_BUFGP         |   0.000|
+ps2_data    |    1.560(R)|    0.100(R)|clk_BUFGP         |   0.000|
+reset       |    4.960(R)|   -0.274(R)|clk_BUFGP         |   0.000|
 ------------+------------+------------+------------------+--------+
 
 Clock clk to Pad
@@ -54,8 +54,8 @@ Clock clk to Pad
                 | clk (edge) |                  | Clock  |
 Destination     |   to PAD   |Internal Clock(s) | Phase  |
 ----------------+------------+------------------+--------+
-erro_div_zero   |    9.690(R)|clk_BUFGP         |   0.000|
-resultado_pronto|   10.591(R)|clk_BUFGP         |   0.000|
+erro_div_zero   |    9.787(R)|clk_BUFGP         |   0.000|
+resultado_pronto|    9.635(R)|clk_BUFGP         |   0.000|
 ----------------+------------+------------------+--------+
 
 Clock to Setup on destination clock clk
@@ -63,18 +63,18 @@ Clock to Setup on destination clock clk
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-clk            |   18.093|         |         |         |
+clk            |   17.700|         |         |         |
 ---------------+---------+---------+---------+---------+
 
 
-Analysis completed Thu Jul 10 06:06:39 2025 
+Analysis completed Thu Jul 10 10:37:13 2025 
 --------------------------------------------------------------------------------
 
 Trace Settings:
 -------------------------
 Trace Settings 
 
-Peak Memory Usage: 4544 MB
+Peak Memory Usage: 388 MB
 
 
 

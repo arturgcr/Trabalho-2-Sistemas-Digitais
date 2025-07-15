@@ -1,8 +1,7 @@
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
-use IEEE.STD_LOGIC_ARITH.ALL;
-use IEEE.STD_LOGIC_UNSIGNED.ALL;
 use ieee.numeric_std.all;
+
 
 entity final_lcd is
     Port ( 	ASCII_CHAR: std_logic_vector(7 downto 0);
@@ -16,7 +15,12 @@ entity final_lcd is
 	   --ADR2:out std_logic;				--ADR(2)
 	   --CS:out std_logic;				--CSC
 	   OE:out std_logic;				--OE
-	   rst:in std_logic		);		--BTN
+	   rst:in std_logic;	
+		
+		count_int:out integer;
+		clk_count_out: out integer;
+		stActWr_out: out std_logic
+		);		--BTN
 	   --rdone: out std_logic);			--WriteDone output to work with DI05 test
 end final_lcd;
 
@@ -49,12 +53,13 @@ architecture Behavioral of final_lcd is
 	signal activateW:std_logic:= '0';		    			--Activate Write sequence
 	signal count:std_logic_vector (16 downto 0):= "00000000000000000";	--15 bit count variable for timing delays
 	signal delayOK:std_logic:= '0';						--High when count has reached the right delay time
-signal OneUSClk : std_logic := '0';					--Signal is treated as a 1 MHz clock	
+	signal OneUSClk : std_logic := '0';					--Signal is treated as a 1 MHz clock	
 	signal stCur:mstate:= stPowerOn_Delay;					--LCD control state machine
 	signal stNext:mstate;			  	
 	signal stCurW:wstate:= stIdle; 						--Write control state machine
 	signal stNextW:wstate;
 	signal writeDone:std_logic:= '0';					--Command set finish
+	signal stActWr_sig: std_logic := '0';
 
 	type LCD_CMDS_T is array(23 downto 0) of std_logic_vector(9 downto 0);
 	signal LCD_CMDS : LCD_CMDS_T := ( 0 => "00"&X"3C",			--Function Set
@@ -89,15 +94,16 @@ signal OneUSClk : std_logic := '0';					--Signal is treated as a 1 MHz clock
 	signal lcd_cmd_ptr : integer range 0 to LCD_CMDS'HIGH + 1 := 0;
 	signal TRAVA: std_logic:='1';
 begin
-
-
+	stActWr_out <= stActWr_sig;
+	clk_count_out <= clkCount;
+	count_int <= to_integer(unsigned(count));
 	LED <= TRAVA;
  	
-	--  This process counts to 50, and then resets.  It is used to divide the clock signal time.
+	--  This process counts to 24, and then resets.  It is used to divide the clock signal time.
 	process (CLK)
 	begin
 		 if rising_edge(CLK) then
-			  if clkCount = 49 then  -- After 50 clock cycles (0 to 49)
+			  if clkCount = 24 then  -- After 50 clock cycles (0 to 49)
 					clkCount <= 0;
 					oneUSClk <= not oneUSClk;  -- Toggle the pulse
 			  else
@@ -114,7 +120,7 @@ begin
 				if delayOK = '1' then
 					count <= "00000000000000000";
 				else
-					count <= count + 1;
+					count <= std_logic_vector(unsigned(count) + 1);
 				end if;
 			end if;
 		end process;
@@ -127,75 +133,48 @@ begin
 	process (lcd_cmd_ptr, oneUSClk, PRINT_CHAR)
    		begin
 			if (oneUSClk = '1' and oneUSClk'event) then
-				if ((stNext = stInitDne or stNext = stDisplayCtrlSet or stNext = stDisplayClear) and writeDone = '0') then 
-					
-					lcd_cmd_ptr <= lcd_cmd_ptr + 1;
-					
+				if ((stNext = stInitDne or stNext = stDisplayCtrlSet or stNext = stDisplayClear) and writeDone = '0') then				
 					-- PATCH --
-
 					if (lcd_cmd_ptr <=3) then
-							
+							lcd_cmd_ptr <= lcd_cmd_ptr + 1;	
 							TRAVA <='0';
-						
 					elsif(PRINT_CHAR='1') then
-
 							TRAVA <='0';
-							LCD_CMDS(lcd_cmd_ptr)(7 downto 0) 
-								<= ASCII_CHAR;					
-
+							LCD_CMDS(lcd_cmd_ptr)(7 downto 0) <= ASCII_CHAR;					
 					else
-						
 							TRAVA <='1';
-						
 					end if;
 					--
-						
-					
 				elsif stCur = stPowerOn_Delay or stNext = stPowerOn_Delay then
-
 					lcd_cmd_ptr <= 0;
+					-- PATCH --
 					TRAVA<='0';
-
 				else
-
 					lcd_cmd_ptr <= lcd_cmd_ptr;
-
 					-- PATCH --
 					if (lcd_cmd_ptr <=3) then
-							
 							TRAVA <='0';
-						
 					elsif(PRINT_CHAR='1') then
-
 							TRAVA <='0';
-
-							LCD_CMDS(lcd_cmd_ptr)(7 downto 0) 
-								<= ASCII_CHAR;					
-
+							LCD_CMDS(lcd_cmd_ptr)(7 downto 0) <= ASCII_CHAR;					
 					else
-						
 							TRAVA <='1';
-						
 					end if;
 					-- --
-
 				end if;
-				
-				
 			end if;
-			
-
 		end process;
 		
-	
 	--  Determines when count has gotten to the right number, depending on the state.
-
 	delayOK <= '1' when ((stCur = stPowerOn_Delay and count = "00100111001010010") or 			--20050  
 					(stCur = stFunctionSet_Delay and count = "00000000000110010") or	--50
 					(stCur = stDisplayCtrlSet_Delay and count = "00000000000110010") or	--50
 					(stCur = stDisplayClear_Delay and count = "00000011001000000") or	--1600
-					(stCur = stCharDelay and count = "11111111111111111"))			--Max Delay for character writes and shifts
+					(stCur = stCharDelay and count = "11111111111111111") or
+					(stCur = stActWr and TRAVA = '0')
+					)			--Max Delay for character writes and shifts
 --					(stCur = stCharDelay and count = "00000000000100101"))		--37  This is proper delay between writes to ram.
+					
 		else	'0';
   	
 	-- This process runs the LCD status state machine
@@ -214,9 +193,7 @@ begin
 	--  This process generates the sequence of outputs needed to initialize and write to the LCD screen
 	process (stCur, delayOK, writeDone, lcd_cmd_ptr, TRAVA)
 		begin   
-		
 			case stCur is
-			
 				when stPowerOn_Delay =>
 					if delayOK = '1' then
 						stNext <= stFunctionSet;
@@ -290,7 +267,7 @@ begin
 					LCD_DB <= LCD_CMDS(lcd_cmd_ptr)(7 downto 0);
 					activateW <= '0';
 					stNext <= stActWr;
-
+					
 				when stActWr =>		
 					RS <= LCD_CMDS(lcd_cmd_ptr)(9);
 					RW <= LCD_CMDS(lcd_cmd_ptr)(8);
@@ -298,7 +275,9 @@ begin
 					if (TRAVA='0') THEN
 						activateW <= '1';
 						stNext <= stCharDelay;
+						stActWr_sig <= '0';
 					else
+						stActWr_sig <= '1';
 						activateW <= '0';
 						stNext <= stActWr;
 					end if;

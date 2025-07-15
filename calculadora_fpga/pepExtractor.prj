@@ -1,1 +1,5 @@
+work	"src/ascii_converter.vhd"
+work	"src/final_lcd.vhd"
 work	"src/logica_calculadora.vhd"
+work	"src/teclado_ps2.vhd"
+work	"src/top2.vhd"

@@ -1,0 +1,6 @@
+xst -intstyle ise -ifn "/home/sd/Desktop/teste3/Trabalho-2-Sistemas-Digitais/calculadora_fpga/modified_lcd.xst" -ofn "/home/sd/Desktop/teste3/Trabalho-2-Sistemas-Digitais/calculadora_fpga/modified_lcd.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc lcd.ucf -p xc3s700an-fgg484-5 modified_lcd.ngc modified_lcd.ngd  
+map -intstyle ise -p xc3s700an-fgg484-5 -cm area -ir off -pr off -c 100 -o modified_lcd_map.ncd modified_lcd.ngd modified_lcd.pcf 
+par -w -intstyle ise -ol high -t 1 modified_lcd_map.ncd modified_lcd.ncd modified_lcd.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml modified_lcd.twx modified_lcd.ncd -o modified_lcd.twr modified_lcd.pcf -ucf lcd.ucf 
+bitgen -intstyle ise -f modified_lcd.ut modified_lcd.ncd 

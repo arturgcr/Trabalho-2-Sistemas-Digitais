@@ -1,0 +1,2 @@
+vhdl isim_temp "src/final_lcd.vhd"
+vhdl isim_temp "final_lcd_tb.vhd"

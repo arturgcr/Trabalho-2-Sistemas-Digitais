@@ -1,0 +1,5 @@
+set -tmpdir "/home/sd/Desktop/teste3/Trabalho-2-Sistemas-Digitais/calculadora_fpga/xst/projnav.tmp"
+set -xsthdpdir "/home/sd/Desktop/teste3/Trabalho-2-Sistemas-Digitais/calculadora_fpga/xst"
+elaborate
+-ifn modified_lcd.prj
+-ifmt mixed

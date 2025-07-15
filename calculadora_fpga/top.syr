@@ -1,18 +1,21 @@
-Release 14.7 - xst P.20131013 (nt64)
+Release 14.7 - xst P.20131013 (lin64)
 Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
---> Parameter TMPDIR set to xst/projnav.tmp
+--> 
+Parameter TMPDIR set to xst/projnav.tmp
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.60 secs
+Total CPU time to Xst completion: 0.07 secs
  
---> Parameter xsthdpdir set to xst
+--> 
+Parameter xsthdpdir set to xst
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.61 secs
+Total CPU time to Xst completion: 0.07 secs
  
---> Reading design: top.prj
+--> 
+Reading design: top.prj
 
 TABLE OF CONTENTS
   1) Synthesis Options Summary
@@ -104,15 +107,15 @@ Slice Utilization Ratio Delta      : 5
 =========================================================================
 *                          HDL Compilation                              *
 =========================================================================
-Compiling vhdl file "C:/Users/rafam/OneDrive/Documentos/Facul/Sistemas Digitais/Trabalho 2/Trabalho-2-Sistemas-Digitais/calculadora_fpga/src/teclado_ps2.vhd" in Library work.
+Compiling vhdl file "/home/sd/Desktop/teste3/Trabalho-2-Sistemas-Digitais/calculadora_fpga/src/teclado_ps2.vhd" in Library work.
 Architecture behavioral of Entity teclado_ps2 is up to date.
-Compiling vhdl file "C:/Users/rafam/OneDrive/Documentos/Facul/Sistemas Digitais/Trabalho 2/Trabalho-2-Sistemas-Digitais/calculadora_fpga/src/logica_calculadora.vhd" in Library work.
+Compiling vhdl file "/home/sd/Desktop/teste3/Trabalho-2-Sistemas-Digitais/calculadora_fpga/src/logica_calculadora.vhd" in Library work.
 Architecture behavioral of Entity logica_calculadora is up to date.
-Compiling vhdl file "C:/Users/rafam/OneDrive/Documentos/Facul/Sistemas Digitais/Trabalho 2/Trabalho-2-Sistemas-Digitais/calculadora_fpga/src/ascii_converter.vhd" in Library work.
+Compiling vhdl file "/home/sd/Desktop/teste3/Trabalho-2-Sistemas-Digitais/calculadora_fpga/src/ascii_converter.vhd" in Library work.
 Architecture behavioral of Entity ascii_converter is up to date.
-Compiling vhdl file "C:/Users/rafam/OneDrive/Documentos/Facul/Sistemas Digitais/Trabalho 2/Trabalho-2-Sistemas-Digitais/calculadora_fpga/src/final_lcd.vhd" in Library work.
+Compiling vhdl file "/home/sd/Desktop/teste3/Trabalho-2-Sistemas-Digitais/calculadora_fpga/src/final_lcd.vhd" in Library work.
 Architecture behavioral of Entity final_lcd is up to date.
-Compiling vhdl file "C:/Users/rafam/OneDrive/Documentos/Facul/Sistemas Digitais/Trabalho 2/Trabalho-2-Sistemas-Digitais/calculadora_fpga/src/top.vhd" in Library work.
+Compiling vhdl file "/home/sd/Desktop/teste3/Trabalho-2-Sistemas-Digitais/calculadora_fpga/src/top.vhd" in Library work.
 Architecture behavioral of Entity top is up to date.
 
 =========================================================================
@@ -155,7 +158,7 @@ Entity <final_lcd> analyzed. Unit <final_lcd> generated.
 Performing bidirectional port resolution...
 
 Synthesizing Unit <teclado_ps2>.
-    Related source file is "C:/Users/rafam/OneDrive/Documentos/Facul/Sistemas Digitais/Trabalho 2/Trabalho-2-Sistemas-Digitais/calculadora_fpga/src/teclado_ps2.vhd".
+    Related source file is "/home/sd/Desktop/teste3/Trabalho-2-Sistemas-Digitais/calculadora_fpga/src/teclado_ps2.vhd".
 WARNING:Xst:646 - Signal <shift_reg<10:9>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
 WARNING:Xst:646 - Signal <shift_reg<0>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
     Found 4-bit up counter for signal <bit_count>.
@@ -174,11 +177,11 @@ Unit <teclado_ps2> synthesized.
 
 
 Synthesizing Unit <logica_calculadora>.
-    Related source file is "C:/Users/rafam/OneDrive/Documentos/Facul/Sistemas Digitais/Trabalho 2/Trabalho-2-Sistemas-Digitais/calculadora_fpga/src/logica_calculadora.vhd".
+    Related source file is "/home/sd/Desktop/teste3/Trabalho-2-Sistemas-Digitais/calculadora_fpga/src/logica_calculadora.vhd".
 WARNING:Xst:646 - Signal <res> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
 WARNING:Xst:646 - Signal <abs_res<31:10>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
     Found 99x33-bit ROM for signal <temp$rom0000> created at line 81.
-WARNING:Xst:643 - "C:/Users/rafam/OneDrive/Documentos/Facul/Sistemas Digitais/Trabalho 2/Trabalho-2-Sistemas-Digitais/calculadora_fpga/src/logica_calculadora.vhd" line 82: The result of a 33x11-bit multiplication is partially used. Only the 32 least significant bits are used. If you are doing this on purpose, you may safely ignore this warning. Otherwise, make sure you are not losing information, leading to unexpected circuit behavior.
+WARNING:Xst:643 - "/home/sd/Desktop/teste3/Trabalho-2-Sistemas-Digitais/calculadora_fpga/src/logica_calculadora.vhd" line 82: The result of a 33x11-bit multiplication is partially used. Only the 32 least significant bits are used. If you are doing this on purpose, you may safely ignore this warning. Otherwise, make sure you are not losing information, leading to unexpected circuit behavior.
     Found 32-bit register for signal <abs_res>.
     Found 32-bit adder for signal <abs_res$addsub0000> created at line 96.
     Found 32-bit comparator less for signal <abs_res$cmp_lt0000> created at line 94.
@@ -202,9 +205,9 @@ Unit <logica_calculadora> synthesized.
 
 
 Synthesizing Unit <ascii_converter>.
-    Related source file is "C:/Users/rafam/OneDrive/Documentos/Facul/Sistemas Digitais/Trabalho 2/Trabalho-2-Sistemas-Digitais/calculadora_fpga/src/ascii_converter.vhd".
+    Related source file is "/home/sd/Desktop/teste3/Trabalho-2-Sistemas-Digitais/calculadora_fpga/src/ascii_converter.vhd".
 WARNING:Xst:646 - Signal <inteiro> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
-WARNING:Xst:643 - "C:/Users/rafam/OneDrive/Documentos/Facul/Sistemas Digitais/Trabalho 2/Trabalho-2-Sistemas-Digitais/calculadora_fpga/src/ascii_converter.vhd" line 33: The result of a 32x6-bit multiplication is partially used. Only the 32 least significant bits are used. If you are doing this on purpose, you may safely ignore this warning. Otherwise, make sure you are not losing information, leading to unexpected circuit behavior.
+WARNING:Xst:643 - "/home/sd/Desktop/teste3/Trabalho-2-Sistemas-Digitais/calculadora_fpga/src/ascii_converter.vhd" line 33: The result of a 32x6-bit multiplication is partially used. Only the 32 least significant bits are used. If you are doing this on purpose, you may safely ignore this warning. Otherwise, make sure you are not losing information, leading to unexpected circuit behavior.
     Found 32x6-bit multiplier for signal <$mult0000> created at line 33.
     Found 6-bit adder for signal <ascii2$add0000> created at line 66.
     Found 6-bit adder for signal <ascii3$add0000> created at line 67.
@@ -229,7 +232,7 @@ Unit <ascii_converter> synthesized.
 
 
 Synthesizing Unit <final_lcd>.
-    Related source file is "C:/Users/rafam/OneDrive/Documentos/Facul/Sistemas Digitais/Trabalho 2/Trabalho-2-Sistemas-Digitais/calculadora_fpga/src/final_lcd.vhd".
+    Related source file is "/home/sd/Desktop/teste3/Trabalho-2-Sistemas-Digitais/calculadora_fpga/src/final_lcd.vhd".
 WARNING:Xst:653 - Signal <LCD_CMDS<23><9:8>> is used but never assigned. This sourceless signal will be automatically connected to value 00.
 WARNING:Xst:653 - Signal <LCD_CMDS<22><9:8>> is used but never assigned. This sourceless signal will be automatically connected to value 10.
 WARNING:Xst:653 - Signal <LCD_CMDS<21><9:8>> is used but never assigned. This sourceless signal will be automatically connected to value 10.
@@ -285,7 +288,7 @@ Unit <final_lcd> synthesized.
 
 
 Synthesizing Unit <top>.
-    Related source file is "C:/Users/rafam/OneDrive/Documentos/Facul/Sistemas Digitais/Trabalho 2/Trabalho-2-Sistemas-Digitais/calculadora_fpga/src/top.vhd".
+    Related source file is "/home/sd/Desktop/teste3/Trabalho-2-Sistemas-Digitais/calculadora_fpga/src/top.vhd".
     Found finite state machine <FSM_1> for signal <state>.
     -----------------------------------------------------------------------
     | States             | 7                                              |
@@ -300,35 +303,38 @@ Synthesizing Unit <top>.
     | Encoding           | automatic                                      |
     | Implementation     | LUT                                            |
     -----------------------------------------------------------------------
-WARNING:Xst:643 - "C:/Users/rafam/OneDrive/Documentos/Facul/Sistemas Digitais/Trabalho 2/Trabalho-2-Sistemas-Digitais/calculadora_fpga/src/top.vhd" line 139: The result of a 7x4-bit multiplication is partially used. Only the 10 least significant bits are used. If you are doing this on purpose, you may safely ignore this warning. Otherwise, make sure you are not losing information, leading to unexpected circuit behavior.
-WARNING:Xst:643 - "C:/Users/rafam/OneDrive/Documentos/Facul/Sistemas Digitais/Trabalho 2/Trabalho-2-Sistemas-Digitais/calculadora_fpga/src/top.vhd" line 125: The result of a 7x4-bit multiplication is partially used. Only the 10 least significant bits are used. If you are doing this on purpose, you may safely ignore this warning. Otherwise, make sure you are not losing information, leading to unexpected circuit behavior.
-    Found 9-bit subtractor for signal <$sub0000> created at line 125.
+WARNING:Xst:643 - "/home/sd/Desktop/teste3/Trabalho-2-Sistemas-Digitais/calculadora_fpga/src/top.vhd" line 142: The result of a 7x4-bit multiplication is partially used. Only the 10 least significant bits are used. If you are doing this on purpose, you may safely ignore this warning. Otherwise, make sure you are not losing information, leading to unexpected circuit behavior.
+WARNING:Xst:643 - "/home/sd/Desktop/teste3/Trabalho-2-Sistemas-Digitais/calculadora_fpga/src/top.vhd" line 128: The result of a 7x4-bit multiplication is partially used. Only the 10 least significant bits are used. If you are doing this on purpose, you may safely ignore this warning. Otherwise, make sure you are not losing information, leading to unexpected circuit behavior.
+    Found 9-bit subtractor for signal <$sub0000> created at line 128.
     Found 8-bit register for signal <ascii_char>.
     Found 3-bit register for signal <char_index>.
-    Found 3-bit adder for signal <char_index$addsub0000> created at line 186.
+    Found 3-bit adder for signal <char_index$addsub0000> created at line 192.
     Found 1-bit register for signal <iniciar_calc>.
     Found 7-bit register for signal <op1>.
-    Found 7-bit adder for signal <op1$addsub0000> created at line 125.
-    Found 7x4-bit multiplier for signal <op1$mult0000> created at line 125.
-    Found 7-bit subtractor for signal <op1$sub0000> created at line 119.
+    Found 7-bit adder for signal <op1$addsub0000> created at line 128.
+    Found 7x4-bit multiplier for signal <op1$mult0000> created at line 128.
+    Found 7-bit subtractor for signal <op1$sub0000> created at line 122.
     Found 7-bit register for signal <op2>.
-    Found 7-bit adder for signal <op2$addsub0000> created at line 139.
-    Found 7x4-bit multiplier for signal <op2$mult0000> created at line 139.
+    Found 7-bit adder for signal <op2$addsub0000> created at line 142.
+    Found 7x4-bit multiplier for signal <op2$mult0000> created at line 142.
     Found 8-bit register for signal <operador_ascii>.
     Found 1-bit register for signal <print_char>.
-    Found 8-bit comparator greatequal for signal <state$cmp_ge0000> created at line 118.
-    Found 8-bit comparator lessequal for signal <state$cmp_le0000> created at line 118.
-    Found 32-bit comparator less for signal <state$cmp_lt0000> created at line 181.
-    Found 3-bit comparator less for signal <state$cmp_lt0001> created at line 185.
+    Found 8-bit comparator greatequal for signal <state$cmp_ge0000> created at line 121.
+    Found 8-bit comparator lessequal for signal <state$cmp_le0000> created at line 121.
+    Found 32-bit comparator less for signal <state$cmp_lt0000> created at line 183.
+    Found 3-bit comparator less for signal <state$cmp_lt0001> created at line 191.
     Found 1-bit register for signal <tecla_lida>.
-    Found 32-bit register for signal <wait_counter>.
-    Found 32-bit adder for signal <wait_counter$addsub0000> created at line 182.
+    Found 32-bit register for signal <wait_counter_1>.
+    Found 32-bit adder for signal <wait_counter_1$addsub0000> created at line 188.
+    Found 32-bit comparator less for signal <wait_counter_1$cmp_lt0000> created at line 184.
+    Found 32-bit register for signal <wait_counter_2>.
+    Found 32-bit adder for signal <wait_counter_2$addsub0000> created at line 185.
     Summary:
 	inferred   1 Finite State Machine(s).
-	inferred  68 D-type flip-flop(s).
-	inferred   6 Adder/Subtractor(s).
+	inferred 100 D-type flip-flop(s).
+	inferred   7 Adder/Subtractor(s).
 	inferred   2 Multiplier(s).
-	inferred   4 Comparator(s).
+	inferred   5 Comparator(s).
 Unit <top> synthesized.
 
 INFO:Xst:1767 - HDL ADVISOR - Resource sharing has identified that some arithmetic operations in this design can share the same physical resources for reduced device utilization. For improved clock frequency you may try to disable resource sharing.
@@ -344,9 +350,9 @@ Macro Statistics
  33x11-bit multiplier                                  : 1
  7x4-bit multiplier                                    : 3
  7x7-bit multiplier                                    : 1
-# Adders/Subtractors                                   : 16
+# Adders/Subtractors                                   : 17
  3-bit adder                                           : 1
- 32-bit adder                                          : 4
+ 32-bit adder                                          : 5
  4-bit subtractor                                      : 2
  6-bit adder                                           : 3
  7-bit adder                                           : 2
@@ -359,18 +365,18 @@ Macro Statistics
  32-bit up counter                                     : 1
  4-bit up counter                                      : 1
  5-bit up counter                                      : 1
-# Registers                                            : 191
+# Registers                                            : 192
  1-bit register                                        : 179
  10-bit register                                       : 1
  3-bit register                                        : 2
- 32-bit register                                       : 2
+ 32-bit register                                       : 3
  7-bit register                                        : 2
  8-bit register                                        : 5
-# Comparators                                          : 16
+# Comparators                                          : 17
  10-bit comparator less                                : 1
  3-bit comparator less                                 : 1
  32-bit comparator greatequal                          : 9
- 32-bit comparator less                                : 2
+ 32-bit comparator less                                : 3
  5-bit comparator lessequal                            : 1
  8-bit comparator greatequal                           : 1
  8-bit comparator lessequal                            : 1
@@ -509,9 +515,9 @@ Macro Statistics
  33x11-bit multiplier                                  : 1
  7x4-bit registered multiplier                         : 3
  7x7-bit registered multiplier                         : 1
-# Adders/Subtractors                                   : 16
+# Adders/Subtractors                                   : 17
  3-bit adder                                           : 1
- 32-bit adder                                          : 4
+ 32-bit adder                                          : 5
  4-bit subtractor                                      : 2
  6-bit adder                                           : 3
  7-bit adder                                           : 2
@@ -523,13 +529,13 @@ Macro Statistics
  32-bit up counter                                     : 1
  4-bit up counter                                      : 1
  5-bit up counter                                      : 1
-# Registers                                            : 296
- Flip-Flops                                            : 296
-# Comparators                                          : 16
+# Registers                                            : 328
+ Flip-Flops                                            : 328
+# Comparators                                          : 17
  10-bit comparator less                                : 1
  3-bit comparator less                                 : 1
  32-bit comparator greatequal                          : 9
- 32-bit comparator less                                : 2
+ 32-bit comparator less                                : 3
  5-bit comparator lessequal                            : 1
  8-bit comparator greatequal                           : 1
  8-bit comparator lessequal                            : 1
@@ -592,8 +598,8 @@ Unit <top> processed.
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 333
- Flip-Flops                                            : 333
+# Registers                                            : 365
+ Flip-Flops                                            : 365
 # Shift Registers                                      : 1
  2-bit shift register                                  : 1
 
@@ -624,27 +630,27 @@ Design Statistics
 # IOs                              : 18
 
 Cell Usage :
-# BELS                             : 1146
+# BELS                             : 1294
 #      GND                         : 1
-#      INV                         : 65
-#      LUT1                        : 84
-#      LUT2                        : 66
+#      INV                         : 68
+#      LUT1                        : 114
+#      LUT2                        : 67
 #      LUT2_D                      : 1
-#      LUT3                        : 146
+#      LUT3                        : 147
 #      LUT3_D                      : 2
-#      LUT4                        : 285
+#      LUT4                        : 328
 #      LUT4_D                      : 7
 #      LUT4_L                      : 13
-#      MUXCY                       : 204
-#      MUXF5                       : 85
+#      MUXCY                       : 244
+#      MUXF5                       : 83
 #      MUXF6                       : 17
 #      MUXF7                       : 1
 #      VCC                         : 1
-#      XORCY                       : 168
-# FlipFlops/Latches                : 334
+#      XORCY                       : 200
+# FlipFlops/Latches                : 366
 #      FD                          : 2
 #      FDE                         : 150
-#      FDR                         : 95
+#      FDR                         : 127
 #      FDRE                        : 78
 #      FDRS                        : 2
 #      FDRSE                       : 4
@@ -667,10 +673,10 @@ Device utilization summary:
 
 Selected Device : 3s700anfgg484-5 
 
- Number of Slices:                      439  out of   5888     7%  
- Number of Slice Flip Flops:            334  out of  11776     2%  
- Number of 4 input LUTs:                670  out of  11776     5%  
-    Number used as logic:               669
+ Number of Slices:                      474  out of   5888     8%  
+ Number of Slice Flip Flops:            366  out of  11776     3%  
+ Number of 4 input LUTs:                748  out of  11776     6%  
+    Number used as logic:               747
     Number used as Shift registers:       1
  Number of IOs:                          18
  Number of bonded IOBs:                  18  out of    372     4%  
@@ -698,7 +704,7 @@ Clock Information:
 -----------------------------------+------------------------+-------+
 Clock Signal                       | Clock buffer(FF name)  | Load  |
 -----------------------------------+------------------------+-------+
-clk                                | BUFGP                  | 164   |
+clk                                | BUFGP                  | 196   |
 lcd_driver_inst/OneUSClk1          | BUFG                   | 175   |
 -----------------------------------+------------------------+-------+
 
@@ -711,7 +717,7 @@ Timing Summary:
 Speed Grade: -5
 
    Minimum period: 18.756ns (Maximum Frequency: 53.317MHz)
-   Minimum input arrival time before clock: 3.421ns
+   Minimum input arrival time before clock: 3.429ns
    Maximum output required time after clock: 8.640ns
    Maximum combinational path delay: No path found
 
@@ -722,7 +728,7 @@ All values displayed in nanoseconds (ns)
 =========================================================================
 Timing constraint: Default period analysis for Clock 'clk'
   Clock period: 18.756ns (frequency: 53.317MHz)
-  Total number of paths / destination ports: 3814655 / 312
+  Total number of paths / destination ports: 3821267 / 343
 -------------------------------------------------------------------------
 Delay:               18.756ns (Levels of Logic = 25)
   Source:            calculadora_inst/Mmult_temp_mult0003 (MULT)
@@ -767,39 +773,38 @@ Delay:               18.756ns (Levels of Logic = 25)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'lcd_driver_inst/OneUSClk1'
-  Clock period: 10.981ns (frequency: 91.068MHz)
-  Total number of paths / destination ports: 12033 / 206
+  Clock period: 10.080ns (frequency: 99.211MHz)
+  Total number of paths / destination ports: 11863 / 206
 -------------------------------------------------------------------------
-Delay:               10.981ns (Levels of Logic = 9)
-  Source:            lcd_driver_inst/count_14 (FF)
+Delay:               10.080ns (Levels of Logic = 8)
+  Source:            lcd_driver_inst/count_4 (FF)
   Destination:       lcd_driver_inst/LCD_CMDS<7>_4 (FF)
   Source Clock:      lcd_driver_inst/OneUSClk1 rising
   Destination Clock: lcd_driver_inst/OneUSClk1 rising
 
-  Data Path: lcd_driver_inst/count_14 to lcd_driver_inst/LCD_CMDS<7>_4
+  Data Path: lcd_driver_inst/count_4 to lcd_driver_inst/LCD_CMDS<7>_4
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDR:C->Q              4   0.495   0.607  lcd_driver_inst/count_14 (lcd_driver_inst/count_14)
-     LUT4:I0->O            1   0.561   0.000  lcd_driver_inst/delayOK_or0000691 (lcd_driver_inst/delayOK_or0000691)
-     MUXF5:I1->O           1   0.229   0.465  lcd_driver_inst/delayOK_or000069_f5 (lcd_driver_inst/delayOK_or000069)
-     LUT4:I0->O            1   0.561   0.380  lcd_driver_inst/delayOK_or000085 (lcd_driver_inst/delayOK_or000085)
-     LUT4:I2->O            1   0.561   0.359  lcd_driver_inst/delayOK_or0000157_SW0 (N146)
-     LUT4:I3->O            6   0.561   0.635  lcd_driver_inst/delayOK_or0000157 (lcd_driver_inst/delayOK_or0000157)
-     LUT2:I1->O           23   0.562   1.045  lcd_driver_inst/delayOK_or0000168 (lcd_driver_inst/delayOK)
+     FDR:C->Q              5   0.495   0.646  lcd_driver_inst/count_4 (lcd_driver_inst/count_4)
+     LUT2:I0->O            1   0.561   0.380  lcd_driver_inst/delayOK_or000064 (lcd_driver_inst/delayOK_or000064)
+     LUT3:I2->O            1   0.561   0.000  lcd_driver_inst/delayOK_or000073_F (N155)
+     MUXF5:I0->O           1   0.229   0.465  lcd_driver_inst/delayOK_or000073 (lcd_driver_inst/delayOK_or000073)
+     LUT4:I0->O            4   0.561   0.565  lcd_driver_inst/delayOK_or0000133 (lcd_driver_inst/delayOK_or0000133)
+     LUT3:I1->O           25   0.562   1.094  lcd_driver_inst/delayOK_or0000160 (lcd_driver_inst/delayOK)
      LUT4:I2->O            3   0.561   0.517  lcd_driver_inst/LCD_CMDS<10>_0_not0000322 (lcd_driver_inst/LCD_CMDS<10>_0_not0000322)
      LUT2:I1->O           17   0.562   1.001  lcd_driver_inst/LCD_CMDS<10>_0_not0000326 (lcd_driver_inst/N8)
      LUT4:I0->O            7   0.561   0.602  lcd_driver_inst/LCD_CMDS<7>_5_not00001 (lcd_driver_inst/LCD_CMDS<7>_5_not0000)
      FDE:CE                    0.156          lcd_driver_inst/LCD_CMDS<7>_5
     ----------------------------------------
-    Total                     10.981ns (5.370ns logic, 5.611ns route)
-                                       (48.9% logic, 51.1% route)
+    Total                     10.080ns (4.809ns logic, 5.271ns route)
+                                       (47.7% logic, 52.3% route)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
-  Total number of paths / destination ports: 138 / 138
+  Total number of paths / destination ports: 170 / 170
 -------------------------------------------------------------------------
-Offset:              3.421ns (Levels of Logic = 2)
+Offset:              3.429ns (Levels of Logic = 2)
   Source:            reset (PAD)
   Destination:       teclado_inst/bit_count_3 (FF)
   Destination Clock: clk rising
@@ -808,18 +813,18 @@ Offset:              3.421ns (Levels of Logic = 2)
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IBUF:I->O           132   0.824   1.102  reset_IBUF (reset_IBUF)
+     IBUF:I->O           164   0.824   1.110  reset_IBUF (reset_IBUF)
      LUT4:I3->O            4   0.561   0.499  teclado_inst/bit_count_or00002 (teclado_inst/bit_count_or0000)
      FDRE:R                    0.435          teclado_inst/bit_count_0
     ----------------------------------------
-    Total                      3.421ns (1.820ns logic, 1.601ns route)
-                                       (53.2% logic, 46.8% route)
+    Total                      3.429ns (1.820ns logic, 1.609ns route)
+                                       (53.1% logic, 46.9% route)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'lcd_driver_inst/OneUSClk1'
   Total number of paths / destination ports: 12 / 12
 -------------------------------------------------------------------------
-Offset:              2.359ns (Levels of Logic = 1)
+Offset:              2.367ns (Levels of Logic = 1)
   Source:            reset (PAD)
   Destination:       lcd_driver_inst/stCurW_FSM_FFd2 (FF)
   Destination Clock: lcd_driver_inst/OneUSClk1 rising
@@ -828,11 +833,11 @@ Offset:              2.359ns (Levels of Logic = 1)
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IBUF:I->O           132   0.824   1.100  reset_IBUF (reset_IBUF)
+     IBUF:I->O           164   0.824   1.108  reset_IBUF (reset_IBUF)
      FDR:R                     0.435          lcd_driver_inst/stCurW_FSM_FFd2
     ----------------------------------------
-    Total                      2.359ns (1.259ns logic, 1.100ns route)
-                                       (53.4% logic, 46.6% route)
+    Total                      2.367ns (1.259ns logic, 1.108ns route)
+                                       (53.2% logic, 46.8% route)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'lcd_driver_inst/OneUSClk1'
@@ -880,12 +885,13 @@ Offset:              5.727ns (Levels of Logic = 1)
 =========================================================================
 
 
-Total REAL time to Xst completion: 17.00 secs
-Total CPU time to Xst completion: 17.76 secs
+Total REAL time to Xst completion: 15.00 secs
+Total CPU time to Xst completion: 15.09 secs
  
 --> 
 
-Total memory usage is 4547448 kilobytes
+
+Total memory usage is 640336 kilobytes
 
 Number of errors   :    0 (   0 filtered)
 Number of warnings :  123 (   0 filtered)

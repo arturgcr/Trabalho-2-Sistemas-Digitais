@@ -8,13 +8,14 @@ architecture Behavioral of teclado_ps2_tb is
 
     -- DUT Signals
     signal clk       : std_logic := '0';
-    signal reset     : std_logic := '1';
+    signal reset     : std_logic := '0';
     signal ps2_clk   : std_logic := '1';
     signal ps2_data  : std_logic := '1';
     signal dado_ascii: std_logic_vector(7 downto 0);
     signal pronto    : std_logic;
 
     constant CLK_PERIOD : time := 20 ns;  -- 50 MHz
+	 constant PS2_CLK_PERIOD : time := 80 us;  -- 50 MHz
 
     component teclado_ps2
         Port (
@@ -47,16 +48,6 @@ begin
         wait for CLK_PERIOD / 2;
     end process;
 	 
-	 ps2_clk_process : process
-	 begin
-		 loop
-			  ps2_clk <= '0';
-			  wait for 40 us;
-			  ps2_clk <= '1';
-			  wait for 40 us;
-		 end loop;
-	 end process;
-
     -- Simulate one key release (e.g., '1' => scan code 16h, break = F0 16h)
     process
         procedure send_frame(code : std_logic_vector(7 downto 0)) is
@@ -64,25 +55,38 @@ begin
         begin
             -- Start bit
             ps2_data <= '0';
-				wait for 80 us;
+				wait for PS2_CLK_PERIOD / 2;
+				ps2_clk <= '0';
+				wait for PS2_CLK_PERIOD / 2;
+				ps2_clk <= '1';
 
             -- 8 data bits
             for i in 0 to 7 loop
                ps2_data <= code(i);
                parity := parity xor code(i);
-					wait for 80 us;
+					wait for PS2_CLK_PERIOD / 2;
+					ps2_clk <= '0';
+					wait for PS2_CLK_PERIOD / 2;
+					ps2_clk <= '1';
             end loop;
 
             -- Parity bit
             ps2_data <= parity;
-				wait for 80 us;
+				wait for PS2_CLK_PERIOD / 2;
+				ps2_clk <= '0';
+				wait for PS2_CLK_PERIOD / 2;
+				ps2_clk <= '1';
 
             -- Stop bit
             ps2_data <= '1';
-				wait for 80 us;
+				wait for PS2_CLK_PERIOD / 2;
+				ps2_clk <= '0';
+				wait for PS2_CLK_PERIOD / 2;
+				ps2_clk <= '1';
         end procedure;
 
     begin
+		  --reset <= '1';
         wait for 100 ns;
 		  reset <= '0';
 		  wait for 100 ns;
@@ -91,6 +95,7 @@ begin
         send_frame(x"F0");
 
         send_frame(x"16");
+
 		  wait for 200 us;
         
 		  reset <= '1';

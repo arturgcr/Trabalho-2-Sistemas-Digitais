@@ -1,2 +1,0 @@
-vhdl work "src/teclado_ps2.vhd"
-vhdl work "src/teclado_ps2_tb.vhd"
